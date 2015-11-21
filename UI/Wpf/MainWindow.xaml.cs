@@ -21,26 +21,26 @@ namespace Wsu.DairyCafo.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        Scenario scenario;
+        //Scenario scenario;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            scenario = new Scenario();
-            scenario.StartDate = DateTime.Now;
-            scenario.EndDate = DateTime.Now;
-            scenario.PathToWeatherFile = @"C:\dev";
-
-            scenario.Cow = new Cow
-            {
-                BodyMass_kg = 500,
-                CrudeProteinDiet_kg_d = 10,
-                DryMatterIntake_kg_d = 40,
-                MilkProduction_kg_d = 15
-            };
-
-            DataContext = scenario;
+           //scenario = new Scenario();
+           //scenario.StartDate = DateTime.Now;
+           //scenario.EndDate = DateTime.Now;
+           //scenario.PathToWeatherFile = @"C:\dev";
+           //
+           //scenario.Cow = new Cow
+           //{
+           //    BodyMass_kg = 500,
+           //    CrudeProteinDiet_kg_d = 10,
+           //    DryMatterIntake_kg_d = 40,
+           //    MilkProduction_kg_d = 15
+           //};
+           //
+           //DataContext = scenario;
         }
 
         private void btnScenarioSelectWeather_Click(object sender, RoutedEventArgs e)
@@ -73,7 +73,7 @@ namespace Wsu.DairyCafo.Wpf
         private void mnuSave_Click(object sender, RoutedEventArgs e)
         {
             string foo = txtCowBodyMass.Text;
-            double moo = this.scenario.Cow.BodyMass_kg;
+            //double moo = this.scenario.Cow.BodyMass_kg;
         }
     }
 }

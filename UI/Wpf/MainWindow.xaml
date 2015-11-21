@@ -159,7 +159,9 @@
                              Grid.Column="1" 
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
-                             VerticalAlignment="Top"  />
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Cow.DryMatterIntake_kg_d, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                             />
 
                     <TextBlock Grid.Row="3">Milk production (kg/d):</TextBlock>
                     <TextBox Name="txtCowMilkProduction"
@@ -167,7 +169,8 @@
                              Grid.Column="1" 
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
-                             VerticalAlignment="Top"/>
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Cow.MilkProduction_kg_d, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
 
                     <TextBlock Grid.Row="4">Crude protein in diet (kg/d):</TextBlock>
                     <TextBox Name="txtCowCrudeProteinDiet"
@@ -175,7 +178,8 @@
                              Grid.Column="1" 
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
-                             VerticalAlignment="Top" />
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Cow.CrudeProteinDiet_kg_d, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                 </Grid>
                 <!--#endregion Cow -->
                 
@@ -223,7 +227,8 @@
                              Grid.Column="1" 
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
-                             VerticalAlignment="Top"/>
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Barn.Manure_alley_area_m2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
                     <!-- Cow num -->
                     <TextBlock Grid.Row="2">Number of cows (cnt):</TextBlock>
@@ -232,7 +237,8 @@
                              Grid.Column="1" 
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
-                             VerticalAlignment="Top"/>
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Barn.Number_cows_cnt, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                 </Grid>
                 <!--#endregion Barn -->
                 
@@ -431,7 +437,8 @@
                              Grid.Column="1" 
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
-                             VerticalAlignment="Top"/>
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Lagoon.SurfaceArea_m2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
                     <!-- Max Volume -->
                     <TextBlock Grid.Row="2">Max volume (m3):</TextBlock>
@@ -440,7 +447,8 @@
                              Grid.Column="1" 
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
-                             VerticalAlignment="Top"/>
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Lagoon.VolumeMax_m3, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                 </Grid>
                 <!--#endregion -->
                 
@@ -487,7 +495,8 @@
                             Grid.Column="1" 
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
-                            VerticalAlignment="Top"/>
+                            VerticalAlignment="Top"
+                            Text="{Binding Path=Field.Area_ha, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                     </Grid>
                 <!--#endregion -->
 

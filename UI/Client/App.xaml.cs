@@ -5,9 +5,10 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using Wsu.DairyCafo.PresentationLogic;
+using Wsu.DairyCafo.UI.PresentationLogic.Model;
+using Wsu.DairyCafo.UI.PresentationLogic.ViewModel;
 
-namespace Wsu.DairyCafo.Wpf
+namespace Wsu.DairyCafo.UI.Client
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -21,13 +22,18 @@ namespace Wsu.DairyCafo.Wpf
             // The following method does not allow multiple WPF Windows, need
             //to use some form of Factory pattern for that.  
             //See: http://stackoverflow.com/a/25508012/1621156
-            MainWindow app = new MainWindow();
+            MainWindow client = new MainWindow();
             ScenarioViewModel context = new ScenarioViewModel();
-            app.DataContext = context;
+ //           context.CurrentScenario = new ScenarioModel()
+ //           {
+ //               PathToWeatherFile = @"C:\",
+ //               StartDate = DateTime.Now,
+ //               EndDate = DateTime.Now
+ //           };
 
-            app.Show();
+            client.DataContext = context;
 
-            
+            client.Show();
         }
     }
 }
