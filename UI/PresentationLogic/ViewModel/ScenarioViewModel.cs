@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Wsu.DairyCafo.DataAccess.Core;
+using Wsu.DairyCafo.DataAccess.Dto;
 using Wsu.DairyCafo.UI.PresentationLogic.Helper;
 using Wsu.DairyCafo.UI.PresentationLogic.Model;
 
@@ -12,11 +14,13 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
     public class ScenarioViewModel : ObservableObject
     {
         #region Fields
+        private IScenarioReader reader;
+
         private ScenarioModel currentScenario;
         private ICommand newScenarioCommand;
         private ICommand getScenarioCommand;
         private ICommand selectWeatherCommand;
-
+        private ICommand saveScenarioCommand;
         #endregion // Fields
 
         #region Public Properties/Commands
@@ -55,6 +59,19 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 return getScenarioCommand;
             }
         }
+        public ICommand SaveScenarioCommand
+        {
+            get
+            {
+                if(saveScenarioCommand == null)
+                {
+                    saveScenarioCommand = new RelayCommand(
+                        param => saveScenario()
+                    );
+                }
+                return saveScenarioCommand;
+            }
+        }
         public ICommand SelectWeatherCommand
         {
             get
@@ -67,20 +84,34 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         }
         #endregion // Public Properties/Commands
 
+        #region 'structors
+        public ScenarioViewModel(IScenarioReader scenarioReader)
+        {
+            this.reader = scenarioReader;
+        }
+        #endregion
         #region Private Helpers
         private void newScenario()
         {
-            CurrentScenario = new ScenarioModel();
+            CurrentScenario = new ScenarioModel(new Scenario());
         }
         private void getScenario()
         {
-            // Mocked for now, will use ScenarioProvider
-            ScenarioModel s = new ScenarioModel();
-            s.PathToWeatherFile = "C:\\";
-            s.StartDate = DateTime.Now;
-            s.EndDate = DateTime.Now;
+            // Get ScenarioDto using ScenarioReader.TryParse()
+            // Create new ScenarioModel(scenarioDto)
+            // Set CurrentScenario
 
-            CurrentScenario = s;
+            Scenario s = reader.Parse();
+
+            ScenarioModel sm = new ScenarioModel(s);
+
+            CurrentScenario = sm;
+        }
+        private void saveScenario()
+        {
+            // Mocked for now, will use ScenarioProvider.Save()?
+            string foo = CurrentScenario.StartDate.ToShortTimeString();
+            string bar = CurrentScenario.EndDate.ToShortTimeString();
         }
         private void openFileDialog()
         {

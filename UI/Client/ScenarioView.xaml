@@ -229,7 +229,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=Barn.Number_cows_cnt, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                             Text="{Binding Path=NumberCows}"/>
                     </Grid>
                     <!--#endregion Barn -->
 
@@ -511,7 +511,8 @@
                               Command="{Binding NewScenarioCommand}"/>
                     <MenuItem Header="_Open"
                               Command="{Binding GetScenarioCommand}"/>
-                    <MenuItem Name="mnuSave" Header="_Save" />
+                    <MenuItem Name="mnuSave" Header="_Save"
+                              Command="{Binding SaveScenarioCommand}"/>
                 </MenuItem>
                 <MenuItem Header="_Scenario">
                     <MenuItem Header="_Run" />

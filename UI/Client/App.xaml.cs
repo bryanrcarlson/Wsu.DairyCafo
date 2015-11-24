@@ -5,8 +5,10 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Wsu.DairyCafo.DataAccess;
 using Wsu.DairyCafo.UI.PresentationLogic.Model;
 using Wsu.DairyCafo.UI.PresentationLogic.ViewModel;
+using Wsu.IO.DataAccess;
 
 namespace Wsu.DairyCafo.UI.Client
 {
@@ -22,8 +24,13 @@ namespace Wsu.DairyCafo.UI.Client
             // The following method does not allow multiple WPF Windows, need
             //to use some form of Factory pattern for that.  
             //See: http://stackoverflow.com/a/25508012/1621156
+
+            //TODO: Move this to Container
             MainWindow client = new MainWindow();
-            ScenarioViewModel context = new ScenarioViewModel();
+            IniFile iniFile = new IniFile(@"D:\WsuData\NIFA\Simulation\Scenarios\Sc1\.NIFA_dairy_scenario");
+            ScenarioReader reader = new ScenarioReader(iniFile);
+            ScenarioViewModel context = new ScenarioViewModel(reader);
+
  //           context.CurrentScenario = new ScenarioModel()
  //           {
  //               PathToWeatherFile = @"C:\",
