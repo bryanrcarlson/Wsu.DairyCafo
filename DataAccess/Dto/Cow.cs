@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wsu.DairyCafo.DataAccess.Dto
 {
-    public class Cow
+    public class Cow : Entity
     {
         public double BodyMass_kg { get; set; }
         public double DryMatterIntake_kg_d { get; set; }

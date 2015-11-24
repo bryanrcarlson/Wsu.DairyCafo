@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Wsu.DairyCafo.DataAccess.Dto
 {
-    public class Lagoon : Entity
+    public abstract class Entity
     {
-        public double SurfaceArea_m2 { get; set; }
-        public double VolumeMax_m3 { get; set; }
+        public string Id { get; set; }
+        public bool Enabled { get; set; }
     }
 }

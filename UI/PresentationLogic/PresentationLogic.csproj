@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\RelayCommand.cs" />
-    <Compile Include="Model\Facility.cs" />
     <Compile Include="Model\ScenarioModel.cs" />
     <Compile Include="ViewModel\ScenarioViewModel.cs" />
     <Compile Include="Helper\ObservableObject.cs" />

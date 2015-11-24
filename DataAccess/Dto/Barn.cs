@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wsu.DairyCafo.DataAccess.Dto
 {
-    public class Barn
+    public class Barn : Entity
     {
         public double Manure_alley_area_m2 { get; set; }
         public double Number_cows_cnt { get; set; }

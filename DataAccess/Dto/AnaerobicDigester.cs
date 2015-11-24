@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wsu.DairyCafo.DataAccess.Core;
 
 namespace Wsu.DairyCafo.DataAccess.Dto
 {
-    public class AnaerobicDigester
+    public class AnaerobicDigester : ManureSeparator
     {
-        public bool IsEnabled { get; set; }
+        public AnaerobicDigester() : base()
+        {
+            this.Style = ManureSeperatorStyles.AnaerobicDigester;
+        }
+        public AnaerobicDigester(ManureSeparator toCopy)
+        {
+            if (toCopy.Style != ManureSeperatorStyles.AnaerobicDigester)
+                throw new ArgumentException("toCopy.Style is not of proper type");
+
+            Copy(toCopy);
+        }
     }
 }

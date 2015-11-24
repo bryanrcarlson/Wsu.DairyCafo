@@ -140,7 +140,7 @@
                              InputScope="Number" 
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=Cow.BodyMass_kg, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                             Text="{Binding Path=CowBodyMass}"
                              />
 
                         <!-- Dry matter intake -->
@@ -151,7 +151,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=Cow.DryMatterIntake_kg_d, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                             Text="{Binding Path=CowDryMatterIntake}"
                              />
 
                         <TextBlock Grid.Row="3">Milk production (kg/d):</TextBlock>
@@ -161,7 +161,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=Cow.MilkProduction_kg_d, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                             Text="{Binding Path=CowMilkProduction}" />
 
                         <TextBlock Grid.Row="4">Crude protein in diet (kg/d):</TextBlock>
                         <TextBox Name="txtCowCrudeProteinDiet"
@@ -170,7 +170,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=Cow.CrudeProteinDiet_kg_d, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                             Text="{Binding Path=CowCrudeProteinDiet}" />
                     </Grid>
                     <!--#endregion Cow -->
 
@@ -219,7 +219,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=Barn.Manure_alley_area_m2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                             Text="{Binding Path=BarnManureAlleyArea}"/>
 
                         <!-- Cow num -->
                         <TextBlock Grid.Row="2">Number of cows (cnt):</TextBlock>
@@ -229,7 +229,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=NumberCows}"/>
+                             Text="{Binding Path=BarnNumberCows}"/>
                     </Grid>
                     <!--#endregion Barn -->
 
@@ -264,8 +264,9 @@
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
-                                <CheckBox Name="cbxAnaerobicDigesterEnabled" 
-                                       Grid.Column="1"  />
+                                <CheckBox Name="cbxAnaerobicDigesterEnabled"
+                                          Grid.Column="1"
+                                          IsChecked="{Binding Path=AnaerobicDigesterEnabled}"/>
                             </Grid>
                         </Border>
 
@@ -303,7 +304,9 @@
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
-                                <CheckBox Name="cbxCourseSeparatorEnabled" Grid.Column="1"  />
+                                <CheckBox Name="cbxCourseSeparatorEnabled" 
+                                          Grid.Column="1"
+                                          IsChecked="{Binding Path=CourseSeparatorEnabled}"/>
                             </Grid>
                         </Border>
                     </Grid>
@@ -341,7 +344,8 @@
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
                                 <CheckBox Name="cbxFineSeparatorEnabled" 
-                                       Grid.Column="1"  />
+                                       Grid.Column="1"
+                                          IsChecked="{Binding Path=FineSeparatorEnabled}"/>
                             </Grid>
                         </Border>
                     </Grid>
@@ -378,7 +382,9 @@
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
-                                <CheckBox Name="cbxNutrientRecoveryEnabled" Grid.Column="1"  />
+                                <CheckBox Name="cbxNutrientRecoveryEnabled" 
+                                          Grid.Column="1"
+                                          IsChecked="{Binding Path=NutrientRecoveryEnabled}"/>
                             </Grid>
                         </Border>
                     </Grid>

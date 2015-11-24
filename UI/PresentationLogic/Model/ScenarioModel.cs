@@ -54,19 +54,132 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
+        //== Cow
+        public double CowBodyMass
+        {
+            get { return scenario.Cow.BodyMass_kg; }
+            set
+            {
+                if (value != scenario.Cow.BodyMass_kg)
+                {
+                    scenario.Cow.BodyMass_kg = value;
+                    OnPropertyChanged("CowBodyMass");
+                }
+            }
+        }
+        public double CowDryMatterIntake
+        {
+            get { return scenario.Cow.DryMatterIntake_kg_d; }
+            set
+            {
+                if (value != scenario.Cow.DryMatterIntake_kg_d)
+                {
+                    scenario.Cow.DryMatterIntake_kg_d = value;
+                    OnPropertyChanged("CowDryMatterIntake");
+                }
+            }
+        }
+        public double CowMilkProduction
+        {
+            get { return scenario.Cow.MilkProduction_kg_d; }
+            set
+            {
+                if (value != scenario.Cow.MilkProduction_kg_d)
+                {
+                    scenario.Cow.MilkProduction_kg_d = value;
+                    OnPropertyChanged("CowMilkProduction");
+                }
+            }
+        }
+        public double CowCrudeProteinDiet
+        {
+            get { return scenario.Cow.CrudeProteinDiet_kg_d; }
+            set
+            {
+                if (value != scenario.Cow.CrudeProteinDiet_kg_d)
+                {
+                    scenario.Cow.CrudeProteinDiet_kg_d = value;
+                    OnPropertyChanged("CowCrudeProteinDiet");
+                }
+            }
+        }
+
+
         //== Barn
-        //public double NumberCows
-        //{
-        //    get { return scenario.Barn.Number_cows_cnt; }
-        //    set
-        //    {
-        //        if (value != scenario.Barn.Number_cows_cnt)
-        //        {
-        //            scenario.Barn.Number_cows_cnt = value;
-        //            OnPropertyChanged("NumberCows");
-        //        }
-        //    }
-        //}
+        public double BarnManureAlleyArea
+        {
+            get { return scenario.Barn.Manure_alley_area_m2; }
+            set
+            {
+                if (value != scenario.Barn.Manure_alley_area_m2)
+                {
+                    scenario.Barn.Manure_alley_area_m2 = value;
+                    OnPropertyChanged("BarnManureAlleyArea");
+                }
+            }
+        }
+        public double BarnNumberCows
+        {
+            get { return scenario.Barn.Number_cows_cnt; }
+            set
+            {
+                if (value != scenario.Barn.Number_cows_cnt)
+                {
+                    scenario.Barn.Number_cows_cnt = value;
+                    OnPropertyChanged("BarnNumberCows");
+                }
+            }
+        }
+
+        //== Separators
+        public bool AnaerobicDigesterEnabled
+        {
+            get { return scenario.AnaerobicDigester.Enabled; }
+            set
+            {
+                if (value != scenario.AnaerobicDigester.Enabled)
+                {
+                    scenario.AnaerobicDigester.Enabled = value;
+                    OnPropertyChanged("AnaerobicDigesterEnabled");
+                }
+            }
+        }
+        public bool CourseSeparatorEnabled
+        {
+            get { return scenario.CourseSeparator.Enabled; }
+            set
+            {
+                if (value != scenario.CourseSeparator.Enabled)
+                {
+                    scenario.CourseSeparator.Enabled = value;
+                    OnPropertyChanged("CourseSeparatorEnabled");
+                }
+            }
+        }
+        public bool FineSeparatorEnabled
+        {
+            get { return scenario.FineSeparator.Enabled; }
+            set
+            {
+                if (value != scenario.FineSeparator.Enabled)
+                {
+                    scenario.FineSeparator.Enabled = value;
+                    OnPropertyChanged("FineSeparatorEnabled");
+                }
+            }
+        }
+        public bool NutrientRecoveryEnabled
+        {
+            get { return scenario.NutrientRecovery.Enabled; }
+            set
+            {
+                if (value != scenario.NutrientRecovery.Enabled)
+                {
+                    scenario.NutrientRecovery.Enabled = value;
+                    OnPropertyChanged("NutrientRecoveryEnabled");
+                }
+            }
+        }
         #endregion // Properties
         #region 'structors
         public ScenarioModel(Scenario scenario)

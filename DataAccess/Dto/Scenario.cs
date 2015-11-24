@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -21,5 +22,19 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public NutrientRecovery NutrientRecovery { get; set; }
         public Lagoon Lagoon { get; set; }
         public Field Field { get; set; }
+
+        //public Collection<ManureSeparator> ManureSeparators { get; set; }
+
+        public Scenario()
+        {
+            this.Cow = new Cow();
+            this.Barn = new Barn();
+            this.AnaerobicDigester = new AnaerobicDigester();
+            this.CourseSeparator = new CourseSeparator();
+            this.FineSeparator = new FineSeparator();
+            this.NutrientRecovery = new NutrientRecovery();
+            this.Lagoon = new Lagoon();
+            this.Field = new Field();
+        }
     }
 }
