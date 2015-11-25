@@ -27,8 +27,10 @@ namespace Wsu.DairyCafo.UI.Client
 
             //TODO: Move this to Container
             MainWindow client = new MainWindow();
-            ScenarioFile iniFile = new ScenarioFile(@"D:\WsuData\NIFA\Simulation\Scenarios\Sc1\.NIFA_dairy_scenario");
-            ScenarioReader reader = new ScenarioReader(iniFile);
+            ScenarioFile dairyScenario = new ScenarioFile();
+            ScenarioFile fieldScenario = new ScenarioFile();
+            ScenarioReader reader = 
+                new ScenarioReader(dairyScenario, fieldScenario);
             ScenarioViewModel context = new ScenarioViewModel(reader);
 
  //           context.CurrentScenario = new ScenarioModel()

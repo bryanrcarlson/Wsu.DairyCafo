@@ -77,7 +77,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             get
             {
                 selectWeatherCommand = new RelayCommand(
-                    param => openFileDialog()
+                    param => browseWeatherFileDialog()
                 );
                 return selectWeatherCommand;
             }
@@ -101,19 +101,24 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             // Create new ScenarioModel(scenarioDto)
             // Set CurrentScenario
 
-            Scenario s = reader.Parse();
+            string sFile = browseScenarioFileDialog();
+            if(!String.IsNullOrEmpty(sFile))
+            {
+                reader.Load(sFile);
+                Scenario s = reader.Parse();
 
-            ScenarioModel sm = new ScenarioModel(s);
+                ScenarioModel sm = new ScenarioModel(s);
 
-            CurrentScenario = sm;
+                CurrentScenario = sm;
+            }
+            
         }
         private void saveScenario()
         {
             // Mocked for now, will use ScenarioProvider.Save()?
-            string foo = CurrentScenario.StartDate.ToShortTimeString();
-            string bar = CurrentScenario.EndDate.ToShortTimeString();
+            throw new NotImplementedException();
         }
-        private void openFileDialog()
+        private void browseWeatherFileDialog()
         {
             // Create OpenFileDialog
             Microsoft.Win32.OpenFileDialog dlg =
@@ -133,6 +138,28 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 string filename = dlg.FileName;
                 CurrentScenario.PathToWeatherFile = filename;
             }
+        }
+        private string browseScenarioFileDialog()
+        {
+            // Create OpenFileDialog
+            Microsoft.Win32.OpenFileDialog dlg =
+                new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter
+            dlg.DefaultExt = ".NIFA_dairy_scenario";
+            dlg.Filter = "Scenario Files (*.NIFA_dairy_scenario)|*.NIFA_dairy_scenario";
+
+            // Display dialog
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get selected file name and display
+            if (result == true)
+            {
+                // Open document
+                string filename = dlg.FileName;
+                return filename;
+            }
+            else { return null; }
         }
         #endregion // Private Helpers
     }

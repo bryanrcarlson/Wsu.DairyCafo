@@ -9,10 +9,9 @@ namespace Wsu.DairyCafo.DataAccess
 {
     public class ScenarioFile : IniFile
     {
-        public ScenarioFile(string pathToFile) : base(pathToFile)
-        {
-
-        }
+        public string LoadedPath { get; private set; }
+        public ScenarioFile() : base() { }
+        public ScenarioFile(string pathToFile) : base(pathToFile) { }
         public string GetValueOnly(string sectionName, string key)
         {
             string s = base.GetValue(sectionName, key);
@@ -20,7 +19,12 @@ namespace Wsu.DairyCafo.DataAccess
 
             return val;
         }
-
+        public override bool Load(string filename)
+        {
+            bool isLoaded = base.Load(filename);
+            if (isLoaded) LoadedPath = filename;
+            return isLoaded;
+        }
         private string cleanStr(string iniString)
         {
             string[] s = iniString.Split(' ');

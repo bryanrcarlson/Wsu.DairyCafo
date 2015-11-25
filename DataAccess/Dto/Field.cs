@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Wsu.DairyCafo.DataAccess.Dto
 {
-    public class Field
+    public class Field : Entity
     {
-        public bool IsEnabled { get; set; }
         public double Area_ha { get; set; }
     }
 }

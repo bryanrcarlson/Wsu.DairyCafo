@@ -1,41 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using Wsu.DairyCafo.DataAccess.Core;
 using Wsu.DairyCafo.DataAccess.Dto;
-using Wsu.IO.DataAccess;
 
 namespace Wsu.DairyCafo.DataAccess
 {
     public class ScenarioReader : IScenarioReader
     {
-        private readonly ScenarioFile dp;
+        private readonly ScenarioFile dDp;
+        private readonly ScenarioFile fDp;
+        private readonly string fieldDirName;
 
-        public ScenarioReader(ScenarioFile iniFile)
+        public ScenarioReader(
+            ScenarioFile dairyScenario,
+            ScenarioFile cropSystScenario,
+            string fieldDirName = "Fields")
         {
-            this.dp = iniFile;
+            this.dDp = dairyScenario;
+            this.fDp = cropSystScenario;
+            this.fieldDirName = fieldDirName;
         }
+        public void Load(string filePath)
+        {
+            if(!dDp.Load(filePath))
+            {
+                throw new ArgumentException("File path not valid");
+            }
+            if(!String.IsNullOrEmpty(dDp.LoadedPath))
+            {
+                // Load Field scenario
+                string dairyDir = Path.GetDirectoryName(filePath);
+                string fieldDir = Path.Combine(dairyDir, fieldDirName);
+                string[] fields = Directory.GetDirectories(fieldDir);
 
+                // Currently only supporting one field
+                string fieldFile = Path.Combine(fields[0], ".CropSyst_scenario");
+                fDp.Load(fieldFile);
+            }
+        }
         public Scenario Parse()
         {
             Scenario s = new Scenario();
 
             #region Scenario
-            string sd = dp.GetValueOnly("dairy scenario", "start_date");
+            string sd = dDp.GetValueOnly("dairy scenario", "start_date");
             s.StartDate = sd != null ? parseDateFromIniFile(sd) : DateTime.Now;
 
-            string ed = dp.GetValueOnly("dairy scenario", "stop_date");
+            string ed = dDp.GetValueOnly("dairy scenario", "stop_date");
             s.EndDate = ed != null ? parseDateFromIniFile(ed) : DateTime.Now;
 
-            string w = dp.GetValueOnly("dairy scenario", "weather");
+            string w = dDp.GetValueOnly("dairy scenario", "weather");
             s.PathToWeatherFile = w;
 
             int manureSeparatorCount = 
-                Convert.ToInt16(dp.GetValueOnly("dairy scenario", "manure_separator:count"));
+                Convert.ToInt16(dDp.GetValueOnly("dairy scenario", "manure_separator:count"));
             int manureStorageCount =
-                Convert.ToInt16(dp.GetValueOnly("dairy scenario", "manure_storage:count"));
+                Convert.ToInt16(dDp.GetValueOnly("dairy scenario", "manure_storage:count"));
             #endregion
 
             parseBarn(s);
@@ -43,15 +63,16 @@ namespace Wsu.DairyCafo.DataAccess
             parseManureSeparators(s, manureSeparatorCount);
             parseLagoon(s, manureStorageCount);
 
+            parseField(s);
             return s;
         }
         private void parseBarn(Scenario s)
         {
             string sect = "barn:1";
-            string id = dp.GetValueOnly(sect, "ID");
-            string enabled = dp.GetValueOnly(sect, "enable");
-            string surface_area = dp.GetValueOnly(sect, "manure_alley_surface_area");
-            string cows = dp.GetValueOnly(sect, "cow_population");
+            string id = dDp.GetValueOnly(sect, "ID");
+            string enabled = dDp.GetValueOnly(sect, "enable");
+            string surface_area = dDp.GetValueOnly(sect, "manure_alley_surface_area");
+            string cows = dDp.GetValueOnly(sect, "cow_population");
 
             s.Barn = new Barn()
             {
@@ -64,12 +85,12 @@ namespace Wsu.DairyCafo.DataAccess
         private void parseCow(Scenario s)
         {
             string sect = "cow_description:1";
-            string id = dp.GetValueOnly(sect, "ID");
-            string enabled = dp.GetValueOnly(sect, "enable");
-            string mass = dp.GetValueOnly(sect, "body_mass");
-            string dmi = dp.GetValueOnly(sect, "milk_production");
-            string milk = dp.GetValueOnly(sect, "dry_matter_intake");
-            string protein = dp.GetValueOnly(sect, "diet_crude_protein");
+            string id = dDp.GetValueOnly(sect, "ID");
+            string enabled = dDp.GetValueOnly(sect, "enable");
+            string mass = dDp.GetValueOnly(sect, "body_mass");
+            string dmi = dDp.GetValueOnly(sect, "milk_production");
+            string milk = dDp.GetValueOnly(sect, "dry_matter_intake");
+            string protein = dDp.GetValueOnly(sect, "diet_crude_protein");
 
             s.Cow = new Cow()
             {
@@ -87,12 +108,12 @@ namespace Wsu.DairyCafo.DataAccess
             {
                 string sect = "manure_separator:" + (i + 1).ToString();
 
-                string id = dp.GetValueOnly(sect, "ID");
-                string enabled = dp.GetValueOnly(sect, "enable");
-                string style = dp.GetValue(sect, "style");
-                string source = dp.GetValueOnly(sect, "source_facility");
-                string liquid = dp.GetValueOnly(sect, "liquid_facility");
-                string solids = dp.GetValueOnly(sect, "solids_facility");
+                string id = dDp.GetValueOnly(sect, "ID");
+                string enabled = dDp.GetValueOnly(sect, "enable");
+                string style = dDp.GetValue(sect, "style");
+                string source = dDp.GetValueOnly(sect, "source_facility");
+                string liquid = dDp.GetValueOnly(sect, "liquid_facility");
+                string solids = dDp.GetValueOnly(sect, "solids_facility");
 
                 ManureSeparator m = new ManureSeparator()
                 {
@@ -127,13 +148,13 @@ namespace Wsu.DairyCafo.DataAccess
             {
                 string sect = "manure_storage:" + (i + 1).ToString();
 
-                string style = dp.GetValueOnly(sect, "style");
+                string style = dDp.GetValueOnly(sect, "style");
                 if(style == "lagoon_aerobic")
                 {
-                    string id = dp.GetValueOnly(sect, "ID");
-                    string enabled = dp.GetValueOnly(sect, "enable");
-                    string sa = dp.GetValueOnly(sect, "surface_area");
-                    string vol = dp.GetValueOnly(sect, "volume_max");
+                    string id = dDp.GetValueOnly(sect, "ID");
+                    string enabled = dDp.GetValueOnly(sect, "enable");
+                    string sa = dDp.GetValueOnly(sect, "surface_area");
+                    string vol = dDp.GetValueOnly(sect, "volume_max");
 
                     s.Lagoon = new Lagoon()
                     {
@@ -147,7 +168,30 @@ namespace Wsu.DairyCafo.DataAccess
                 }
             }
         }
+        private void parseField(Scenario s)
+        {
+            if(String.IsNullOrEmpty(fDp.LoadedPath))
+            {
+                s.Field = new Field()
+                {
+                    Enabled = false,
+                    Id = ""
+                };
+            }
+            else
+            {
+                string id = Path.GetDirectoryName(fDp.LoadedPath);
+                string area = fDp.GetValueOnly("field", "size");
 
+                s.Field = new Field()
+                {
+                    Id = id,
+                    Enabled = true,
+                    Area_ha = Convert.ToDouble(area)
+                };
+            }
+            
+        }
 
         private DateTime parseDateFromIniFile(string date)
         {
@@ -157,10 +201,5 @@ namespace Wsu.DairyCafo.DataAccess
 
             return dt;
         }
-        //private string cleanStr(string iniString)
-        //{
-        //    string[] s = iniString.Split(' ');
-        //    return s[0];
-        //}
     }
 }

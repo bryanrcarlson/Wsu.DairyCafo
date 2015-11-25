@@ -180,6 +180,47 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
+
+        //== Lagoon
+        public double LagoonSurfaceArea
+        {
+            get { return scenario.Lagoon.SurfaceArea_m2; }
+            set
+            {
+                if (value != scenario.Lagoon.SurfaceArea_m2)
+                {
+                    scenario.Lagoon.SurfaceArea_m2 = value;
+                    OnPropertyChanged("LagoonSurfaceArea");
+                }
+            }
+        }
+        public double LagoonVolumeMax
+        {
+            get { return scenario.Lagoon.VolumeMax_m3; }
+            set
+            {
+                if (value != scenario.Lagoon.VolumeMax_m3)
+                {
+                    scenario.Lagoon.VolumeMax_m3 = value;
+                    OnPropertyChanged("LagoonVolumeMax");
+                }
+            }
+        }
+
+        //== Field
+        public double FieldArea
+        {
+            get { return scenario.Field.Area_ha; }
+            set
+            {
+                if (value != scenario.Field.Area_ha)
+                {
+                    scenario.Field.Area_ha = value;
+                    OnPropertyChanged("FieldArea");
+                }
+            }
+        }
+
         #endregion // Properties
         #region 'structors
         public ScenarioModel(Scenario scenario)

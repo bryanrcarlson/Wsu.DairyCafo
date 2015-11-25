@@ -7,9 +7,8 @@
         mc:Ignorable="d"
         Title="Dairy-CropSyst Editor" 
         Height="450" 
-        Width="500" 
-        MaxWidth="500" 
-        MinWidth="500">
+        Width="500"  
+        MinWidth="400">
     <Grid>
         <ContentControl Content="{Binding}" HorizontalAlignment="Center" Margin="10" />
     </Grid>

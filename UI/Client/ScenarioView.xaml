@@ -435,7 +435,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=Lagoon.SurfaceArea_m2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                             Text="{Binding Path=LagoonSurfaceArea}"/>
 
                         <!-- Max Volume -->
                         <TextBlock Grid.Row="2">Max volume (m3):</TextBlock>
@@ -445,7 +445,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=Lagoon.VolumeMax_m3, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                             Text="{Binding Path=LagoonVolumeMax}"/>
                     </Grid>
                     <!--#endregion -->
 
@@ -493,7 +493,7 @@
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
                             VerticalAlignment="Top"
-                            Text="{Binding Path=Field.Area_ha, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                            Text="{Binding Path=FieldArea}"/>
                     </Grid>
                     <!--#endregion -->
 
