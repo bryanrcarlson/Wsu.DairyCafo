@@ -7,6 +7,12 @@
         public string LiquidFacility { get; set; }
         public string SolidFacility { get; set; }
 
+        public ManureSeparator()
+        {
+            SourceFacility = "";
+            LiquidFacility = "";
+            SolidFacility = "";
+        }
         protected virtual void Copy(ManureSeparator toCopy)
         {
             this.Id = toCopy.Id;

@@ -11,13 +11,15 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
     public class ScenarioModel : ObservableObject
     {
         #region Fields
-        //       private string pathToWeatherFile;
-        //       private DateTime startDate;
-        //       private DateTime endDate;
         private Scenario scenario;
         #endregion //Fields
 
         #region Properties
+        public Scenario GetScenario()
+        {
+            return this.scenario;
+        }
+
         public string PathToWeatherFile
         {
             get { return scenario.PathToWeatherFile; }
@@ -44,13 +46,13 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
         }
         public DateTime EndDate
         {
-            get { return scenario.EndDate; }
+            get { return scenario.StopDate; }
             set
             {
-                if (value != scenario.EndDate)
+                if (value != scenario.StopDate)
                 {
-                    scenario.EndDate = value;
-                    OnPropertyChanged("EndDate");
+                    scenario.StopDate = value;
+                    OnPropertyChanged("StopDate");
                 }
             }
         }
@@ -220,7 +222,18 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
-
+        public bool FieldEnabled
+        {
+            get { return scenario.Field.Enabled; }
+            set
+            {
+                if (value != scenario.Field.Enabled)
+                {
+                    scenario.Field.Enabled = value;
+                    OnPropertyChanged("FieldEnabled");
+                }
+            }
+        }
         #endregion // Properties
         #region 'structors
         public ScenarioModel(Scenario scenario)

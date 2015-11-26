@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using Wsu.DairyCafo.DataAccess.Core;
 using Wsu.DairyCafo.DataAccess.Dto;
 using Wsu.DairyCafo.UI.PresentationLogic.Helper;
 using Wsu.DairyCafo.UI.PresentationLogic.Model;
+using System.Windows.Forms;
 
 namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
 {
     public class ScenarioViewModel : ObservableObject
     {
         #region Fields
-        private IScenarioReader reader;
-
+        private readonly IScenarioReader reader;
+        private readonly IScenarioWriter writer;
         private ScenarioModel currentScenario;
         private ICommand newScenarioCommand;
         private ICommand getScenarioCommand;
@@ -85,15 +88,31 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         #endregion // Public Properties/Commands
 
         #region 'structors
-        public ScenarioViewModel(IScenarioReader scenarioReader)
+        public ScenarioViewModel(
+            IScenarioReader scenarioReader,
+            IScenarioWriter scenarioWriter)
         {
             this.reader = scenarioReader;
+            this.writer = scenarioWriter;
         }
         #endregion
         #region Private Helpers
         private void newScenario()
         {
-            CurrentScenario = new ScenarioModel(new Scenario());
+            string filePath = newScenarioDialog();
+            if(!String.IsNullOrEmpty(filePath))
+            {
+                CurrentScenario = new ScenarioModel(new Scenario());
+
+                try
+                {
+                    writer.Write(CurrentScenario.GetScenario(), filePath);
+                }
+                catch(InvalidOperationException e)
+                {
+                    System.Windows.MessageBox.Show(e.Message);
+                }
+            }
         }
         private void getScenario()
         {
@@ -101,22 +120,28 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             // Create new ScenarioModel(scenarioDto)
             // Set CurrentScenario
 
-            string sFile = browseScenarioFileDialog();
+            string sFile = loadScenarioFileDialog();
             if(!String.IsNullOrEmpty(sFile))
             {
-                reader.Load(sFile);
-                Scenario s = reader.Parse();
+                try
+                {
+                    reader.Load(sFile);
+                }
+                catch(NullReferenceException e)
+                {
+                    System.Windows.MessageBox.Show(e.Message);
+                }
+                    Scenario s = reader.Parse();
 
-                ScenarioModel sm = new ScenarioModel(s);
+                    ScenarioModel sm = new ScenarioModel(s);
 
-                CurrentScenario = sm;
+                    CurrentScenario = sm;
             }
             
         }
         private void saveScenario()
         {
-            // Mocked for now, will use ScenarioProvider.Save()?
-            throw new NotImplementedException();
+            writer.Write(this.currentScenario.GetScenario());
         }
         private void browseWeatherFileDialog()
         {
@@ -139,7 +164,21 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 CurrentScenario.PathToWeatherFile = filename;
             }
         }
-        private string browseScenarioFileDialog()
+        private string newScenarioDialog()
+        {
+            using(FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                fbd.Description = "Select a folder";
+                if(fbd.ShowDialog() == DialogResult.OK)
+                {
+                    return fbd.SelectedPath;
+                }
+            }
+
+            // Did not select a dir
+            return null;
+        }
+        private string loadScenarioFileDialog()
         {
             // Create OpenFileDialog
             Microsoft.Win32.OpenFileDialog dlg =

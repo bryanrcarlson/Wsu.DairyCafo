@@ -40,8 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\IScenarioDefaults.cs" />
     <Compile Include="Core\IScenarioReader.cs" />
+    <Compile Include="Core\IScenarioWriter.cs" />
     <Compile Include="Core\ManureSeperatorStyles.cs" />
+    <Compile Include="Core\ScenarioDefaults.cs" />
     <Compile Include="Dto\AnaerobicDigester.cs" />
     <Compile Include="Dto\Barn.cs" />
     <Compile Include="Dto\CourseSeparator.cs" />

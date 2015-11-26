@@ -12,6 +12,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public AnaerobicDigester() : base()
         {
             this.Style = ManureSeperatorStyles.AnaerobicDigester;
+            this.Id = "anaerobic digester";
         }
         public AnaerobicDigester(ManureSeparator toCopy)
         {

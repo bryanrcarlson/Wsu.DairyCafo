@@ -7,11 +7,20 @@
     <System:Double x:Key="H1FontSize">20</System:Double>
     <System:Double x:Key="InputHeight">30</System:Double>
     <System:Double x:Key="WindowWidth">500</System:Double>
-    
+
     <DataTemplate DataType="{x:Type model:ScenarioModel}">
         <Grid>
             <ScrollViewer VerticalScrollBarVisibility="Auto">
+                
                 <StackPanel>
+                    <!--<Popup IsOpen="True" 
+                           Name="popError" 
+                           Placement="Center"
+                           PlacementTarget="{Binding ElementName=btnScenarioSelectWeather}">
+                        <Canvas Width="100" Height="100">
+                            <TextBlock>Hi</TextBlock>
+                        </Canvas>
+                    </Popup>-->
                     <!--#region Scenario -->
                     <Grid Margin="10">
                         <Grid.Resources>
@@ -481,7 +490,8 @@
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
-                                <CheckBox Grid.Column="1"  />
+                                <CheckBox Name="FieldEnabled" Grid.Column="1"
+                                          IsChecked="{Binding Path=FieldEnabled}"/>
                             </Grid>
                         </Border>
 

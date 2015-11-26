@@ -27,6 +27,9 @@ namespace Wsu.DairyCafo.DataAccess
         }
         private string cleanStr(string iniString)
         {
+            if (String.IsNullOrEmpty(iniString))
+                return null;
+
             string[] s = iniString.Split(' ');
             return s[0];
         }

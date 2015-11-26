@@ -31,11 +31,22 @@ namespace Wsu.DairyCafo.DataAccess
                 // Load Field scenario
                 string dairyDir = Path.GetDirectoryName(filePath);
                 string fieldDir = Path.Combine(dairyDir, fieldDirName);
+
+                if(!Directory.Exists(fieldDir))
+                {
+                    Directory.CreateDirectory(fieldDir);
+                    throw new NullReferenceException("Directory \"" +
+                        fieldDirName + "\" does not exist so we created one for you.  Please add a dir with a CropSyst scenario to it.");
+                }
+
                 string[] fields = Directory.GetDirectories(fieldDir);
 
-                // Currently only supporting one field
-                string fieldFile = Path.Combine(fields[0], ".CropSyst_scenario");
-                fDp.Load(fieldFile);
+                if(fields.Length > 0)
+                {
+                    // Currently only supporting one field
+                    string fieldFile = Path.Combine(fields[0], ".CropSyst_scenario");
+                    fDp.Load(fieldFile);
+                }
             }
         }
         public Scenario Parse()
@@ -44,13 +55,19 @@ namespace Wsu.DairyCafo.DataAccess
 
             #region Scenario
             string sd = dDp.GetValueOnly("dairy scenario", "start_date");
-            s.StartDate = sd != null ? parseDateFromIniFile(sd) : DateTime.Now;
+            s.StartDate = !String.IsNullOrEmpty(sd) 
+                ? parseDateFromIniFile(sd) 
+                : DateTime.Now;
 
             string ed = dDp.GetValueOnly("dairy scenario", "stop_date");
-            s.EndDate = ed != null ? parseDateFromIniFile(ed) : DateTime.Now;
+            s.StopDate = !String.IsNullOrEmpty(ed) 
+                ? parseDateFromIniFile(ed) 
+                : DateTime.Now;
 
             string w = dDp.GetValueOnly("dairy scenario", "weather");
-            s.PathToWeatherFile = w;
+            s.PathToWeatherFile = !String.IsNullOrEmpty(w)
+                ? w
+                : "";
 
             int manureSeparatorCount = 
                 Convert.ToInt16(dDp.GetValueOnly("dairy scenario", "manure_separator:count"));
@@ -69,7 +86,7 @@ namespace Wsu.DairyCafo.DataAccess
         private void parseBarn(Scenario s)
         {
             string sect = "barn:1";
-            string id = dDp.GetValueOnly(sect, "ID");
+            string id = dDp.GetValue(sect, "ID");
             string enabled = dDp.GetValueOnly(sect, "enable");
             string surface_area = dDp.GetValueOnly(sect, "manure_alley_surface_area");
             string cows = dDp.GetValueOnly(sect, "cow_population");
@@ -85,7 +102,7 @@ namespace Wsu.DairyCafo.DataAccess
         private void parseCow(Scenario s)
         {
             string sect = "cow_description:1";
-            string id = dDp.GetValueOnly(sect, "ID");
+            string id = dDp.GetValue(sect, "ID");
             string enabled = dDp.GetValueOnly(sect, "enable");
             string mass = dDp.GetValueOnly(sect, "body_mass");
             string dmi = dDp.GetValueOnly(sect, "milk_production");
@@ -108,7 +125,7 @@ namespace Wsu.DairyCafo.DataAccess
             {
                 string sect = "manure_separator:" + (i + 1).ToString();
 
-                string id = dDp.GetValueOnly(sect, "ID");
+                string id = dDp.GetValue(sect, "ID");
                 string enabled = dDp.GetValueOnly(sect, "enable");
                 string style = dDp.GetValue(sect, "style");
                 string source = dDp.GetValueOnly(sect, "source_facility");
@@ -151,7 +168,7 @@ namespace Wsu.DairyCafo.DataAccess
                 string style = dDp.GetValueOnly(sect, "style");
                 if(style == "lagoon_aerobic")
                 {
-                    string id = dDp.GetValueOnly(sect, "ID");
+                    string id = dDp.GetValue(sect, "ID");
                     string enabled = dDp.GetValueOnly(sect, "enable");
                     string sa = dDp.GetValueOnly(sect, "surface_area");
                     string vol = dDp.GetValueOnly(sect, "volume_max");

@@ -12,5 +12,10 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public double DryMatterIntake_kg_d { get; set; }
         public double MilkProduction_kg_d { get; set; }
         public double CrudeProteinDiet_kg_d { get; set; }
+
+        public Cow()
+        {
+            Id = "herd";
+        }
     }
 }

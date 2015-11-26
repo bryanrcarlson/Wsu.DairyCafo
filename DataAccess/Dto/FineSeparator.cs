@@ -12,6 +12,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public FineSeparator() : base()
         {
             this.Style = ManureSeperatorStyles.FineSeparator;
+            this.Id = "dissolved air flotation";
         }
         public FineSeparator(ManureSeparator toCopy)
         {

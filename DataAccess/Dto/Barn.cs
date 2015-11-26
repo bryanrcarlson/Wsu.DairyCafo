@@ -10,5 +10,10 @@ namespace Wsu.DairyCafo.DataAccess.Dto
     {
         public double Manure_alley_area_m2 { get; set; }
         public double Number_cows_cnt { get; set; }
+
+        public Barn()
+        {
+            Id = "barn";
+        }
     }
 }

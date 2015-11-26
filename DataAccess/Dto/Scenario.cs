@@ -12,7 +12,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
     {
         public string PathToWeatherFile { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime StopDate { get; set; }
 
         public Cow Cow { get; set; }
         public Barn Barn { get; set; }
@@ -27,6 +27,10 @@ namespace Wsu.DairyCafo.DataAccess.Dto
 
         public Scenario()
         {
+            PathToWeatherFile = "";
+            StartDate = DateTime.Today;
+            StopDate = DateTime.Today;
+
             this.Cow = new Cow();
             this.Barn = new Barn();
             this.AnaerobicDigester = new AnaerobicDigester();

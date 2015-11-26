@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Wsu.DairyCafo.DataAccess;
+using Wsu.DairyCafo.DataAccess.Core;
 using Wsu.DairyCafo.UI.PresentationLogic.Model;
 using Wsu.DairyCafo.UI.PresentationLogic.ViewModel;
 using Wsu.IO.DataAccess;
@@ -25,20 +26,16 @@ namespace Wsu.DairyCafo.UI.Client
             //to use some form of Factory pattern for that.  
             //See: http://stackoverflow.com/a/25508012/1621156
 
-            //TODO: Move this to Container
+            //TODO: Move the following to a Container class
             MainWindow client = new MainWindow();
             ScenarioFile dairyScenario = new ScenarioFile();
             ScenarioFile fieldScenario = new ScenarioFile();
+            ScenarioDefaults defaults = new ScenarioDefaults();
             ScenarioReader reader = 
                 new ScenarioReader(dairyScenario, fieldScenario);
-            ScenarioViewModel context = new ScenarioViewModel(reader);
-
- //           context.CurrentScenario = new ScenarioModel()
- //           {
- //               PathToWeatherFile = @"C:\",
- //               StartDate = DateTime.Now,
- //               EndDate = DateTime.Now
- //           };
+            ScenarioWriter writer =
+                new ScenarioWriter(dairyScenario, fieldScenario, defaults);
+            ScenarioViewModel context = new ScenarioViewModel(reader, writer);
 
             client.DataContext = context;
 

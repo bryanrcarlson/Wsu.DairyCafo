@@ -13,6 +13,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public CourseSeparator() : base()
         {
             this.Style = ManureSeperatorStyles.CourseSeparator;
+            this.Id = "fiber separator";
         }
         public CourseSeparator(ManureSeparator toCopy)
         {

@@ -10,5 +10,10 @@ namespace Wsu.DairyCafo.DataAccess.Dto
     {
         public double SurfaceArea_m2 { get; set; }
         public double VolumeMax_m3 { get; set; }
+
+        public Lagoon()
+        {
+            this.Id = "lagoon";
+        }
     }
 }
