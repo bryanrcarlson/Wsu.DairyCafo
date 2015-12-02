@@ -11,5 +11,6 @@ namespace Wsu.DairyCafo.DataAccess.Core
     {
         void Write(Scenario s);
         void Write(Scenario s, string dirPath);
+        void WriteField(Scenario s);
     }
 }

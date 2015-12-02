@@ -48,7 +48,10 @@ namespace Wsu.DairyCafo.DataAccess
         public void Write(Scenario s)
         {
             if (String.IsNullOrEmpty(dDp.LoadedPath))
-                throw new NullReferenceException("Cannot write, no file loaded");
+                throw new NullReferenceException("Cannot write, no scenario file loaded");
+
+            // Clear contents
+            File.WriteAllText(dDp.LoadedPath, string.Empty);
 
             dDp.SetSection("version", defaults.GetVersionDefaults());
             var sVals = defaults.GetScenarioDefaults();
@@ -56,6 +59,11 @@ namespace Wsu.DairyCafo.DataAccess
             sVals.Add("start_date", s.StartDate.Year.ToString("0000") + s.StartDate.DayOfYear.ToString("000"));
             sVals.Add("stop_date", s.StopDate.Year.ToString("0000") + s.StopDate.DayOfYear.ToString("000"));
 
+            int numSeparators = getSeparatorsCount(s);
+            int numStorageTanks = numSeparators > 0 ? numSeparators : 1; // lagoon + tanks between separators
+
+            sVals.Add("manure_separator:count", numSeparators.ToString());
+            sVals.Add("manure_storage:count", numStorageTanks.ToString());
             dDp.SetSection("dairy scenario", sVals);
             
             writeCow(s);
@@ -64,7 +72,19 @@ namespace Wsu.DairyCafo.DataAccess
 
             writeSeparatorsAndStorage(s);
 
-            dDp.Save(dDp.LoadedPath);
+            if (!dDp.Save(dDp.LoadedPath))
+                throw new OperationCanceledException("Failed to save file");   
+        }
+        public void WriteField(Scenario s)
+        {
+            try
+            {
+                writeField(s);
+            }
+            catch (NullReferenceException e)
+            {
+                throw e;
+            }
         }
         private void writeBarn(Scenario s)
         {
@@ -146,6 +166,13 @@ namespace Wsu.DairyCafo.DataAccess
             }
 
 
+        }
+        private void writeField(Scenario s)
+        {
+            if (String.IsNullOrEmpty(fDp.LoadedPath))
+                throw new NullReferenceException("Cannot write field scenario, no file loaded");
+
+            fDp.SetValue("field", "size", s.Field.Area_ha.ToString());
         }
         private SortedList<int,ManureSeparator> sortManureSeparators(Scenario s)
         {

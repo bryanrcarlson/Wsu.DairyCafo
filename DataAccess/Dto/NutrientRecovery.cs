@@ -12,7 +12,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public NutrientRecovery() : base()
         {
             this.Style = ManureSeperatorStyles.NutrientRecovery;
-            this.Id = "ammonia stripper";
+            this.Id = "nut rec";
         }
         public NutrientRecovery(ManureSeparator toCopy)
         {

@@ -11,6 +11,9 @@ using Wsu.DairyCafo.DataAccess.Dto;
 using Wsu.DairyCafo.UI.PresentationLogic.Helper;
 using Wsu.DairyCafo.UI.PresentationLogic.Model;
 using System.Windows.Forms;
+using Wsu.IO.Core;
+using Wsu.IO.Runner;
+using System.IO;
 
 namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
 {
@@ -24,6 +27,8 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         private ICommand getScenarioCommand;
         private ICommand selectWeatherCommand;
         private ICommand saveScenarioCommand;
+        private ICommand runScenarioCommand;
+        private DirectoryInfo currentWorkingDir;    //TODO: Clear/update this when appropiate
         #endregion // Fields
 
         #region Public Properties/Commands
@@ -85,6 +90,16 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 return selectWeatherCommand;
             }
         }
+        public ICommand RunScenarioCommand
+        {
+            get
+            {
+                runScenarioCommand = new RelayCommand(
+                    param => runScenario()
+                );
+                return runScenarioCommand;
+            }
+        }
         #endregion // Public Properties/Commands
 
         #region 'structors
@@ -102,6 +117,8 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             string filePath = newScenarioDialog();
             if(!String.IsNullOrEmpty(filePath))
             {
+                currentWorkingDir = new DirectoryInfo(Path.GetDirectoryName(filePath));
+
                 CurrentScenario = new ScenarioModel(new Scenario());
 
                 try
@@ -123,6 +140,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             string sFile = loadScenarioFileDialog();
             if(!String.IsNullOrEmpty(sFile))
             {
+                currentWorkingDir = new DirectoryInfo(Path.GetDirectoryName(sFile));
                 try
                 {
                     reader.Load(sFile);
@@ -141,7 +159,32 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         }
         private void saveScenario()
         {
-            writer.Write(this.currentScenario.GetScenario());
+            try
+            {
+                writer.Write(this.currentScenario.GetScenario());
+                writer.WriteField(this.currentScenario.GetScenario());
+            }
+            catch(Exception e)
+            {
+                System.Windows.MessageBox.Show(e.Message);
+            }
+        }
+        private void runScenario()
+        {
+            if (currentWorkingDir == null
+                || String.IsNullOrEmpty(currentWorkingDir.ToString()))
+                throw new NullReferenceException("No scenario loaded");
+
+            FileInfo program = new FileInfo(@"C:\Program Files (x86)\CS_suite_4\NIFA\dairy\scenario_run.exe");
+            string arguments = "\"" + currentWorkingDir.ToString() + "\"";
+            if (!currentScenario.FieldEnabled)
+                arguments += " -f";
+
+            var runner = new ExeRunner(program);
+
+            int exitCode;
+            
+            runner.TryExecute(arguments, out exitCode);
         }
         private void browseWeatherFileDialog()
         {

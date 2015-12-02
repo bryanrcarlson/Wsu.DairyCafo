@@ -92,13 +92,13 @@
                                 SelectedDateFormat="Long"
                                 SelectedDate="{Binding Path=StartDate}"/>
 
-                        <TextBlock Grid.Row="3">End Date:</TextBlock>
-                        <DatePicker Name="dateScenarioEndDate" Grid.Row="3" 
+                        <TextBlock Grid.Row="3">Stop Date:</TextBlock>
+                        <DatePicker Name="dateScenarioStopDate" Grid.Row="3" 
                                 Grid.Column="1" 
                                 Height="{StaticResource InputHeight}" 
                                 VerticalAlignment="Top"
                                 SelectedDateFormat="Long"
-                                SelectedDate="{Binding Path=EndDate}"/>
+                                SelectedDate="{Binding Path=StopDate}"/>
                     </Grid>
                     <!--#endregion -->
 
@@ -531,7 +531,8 @@
                               Command="{Binding SaveScenarioCommand}"/>
                 </MenuItem>
                 <MenuItem Header="_Scenario">
-                    <MenuItem Header="_Run" />
+                    <MenuItem Header="_Run"
+                              Command="{Binding RunScenarioCommand}"/>
                 </MenuItem>
             </Menu>
             

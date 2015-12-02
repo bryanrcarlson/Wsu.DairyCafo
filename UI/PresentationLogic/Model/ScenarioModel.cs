@@ -44,7 +44,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
-        public DateTime EndDate
+        public DateTime StopDate
         {
             get { return scenario.StopDate; }
             set

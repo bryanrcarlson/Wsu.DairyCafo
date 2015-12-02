@@ -26,20 +26,8 @@ namespace Wsu.DairyCafo.UI.Client
             //to use some form of Factory pattern for that.  
             //See: http://stackoverflow.com/a/25508012/1621156
 
-            //TODO: Move the following to a Container class
-            MainWindow client = new MainWindow();
-            ScenarioFile dairyScenario = new ScenarioFile();
-            ScenarioFile fieldScenario = new ScenarioFile();
-            ScenarioDefaults defaults = new ScenarioDefaults();
-            ScenarioReader reader = 
-                new ScenarioReader(dairyScenario, fieldScenario);
-            ScenarioWriter writer =
-                new ScenarioWriter(dairyScenario, fieldScenario, defaults);
-            ScenarioViewModel context = new ScenarioViewModel(reader, writer);
-
-            client.DataContext = context;
-
-            client.Show();
+            Container container = new Container();
+            container.ResolveMainWindow().Show();
         }
     }
 }
