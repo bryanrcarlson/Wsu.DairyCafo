@@ -87,6 +87,15 @@ namespace Wsu.DairyCafo.DataAccess.Core
 
             return d;
         }
-        
+        public Dictionary<string, string> GetFertigationDefaults()
+        {
+            Dictionary<string, string> d = new Dictionary<string, string>()
+            {
+                { "enable", "true" },
+                { "application_method", "surface_broadcast_no_incorporation" }
+            };
+
+            return d;
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace Wsu.DairyCafo.DataAccess.Core
         Dictionary<string, string> GetCowDefaults();
         Dictionary<string, string> GetLagoonDefaults();
         Dictionary<string, string> GetHoldingTankDefaults();
+        Dictionary<string, string> GetFertigationDefaults();
     }
 }

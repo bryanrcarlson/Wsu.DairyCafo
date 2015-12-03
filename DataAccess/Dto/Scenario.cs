@@ -21,6 +21,9 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public FineSeparator FineSeparator { get; set; }
         public NutrientRecovery NutrientRecovery { get; set; }
         public Lagoon Lagoon { get; set; }
+
+        public Fertigation Fertigation { get; set; }
+
         public Field Field { get; set; }
 
         //public Collection<ManureSeparator> ManureSeparators { get; set; }
@@ -38,6 +41,8 @@ namespace Wsu.DairyCafo.DataAccess.Dto
             this.FineSeparator = new FineSeparator();
             this.NutrientRecovery = new NutrientRecovery();
             this.Lagoon = new Lagoon();
+            this.Fertigation = new Fertigation();
+            this.Fertigation.ApplicationDate_date = DateTime.Today;
             this.Field = new Field();
         }
     }

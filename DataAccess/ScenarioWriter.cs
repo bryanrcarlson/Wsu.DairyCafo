@@ -50,30 +50,40 @@ namespace Wsu.DairyCafo.DataAccess
             if (String.IsNullOrEmpty(dDp.LoadedPath))
                 throw new NullReferenceException("Cannot write, no scenario file loaded");
 
-            // Clear contents
-            File.WriteAllText(dDp.LoadedPath, string.Empty);
+            // Clear contents (TODO: do something with the backup)
+            Dictionary<string, Dictionary<string, string>> backup =
+                dDp.Clear();
+            File.WriteAllText(dDp.LoadedPath, String.Empty);
+
 
             dDp.SetSection("version", defaults.GetVersionDefaults());
             var sVals = defaults.GetScenarioDefaults();
             sVals.Add("weather", s.PathToWeatherFile.ToString());
-            sVals.Add("start_date", s.StartDate.Year.ToString("0000") + s.StartDate.DayOfYear.ToString("000"));
-            sVals.Add("stop_date", s.StopDate.Year.ToString("0000") + s.StopDate.DayOfYear.ToString("000"));
-
-            int numSeparators = getSeparatorsCount(s);
-            int numStorageTanks = numSeparators > 0 ? numSeparators : 1; // lagoon + tanks between separators
-
-            sVals.Add("manure_separator:count", numSeparators.ToString());
-            sVals.Add("manure_storage:count", numStorageTanks.ToString());
-            dDp.SetSection("dairy scenario", sVals);
+            sVals.Add("start_date", getYYYYDOYString(s.StartDate));
+            sVals.Add("stop_date", getYYYYDOYString(s.StopDate));
             
             writeCow(s);
             writeBarn(s);
             writeLagoon(s);
 
-            writeSeparatorsAndStorage(s);
+            int numSeparators = writeSeparatorsAndStorage(s);
+            int numStorageTanks = numSeparators > 0 ? numSeparators : 1; // lagoon + tanks between separators
+
+            writeFertigationManagement(s);
+
+            int numFertigations = writeFertigations(s);
+
+            sVals.Add("manure_separator:count", numSeparators.ToString());
+            sVals.Add("manure_storage:count", numStorageTanks.ToString());
+            sVals.Add("fertigation:count", numFertigations.ToString());
+
+            dDp.SetSection("dairy scenario", sVals);
 
             if (!dDp.Save(dDp.LoadedPath))
-                throw new OperationCanceledException("Failed to save file");   
+            {
+                throw new OperationCanceledException("Failed to save file"); 
+            }
+                  
         }
         public void WriteField(Scenario s)
         {
@@ -115,10 +125,10 @@ namespace Wsu.DairyCafo.DataAccess
             // Lagoon is always the first manure storage; before holding tanks
             dDp.SetSection("manure_storage:1", vals);
         }
-        private void writeSeparatorsAndStorage(Scenario s)
+        private int writeSeparatorsAndStorage(Scenario s)
         {
             SortedList<int,ManureSeparator> seps = sortManureSeparators(s);
-
+            int sepsWritten = 0;
             // Last in list will pass manure to lagoon
             //seps[seps.Count - 1].LiquidFacility = s.Lagoon.Id;
 
@@ -163,9 +173,67 @@ namespace Wsu.DairyCafo.DataAccess
                 vals.Add("solids_facility", seps[i].SolidFacility);
 
                 dDp.SetSection(manSepCnt, vals);
+
+                sepsWritten++;
             }
 
+            return sepsWritten;
+        }
+        private void writeFertigationManagement(Scenario s)
+        {
+            // Write fert management (unique to this application)
+            var vals = defaults.GetFertigationDefaults();
+            vals.Add("ID", "fert-management");
+            vals.Add("application_date",
+                getYYYYDOYString(s.Fertigation.ApplicationDate_date));
+            vals.Add("removal", s.Fertigation.AmountRemoved_percent.ToString());
+            vals.Add("num_days_to_repeat", s.Fertigation.Repetition_d.ToString());
+            vals.Add("from_storage", s.Lagoon.Id);
+            vals.Add("to_field", String.IsNullOrEmpty(s.Field.Id) 
+                ? "" 
+                : s.Field.Id);
 
+            dDp.SetSection("fertigation_management", vals);
+        }
+        private int writeFertigations(Scenario s)
+        {
+            // Wire up values
+            s.Fertigation.SourceFacility_id = s.Lagoon.Id;
+            s.Fertigation.TargetField_id = 
+                String.IsNullOrEmpty(s.Field.Id) 
+                    ? ""
+                    : s.Field.Id;
+
+            // Expand fert management to instances of ferts
+            DateTime currDt = s.Fertigation.ApplicationDate_date;
+            int i = 0;
+            do
+            {
+                i++;
+                writeFertigation(s.Fertigation, i, getYYYYDOYString(currDt));
+                currDt = currDt.AddDays(s.Fertigation.Repetition_d);
+            } while (currDt < s.StopDate);
+
+            return i;
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="f">Fertigation to write</param>
+        /// <param name="IdCount">Not zero based, starts at 1</param>
+        private void writeFertigation(Fertigation f, int IdCount, string date)
+        {
+            string sect = "fertigation:" + IdCount.ToString();
+
+            var vals = defaults.GetFertigationDefaults();
+            vals.Add("ID", "fert" + date);
+            vals.Add("application_date", date);
+            vals.Add("removal", f.AmountRemoved_percent.ToString());
+            vals.Add("from_storage", f.SourceFacility_id);
+            vals.Add("to_field", f.TargetField_id);
+
+            dDp.SetSection(sect, vals);
         }
         private void writeField(Scenario s)
         {
@@ -217,6 +285,25 @@ namespace Wsu.DairyCafo.DataAccess
                 count++;
             return count;
         }
+        private int getFertigationsCount(Scenario s)
+        {
+            int v = 0;
+            if(s.Fertigation.Repetition_d > 0)
+            {
+                DateTime end = s.StopDate;
+                DateTime start = s.Fertigation.ApplicationDate_date;
+
+                double numDays = end.ToOADate() - start.ToOADate();
+
+                v = Convert.ToInt16(numDays / s.Fertigation.Repetition_d);
+            }
+            else
+            {
+                v = 1;
+            }
+
+            return v;
+        }
         private string getHoldingTankId(string style)
         {
             string tankId;
@@ -233,6 +320,11 @@ namespace Wsu.DairyCafo.DataAccess
                 throw new ArgumentException("Style is not valid");
 
             return tankId;
+        }
+        private string getYYYYDOYString(DateTime dt)
+        {
+            string v = dt.Year.ToString("0000") + dt.DayOfYear.ToString("000");
+            return v;
         }
     }
 }

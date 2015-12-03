@@ -50,6 +50,7 @@
     <Compile Include="Dto\CourseSeparator.cs" />
     <Compile Include="Dto\Cow.cs" />
     <Compile Include="Dto\Entity.cs" />
+    <Compile Include="Dto\Fertigation.cs" />
     <Compile Include="Dto\Field.cs" />
     <Compile Include="Dto\FineSeparator.cs" />
     <Compile Include="Dto\Lagoon.cs" />

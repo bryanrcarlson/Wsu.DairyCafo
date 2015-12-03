@@ -80,7 +80,7 @@ namespace Wsu.DairyCafo.DataAccess
             parseCow(s);
             parseManureSeparators(s, manureSeparatorCount);
             parseLagoon(s, manureStorageCount);
-
+            parseFertigationManagement(s);
             parseField(s);
             return s;
         }
@@ -159,6 +159,32 @@ namespace Wsu.DairyCafo.DataAccess
                         break;
                 }
             }
+        }
+        private void parseFertigationManagement(Scenario s)
+        {
+            string sect = "fertigation_management";
+            string id = dDp.GetValue(sect, "ID");
+            string enabled = dDp.GetValueOnly(sect, "enable");
+            string date_string = dDp.GetValueOnly(sect, "application_date");
+
+            
+            string remove_per = dDp.GetValueOnly(sect, "removal");
+            string repetition = dDp.GetValueOnly(sect, "num_days_to_repeat");
+            string source = dDp.GetValueOnly(sect, "from_storage");
+            string field = dDp.GetValueOnly(sect, "to_field");
+
+            s.Fertigation = new Fertigation()
+            {
+                Id = id,
+                Enabled = Convert.ToBoolean(enabled),
+                ApplicationDate_date = !String.IsNullOrEmpty(date_string)
+                    ? parseDateFromIniFile(date_string)
+                    : DateTime.Now,
+                AmountRemoved_percent = Convert.ToDouble(remove_per),
+                Repetition_d = Convert.ToInt16(repetition),
+                SourceFacility_id = source,
+                TargetField_id = field
+            };
         }
         private void parseLagoon(Scenario s, int manureStorageCount)
         {

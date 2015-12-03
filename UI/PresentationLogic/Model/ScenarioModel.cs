@@ -209,6 +209,44 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
             }
         }
 
+        //== Fertigation
+        public DateTime FertigationDate
+        {
+            get { return scenario.Fertigation.ApplicationDate_date; }
+            set
+            {
+                if(value != scenario.Fertigation.ApplicationDate_date)
+                {
+                    scenario.Fertigation.ApplicationDate_date = value;
+                    OnPropertyChanged("FertigationDate");
+                }
+            }
+        }
+        public double FertigationAmnt
+        {
+            get { return scenario.Fertigation.AmountRemoved_percent; }
+            set
+            {
+                if (value != scenario.Fertigation.AmountRemoved_percent)
+                {
+                    scenario.Fertigation.AmountRemoved_percent = value;
+                    OnPropertyChanged("FertigationAmnt");
+                }
+            }
+        }
+        public int FertigationRepetition
+        {
+            get { return scenario.Fertigation.Repetition_d; }
+            set
+            {
+                if (value != scenario.Fertigation.Repetition_d)
+                {
+                    scenario.Fertigation.Repetition_d = value;
+                    OnPropertyChanged("FertigationRepetition");
+                }
+            }
+        }
+
         //== Field
         public double FieldArea
         {
