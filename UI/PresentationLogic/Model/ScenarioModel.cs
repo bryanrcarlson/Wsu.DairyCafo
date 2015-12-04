@@ -246,6 +246,18 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
+        public bool FertigationEnabled
+        {
+            get { return scenario.Fertigation.Enabled; }
+            set
+            {
+                if (value != scenario.Fertigation.Enabled)
+                {
+                    scenario.Fertigation.Enabled = value;
+                    OnPropertyChanged("FertigationEnabled");
+                }
+            }
+        }
 
         //== Field
         public double FieldArea

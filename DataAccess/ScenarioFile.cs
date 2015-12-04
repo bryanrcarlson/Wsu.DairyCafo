@@ -10,6 +10,7 @@ namespace Wsu.DairyCafo.DataAccess
     public class ScenarioFile : IniFile
     {
         public string LoadedPath { get; private set; }
+
         public ScenarioFile() : base() { }
         public ScenarioFile(string pathToFile) : base(pathToFile) { }
         public string GetValueOnly(string sectionName, string key)

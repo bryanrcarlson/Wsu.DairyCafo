@@ -50,7 +50,8 @@ namespace Wsu.DairyCafo.DataAccess
             if (String.IsNullOrEmpty(dDp.LoadedPath))
                 throw new NullReferenceException("Cannot write, no scenario file loaded");
 
-            // Clear contents (TODO: do something with the backup)
+            // Clear contents
+            // TODO: do something with the backup
             Dictionary<string, Dictionary<string, string>> backup =
                 dDp.Clear();
             File.WriteAllText(dDp.LoadedPath, String.Empty);
@@ -79,7 +80,11 @@ namespace Wsu.DairyCafo.DataAccess
 
             dDp.SetSection("dairy scenario", sVals);
 
-            if (!dDp.Save(dDp.LoadedPath))
+            List<string> sectionOrder = new List<string>()
+            {
+                "version", "dairy scenario"
+            };
+            if (!dDp.Save(dDp.LoadedPath, sectionOrder))
             {
                 throw new OperationCanceledException("Failed to save file"); 
             }
@@ -198,6 +203,10 @@ namespace Wsu.DairyCafo.DataAccess
         private int writeFertigations(Scenario s)
         {
             // Wire up values
+
+            if (!s.Fertigation.Enabled)
+                return 0;
+
             s.Fertigation.SourceFacility_id = s.Lagoon.Id;
             s.Fertigation.TargetField_id = 
                 String.IsNullOrEmpty(s.Field.Id) 
@@ -240,7 +249,27 @@ namespace Wsu.DairyCafo.DataAccess
             if (String.IsNullOrEmpty(fDp.LoadedPath))
                 throw new NullReferenceException("Cannot write field scenario, no file loaded");
 
+            // Delete fertigation file
+            string fertPath = Path.Combine(
+                Path.GetDirectoryName(fDp.LoadedPath),
+                "Database",
+                "Management",
+                "fertigation.CS_management");
+            if (File.Exists(fertPath))
+                File.Delete(fertPath);
+
+            // Set field area
             fDp.SetValue("field", "size", s.Field.Area_ha.ToString());
+
+            // Set fixed management to apply fertigation from manure storage (lagoon)
+            string fixedManagementPath = "";
+            if (s.Fertigation.Enabled) fixedManagementPath = fertPath;
+            fDp.SetValue(
+                    "parameter_filenames", 
+                    "fixed_management", 
+                    fixedManagementPath);
+
+            fDp.Save(fDp.LoadedPath);
         }
         private SortedList<int,ManureSeparator> sortManureSeparators(Scenario s)
         {

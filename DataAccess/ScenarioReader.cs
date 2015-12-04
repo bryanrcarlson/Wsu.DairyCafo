@@ -224,7 +224,7 @@ namespace Wsu.DairyCafo.DataAccess
             }
             else
             {
-                string id = Path.GetDirectoryName(fDp.LoadedPath);
+                string id = new DirectoryInfo(fDp.LoadedPath).Parent.ToString();
                 string area = fDp.GetValueOnly("field", "size");
 
                 s.Field = new Field()
