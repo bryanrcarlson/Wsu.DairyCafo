@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\IFieldsDirectory.cs" />
     <Compile Include="Core\IScenarioDefaults.cs" />
+    <Compile Include="Core\IScenarioFile.cs" />
     <Compile Include="Core\IScenarioReader.cs" />
     <Compile Include="Core\IScenarioWriter.cs" />
     <Compile Include="Core\ManureSeperatorStyles.cs" />

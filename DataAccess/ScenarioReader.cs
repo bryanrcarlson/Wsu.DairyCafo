@@ -7,13 +7,13 @@ namespace Wsu.DairyCafo.DataAccess
 {
     public class ScenarioReader : IScenarioReader
     {
-        private readonly ScenarioFile dDp;
-        private readonly ScenarioFile fDp;
+        private readonly IScenarioFile dDp;
+        private readonly IScenarioFile fDp;
         private readonly string fieldDirName;
 
         public ScenarioReader(
-            ScenarioFile dairyScenario,
-            ScenarioFile cropSystScenario,
+            IScenarioFile dairyScenario,
+            IScenarioFile cropSystScenario,
             string fieldDirName = "Fields")
         {
             this.dDp = dairyScenario;
@@ -32,9 +32,12 @@ namespace Wsu.DairyCafo.DataAccess
                 string dairyDir = Path.GetDirectoryName(filePath);
                 string fieldDir = Path.Combine(dairyDir, fieldDirName);
 
+                //TODO: Create a FieldsDirectory (or name it more generic?) class that
+                //has the following functions.  Ultimatly, should only return
+                //a string to be used to set/load fDp.
                 if(!Directory.Exists(fieldDir))
                 {
-                    Directory.CreateDirectory(fieldDir);
+                    //Directory.CreateDirectory(fieldDir);
                     throw new NullReferenceException("Directory \"" +
                         fieldDirName + "\" does not exist so we created one for you.  Please add a dir with a CropSyst scenario to it.");
                 }

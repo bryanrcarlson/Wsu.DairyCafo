@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wsu.DairyCafo.DataAccess.Core;
 using Wsu.IO.DataAccess;
 
 namespace Wsu.DairyCafo.DataAccess
 {
-    public class ScenarioFile : IniFile
+    public class ScenarioFile : IniFile, IScenarioFile
     {
         public string LoadedPath { get; private set; }
 
