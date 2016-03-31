@@ -95,12 +95,12 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
         }
         public double CowCrudeProteinDiet
         {
-            get { return scenario.Cow.CrudeProteinDiet_kg_d; }
+            get { return scenario.Cow.CrudeProteinDiet_percent; }
             set
             {
-                if (value != scenario.Cow.CrudeProteinDiet_kg_d)
+                if (value != scenario.Cow.CrudeProteinDiet_percent)
                 {
-                    scenario.Cow.CrudeProteinDiet_kg_d = value;
+                    scenario.Cow.CrudeProteinDiet_percent = value;
                     OnPropertyChanged("CowCrudeProteinDiet");
                 }
             }
@@ -110,24 +110,24 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
         //== Barn
         public double BarnManureAlleyArea
         {
-            get { return scenario.Barn.Manure_alley_area_m2; }
+            get { return scenario.Barn.ManureAlleyArea_m2; }
             set
             {
-                if (value != scenario.Barn.Manure_alley_area_m2)
+                if (value != scenario.Barn.ManureAlleyArea_m2)
                 {
-                    scenario.Barn.Manure_alley_area_m2 = value;
+                    scenario.Barn.ManureAlleyArea_m2 = value;
                     OnPropertyChanged("BarnManureAlleyArea");
                 }
             }
         }
         public double BarnNumberCows
         {
-            get { return scenario.Barn.Number_cows_cnt; }
+            get { return scenario.Barn.NumberCows_cnt; }
             set
             {
-                if (value != scenario.Barn.Number_cows_cnt)
+                if (value != scenario.Barn.NumberCows_cnt)
                 {
-                    scenario.Barn.Number_cows_cnt = value;
+                    scenario.Barn.NumberCows_cnt = value;
                     OnPropertyChanged("BarnNumberCows");
                 }
             }

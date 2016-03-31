@@ -99,8 +99,8 @@ namespace Wsu.DairyCafo.DataAccess
             {
                 Id = id,
                 Enabled = Convert.ToBoolean(enabled),
-                Manure_alley_area_m2 = Convert.ToDouble(surface_area),
-                Number_cows_cnt = Convert.ToDouble(cows)
+                ManureAlleyArea_m2 = Convert.ToDouble(surface_area),
+                NumberCows_cnt = Convert.ToDouble(cows)
             };
         }
         private void parseCow(Scenario s)
@@ -118,7 +118,7 @@ namespace Wsu.DairyCafo.DataAccess
                 Id = id,
                 Enabled = Convert.ToBoolean(enabled),
                 BodyMass_kg = Convert.ToDouble(mass),
-                CrudeProteinDiet_kg_d = Convert.ToDouble(protein),
+                CrudeProteinDiet_percent = Convert.ToDouble(protein),
                 DryMatterIntake_kg_d = Convert.ToDouble(dmi),
                 MilkProduction_kg_d = Convert.ToDouble(milk)
             };

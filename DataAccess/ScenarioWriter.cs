@@ -105,9 +105,9 @@ namespace Wsu.DairyCafo.DataAccess
         {
             var vals = defaults.GetBarnDefaults();
             vals.Add("manure_alley_surface_area", 
-                s.Barn.Manure_alley_area_m2.ToString());
+                s.Barn.ManureAlleyArea_m2.ToString());
             vals.Add("cow_population",
-                s.Barn.Number_cows_cnt.ToString());
+                s.Barn.NumberCows_cnt.ToString());
 
             dDp.SetSection("barn:1", vals);
         }
@@ -117,7 +117,7 @@ namespace Wsu.DairyCafo.DataAccess
             vals.Add("body_mass", s.Cow.BodyMass_kg.ToString());
             vals.Add("dry_matter_intake", s.Cow.DryMatterIntake_kg_d.ToString());
             vals.Add("milk_production", s.Cow.MilkProduction_kg_d.ToString());
-            vals.Add("diet_crude_protein", s.Cow.CrudeProteinDiet_kg_d.ToString());
+            vals.Add("diet_crude_protein", s.Cow.CrudeProteinDiet_percent.ToString());
 
             dDp.SetSection("cow_description:1", vals);
         }
