@@ -49,6 +49,7 @@
     <Compile Include="Core\ScenarioDefaults.cs" />
     <Compile Include="Dto\AnaerobicDigester.cs" />
     <Compile Include="Dto\Barn.cs" />
+    <Compile Include="Dto\Biomatter.cs" />
     <Compile Include="Dto\CourseSeparator.cs" />
     <Compile Include="Dto\Cow.cs" />
     <Compile Include="Dto\Entity.cs" />
@@ -57,7 +58,9 @@
     <Compile Include="Dto\FineSeparator.cs" />
     <Compile Include="Dto\Lagoon.cs" />
     <Compile Include="Dto\ManureSeparator.cs" />
+    <Compile Include="Dto\ManureStorage.cs" />
     <Compile Include="Dto\NutrientRecovery.cs" />
+    <Compile Include="Dto\ReceiveOffFarmBiomass.cs" />
     <Compile Include="Dto\Scenario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenarioFile.cs" />

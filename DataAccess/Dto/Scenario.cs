@@ -48,7 +48,6 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public string IrrigationPumpModel { get; set; }
         public int ParameterizedScenario { get; set; }
 
-
         public Cow Cow { get; set; }
         public Barn Barn { get; set; }
         public AnaerobicDigester AnaerobicDigester { get; set; }
@@ -56,7 +55,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public FineSeparator FineSeparator { get; set; }
         public NutrientRecovery NutrientRecovery { get; set; }
         public Lagoon Lagoon { get; set; }
-
+        public ReceiveOffFarmBiomass ReceiveOffFarmBiomass { get; set; }
         public Fertigation Fertigation { get; set; }
 
         public Field Field { get; set; }
@@ -85,6 +84,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
             this.Fertigation = new Fertigation();
             this.Fertigation.ApplicationDate_date = DateTime.Today;
             this.Field = new Field();
+            this.ReceiveOffFarmBiomass = new ReceiveOffFarmBiomass();
         }
     }
 }
