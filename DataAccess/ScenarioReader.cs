@@ -79,7 +79,7 @@ namespace Wsu.DairyCafo.DataAccess
 
             #region Scenario
             s.DetailsUrl = dDp.GetValueOnly("dairy scenario", "details_URL");
-            s.Description = dDp.GetValueOnly("dairy scenario", "description");
+            s.Description = dDp.GetValue("dairy scenario", "description");
             s.Accumulations = 
                 Convert.ToInt16(dDp.GetValueOnly("dairy scenario", 
                 "accumulations"));
@@ -110,6 +110,8 @@ namespace Wsu.DairyCafo.DataAccess
                 Convert.ToInt16(dDp.GetValueOnly("dairy scenario", "manure_separator:count"));
             int manureStorageCount =
                 Convert.ToInt16(dDp.GetValueOnly("dairy scenario", "manure_storage:count"));
+            int receiveOffFarmBiomassCount =
+                Convert.ToInt16(dDp.GetValueOnly("dairy scenario", "receive_off_farm_biomass:count"));
             #endregion
 
             parseBarn(s);
@@ -117,6 +119,7 @@ namespace Wsu.DairyCafo.DataAccess
             parseManureSeparators(s, manureSeparatorCount);
             parseLagoon(s, manureStorageCount);
             parseFertigationManagement(s);
+            parseReceiveOffFarmBiomass(s, receiveOffFarmBiomassCount);
             parseField(s);
             return s;
         }
@@ -179,6 +182,92 @@ namespace Wsu.DairyCafo.DataAccess
                 PhManure_mol_L = Convert.ToDouble(manure_pH)
             };
         }
+        private void parseReceiveOffFarmBiomass(
+            Scenario s, 
+            int receiveOffFarmBiomassCount)
+        {
+            
+            if (receiveOffFarmBiomassCount > 0)
+            {
+                // Warning: Only handle one at this time
+                string sect = "receive_off_farm_biomass:1";
+
+                string id = dDp.GetValue(sect, "ID");
+                string enable = dDp.GetValue(sect, "enable");
+                string application_date = 
+                    dDp.GetValue(sect, "application_date");
+                string destination_facility_ID = 
+                    dDp.GetValue(sect, "destination_facility_ID");
+                string biomatter = dDp.GetValue(sect, "biomatter");
+
+                string mass = dDp.GetValueOnly(sect, "mass");
+                string h2o_kg = dDp.GetValueOnly(sect, "h2o_kg");
+                string nitrogen_urea_kg = 
+                    dDp.GetValueOnly(sect, "nitrogen_urea_kg");
+                string nitrogen_ammonical_kg = 
+                    dDp.GetValueOnly(sect, "nitrogen_ammonical_kg");
+                string nitrogen_organic_kg = 
+                    dDp.GetValueOnly(sect, "nitrogen_organic_kg");
+                string carbon_inorganic_kg = 
+                    dDp.GetValueOnly(sect, "carbon_inorganic_kg");
+                string carbon_organic_fast_kg = 
+                    dDp.GetValueOnly(sect, "carbon_organic_fast_kg");
+                string carbon_organic_slow_kg = 
+                    dDp.GetValueOnly(sect, "carbon_organic_slow_kg");
+                string carbon_organic_resilient_kg = 
+                    dDp.GetValueOnly(sect, "carbon_organic_resilient_kg");
+                string phosphorus_inorganic_kg = 
+                    dDp.GetValueOnly(sect, "phosphorus_inorganic_kg");
+                string phosphorus_organic_kg = 
+                    dDp.GetValueOnly(sect, "phosphorus_organic_kg");
+                string potassium_inorganic_kg = 
+                    dDp.GetValueOnly(sect, "potassium_inorganic_kg");
+                string potassium_organic_kg = 
+                    dDp.GetValueOnly(sect, "potassium_organic_kg");
+                string decomposition_constant_fast = 
+                    dDp.GetValueOnly(sect, "decomposition_constant_fast");
+                string decomposition_constant_slow = 
+                    dDp.GetValueOnly(sect, "decomposition_constant_slow");
+                string decomposition_constant_resilient = 
+                    dDp.GetValueOnly(sect, "IDdecomposition_constant_resilient");
+
+                Biomatter manure = new Biomatter()
+                {
+                    Mass_kg = Convert.ToDouble(mass),
+                    H2o_kg = Convert.ToDouble(h2o_kg),
+                    NitrogenUrea_kg = Convert.ToDouble(nitrogen_urea_kg),
+                    NitrogenAmmonical_kg = Convert.ToDouble(nitrogen_ammonical_kg),
+                    NitrogenOrganic_kg = Convert.ToDouble(nitrogen_organic_kg),
+                    CarbonInorganic_kg = Convert.ToDouble(carbon_inorganic_kg),
+                    CarbonOrganicFast_kg = Convert.ToDouble(carbon_organic_fast_kg),
+                    CarbonOrganicSlow_kg = Convert.ToDouble(carbon_organic_slow_kg),
+                    CarbonOrganicResilient_kg = Convert.ToDouble(carbon_organic_resilient_kg),
+                    PhosphorusInorganic_kg = Convert.ToDouble(phosphorus_inorganic_kg),
+                    PhosphorusOrganic_kg = Convert.ToDouble(phosphorus_organic_kg),
+                    PotassiumInorganic_kg = Convert.ToDouble(potassium_inorganic_kg),
+                    PotassiumOrganic_kg = Convert.ToDouble(potassium_organic_kg),
+                    DecompositionConstantFast = Convert.ToDouble(decomposition_constant_fast),
+                    DecompositionConstantSlow = Convert.ToDouble(decomposition_constant_slow),
+                    DecompositionConstantResilient = Convert.ToDouble(decomposition_constant_resilient)
+                };
+
+                DateTime applicationDate = parseDateFromIniFile(application_date);
+
+                s.ReceiveOffFarmBiomass = new ReceiveOffFarmBiomass()
+                {
+                    Id = id,
+                    Enabled = Convert.ToBoolean(enable),
+                    DestinationFacilityID = destination_facility_ID,
+                    ApplicationDate = String.IsNullOrEmpty(application_date) ?
+                        DateTime.MinValue :
+                        parseDateFromIniFile(application_date),
+                    BiomatterLabel = biomatter,
+                    Biomatter = manure
+                };
+            }
+
+
+        }
         private void parseManureSeparators(Scenario s, int manureSeparatorCount)
         {
             for (int i = 0; i < manureSeparatorCount; i++)
@@ -188,9 +277,9 @@ namespace Wsu.DairyCafo.DataAccess
                 string id = dDp.GetValue(sect, "ID");
                 string enabled = dDp.GetValueOnly(sect, "enable");
                 string style = dDp.GetValue(sect, "style");
-                string source = dDp.GetValueOnly(sect, "source_facility");
-                string liquid = dDp.GetValueOnly(sect, "liquid_facility");
-                string solids = dDp.GetValueOnly(sect, "solids_facility");
+                string source = dDp.GetValue(sect, "source_facility");
+                string liquid = dDp.GetValue(sect, "liquid_facility");
+                string solids = dDp.GetValue(sect, "solids_facility");
 
                 ManureSeparator m = new ManureSeparator()
                 {
@@ -302,12 +391,28 @@ namespace Wsu.DairyCafo.DataAccess
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="date">Date string in format of yyyydoy but could
+        /// also be 0</param>
+        /// <returns>Date in the form of a DateTime</returns>
         private DateTime parseDateFromIniFile(string date)
         {
-            int year = Convert.ToInt16(date.Substring(0, 4));
-            int doy = Convert.ToInt16(date.Substring(4, 3));
-            DateTime dt = new DateTime(year, 1, 1).AddDays(doy - 1);
+            DateTime dt;
 
+            // TODO: Decide how to deal with this, needs to interface with the UI and the model
+            if (date == "0")
+            {
+                dt = DateTime.MinValue;
+            } 
+            else
+            {
+                int year = Convert.ToInt16(date.Substring(0, 4));
+                int doy = Convert.ToInt16(date.Substring(4, 3));
+                dt = new DateTime(year, 1, 1).AddDays(doy - 1);
+            }
+            
             return dt;
         }
     }

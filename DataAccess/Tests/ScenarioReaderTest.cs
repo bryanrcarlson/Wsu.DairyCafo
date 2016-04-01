@@ -106,9 +106,8 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             // Assert.IsNull(sut.Barn.CleaningFrequency); //TODO: Move this to a test that checks for undefined values
 
             // [manure_storage] (lagoon)
-            Assert.AreEqual(142250, sut.Lagoon.SurfaceArea_m2);
-            Assert.AreEqual(519213, sut.Lagoon.VolumeMax_m3);
-            Assert.AreEqual(8.5, sut.Lagoon.PH_mol_L);
+            Assert.AreEqual(38250.0, sut.Lagoon.SurfaceArea_m2);
+            Assert.AreEqual(153000.0, sut.Lagoon.VolumeMax_m3);
 
             // [manure_separator] (AD)
             Assert.AreEqual("AD", sut.AnaerobicDigester.Id);
@@ -137,6 +136,13 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             Assert.AreEqual("FS tank", sut.NutrientRecovery.SourceFacility);
             Assert.AreEqual("lagoon", sut.NutrientRecovery.LiquidFacility);
             Assert.AreEqual("<off-site>", sut.NutrientRecovery.SolidFacility);
+
+            // [receive_off_farm_biomass:1]
+            Assert.AreEqual(1, sut.ReceiveOffFarmBiomass.ApplicationDate.Year);
+            Assert.AreEqual(28672.3, 
+                sut.ReceiveOffFarmBiomass.Biomatter.Mass_kg);
+            Assert.AreEqual(1743.25, 
+                sut.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicResilient_kg);
         }
     }
 }

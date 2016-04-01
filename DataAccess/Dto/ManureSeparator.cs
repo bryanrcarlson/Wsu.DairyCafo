@@ -20,7 +20,7 @@
             this.Style = toCopy.Style;
             this.SourceFacility = toCopy.SourceFacility;
             this.LiquidFacility = toCopy.LiquidFacility;
-            this.SourceFacility = toCopy.SolidFacility;
+            this.SolidFacility = toCopy.SolidFacility;
         }
     }
 }

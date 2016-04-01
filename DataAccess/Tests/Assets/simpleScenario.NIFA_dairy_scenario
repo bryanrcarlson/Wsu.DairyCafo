@@ -16,7 +16,7 @@ start_date=2005001
 stop_date=2005365
 manure_separator:count=1
 manure_storage:count=1
-receive_off_farm_biomass:count=1
+receive_off_farm_biomass:count=0
 fertigation:count=1
 [cow_description:1]
 ID=herd
