@@ -164,7 +164,7 @@
                              VerticalAlignment="Top"
                              Text="{Binding Path=CowMilkProduction}" />
 
-                        <TextBlock Grid.Row="4">Crude protein in diet (kg/d):</TextBlock>
+                        <TextBlock Grid.Row="4">Crude protein in diet (%):</TextBlock>
                         <TextBox Name="txtCowCrudeProteinDiet"
                              Grid.Row="4" 
                              Grid.Column="1" 
@@ -274,7 +274,7 @@
                     </Grid>
                     <!--#endregion -->
 
-                    <!--#region Course separator -->
+                    <!--#region Coarse separator -->
                     <Grid Margin="10">
                         <Grid.Resources>
                             <Style TargetType="TextBlock">
@@ -300,7 +300,7 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" 
-                                   Text="Course Separator" 
+                                   Text="Coarse Separator" 
                                    Foreground="Black" 
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
