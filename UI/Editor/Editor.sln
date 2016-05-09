@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client.csproj", "{D91DC773-685E-4699-BBAA-1C392F38F746}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wsu.IO.Tests", "..\..\..\IO\Wsu.IO.Tests\Wsu.IO.Tests.csproj", "{9088AE52-AD0B-4609-A8AB-F13D49DB3082}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wsu.CropSyst", "..\..\..\CropSyst\Wsu.CropSyst.csproj", "{F896CAA3-5C3C-4903-9B81-74EF8FC0C2AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLogic.Tests", "..\PresentationLogic\Tests\PresentationLogic.Tests.csproj", "{645B3B66-48E9-4287-ACA4-ABD81125CA37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,14 @@ Global
 		{F896CAA3-5C3C-4903-9B81-74EF8FC0C2AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F896CAA3-5C3C-4903-9B81-74EF8FC0C2AD}.Release|x64.ActiveCfg = Release|x64
 		{F896CAA3-5C3C-4903-9B81-74EF8FC0C2AD}.Release|x64.Build.0 = Release|x64
+		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Debug|x64.Build.0 = Debug|Any CPU
+		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Release|x64.ActiveCfg = Release|Any CPU
+		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

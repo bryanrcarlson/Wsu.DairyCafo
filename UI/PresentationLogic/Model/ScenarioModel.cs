@@ -32,6 +32,22 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
+        public int SimulationYear
+        {
+            get
+            {
+                return getSimulationYear();
+            }
+            set
+            {
+                if (value != getSimulationYear())
+                {
+                    scenario.StartDate = new DateTime(value, 1, 1);
+                    scenario.StopDate = new DateTime(value, 12, 31);
+                }
+            }
+        }
+
         public DateTime StartDate
         {
             get { return scenario.StartDate; }
@@ -362,6 +378,24 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
         public ScenarioModel(Scenario scenario)
         {
             this.scenario = scenario;
+        }
+        #endregion
+
+        #region Helpers
+        private int getSimulationYear()
+        {
+            int startYear = scenario.StartDate.Year;
+            int stopYear = scenario.StopDate.Year;
+
+            if (startYear == stopYear)
+            {
+                return startYear;
+            }
+            else
+            {
+                throw new InvalidOperationException(
+                    "Simulation must start and stop in the same year");
+            }
         }
         #endregion
     }

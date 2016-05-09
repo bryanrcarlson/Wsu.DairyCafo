@@ -75,7 +75,16 @@
                         </Grid>
 
                         <!-- Dates -->
-                        <TextBlock Grid.Row="2">Start Date:</TextBlock>
+                        <TextBlock Grid.Row="2">Simulation year</TextBlock>
+                        <TextBox Name="txtScenarioYear"
+                             Grid.Row="2" 
+                             Grid.Column="1" 
+                             InputScope="Number" 
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=SimulationYear}"
+                             />
+                        <!--<TextBlock Grid.Row="2">Start Date:</TextBlock>
                         <DatePicker Name="dateScenarioStartDate" 
                                 Grid.Row="2" 
                                 Grid.Column="1" 
@@ -90,7 +99,7 @@
                                 Height="{StaticResource InputHeight}" 
                                 VerticalAlignment="Top"
                                 SelectedDateFormat="Long"
-                                SelectedDate="{Binding Path=StopDate}"/>
+                                SelectedDate="{Binding Path=StopDate}"/>-->
                     </Grid>
                     <!--#endregion -->
 
