@@ -105,8 +105,57 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
+        public double StarchDiet_percent
+        {
+            get { return scenario.Cow.StarchDiet_percent; }
+            set
+            {
+                if (value != scenario.Cow.StarchDiet_percent)
+                {
+                    scenario.Cow.StarchDiet_percent = value;
+                    OnPropertyChanged("StarchDiet_percent");
+                }
+            }
+        }
 
+        public double AcidDetergentFiberDiet_percent
+        {
+            get { return scenario.Cow.AcidDetergentFiberDiet_percent; }
+            set
+            {
+                if (value != scenario.Cow.AcidDetergentFiberDiet_percent)
+                {
+                    scenario.Cow.AcidDetergentFiberDiet_percent = value;
+                    OnPropertyChanged("AcidDetergentFiberDiet_percent");
+                }
+            }
+        }
 
+        public double MetabolizableEnergyDiet_MJ_d
+        {
+            get { return scenario.Cow.MetabolizableEnergyDiet_MJ_d; }
+            set
+            {
+                if (value != scenario.Cow.MetabolizableEnergyDiet_MJ_d)
+                {
+                    scenario.Cow.MetabolizableEnergyDiet_MJ_d = value;
+                    OnPropertyChanged("MetabolizableEnergyDiet_MJ_d");
+                }
+            }
+        }
+
+        public double PhManure_mol_L
+        {
+            get { return scenario.Cow.PhManure_mol_L; }
+            set
+            {
+                if (value != scenario.Cow.PhManure_mol_L)
+                {
+                    scenario.Cow.PhManure_mol_L = value;
+                    OnPropertyChanged("PhManure_mol_L");
+                }
+            }
+        }
         //== Barn
         public double BarnManureAlleyArea
         {
@@ -129,6 +178,18 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 {
                     scenario.Barn.NumberCows_cnt = value;
                     OnPropertyChanged("BarnNumberCows");
+                }
+            }
+        }
+        public int CleaningFrequency
+        {
+            get { return scenario.Barn.CleaningFrequency; }
+            set
+            {
+                if (value != scenario.Barn.CleaningFrequency)
+                {
+                    scenario.Barn.CleaningFrequency = value;
+                    OnPropertyChanged("CleaningFrequency");
                 }
             }
         }
@@ -205,6 +266,18 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 {
                     scenario.Lagoon.VolumeMax_m3 = value;
                     OnPropertyChanged("LagoonVolumeMax");
+                }
+            }
+        }
+        public double PH_mol_L
+        {
+            get { return scenario.Lagoon.PH_mol_L; }
+            set
+            {
+                if (value != scenario.Lagoon.PH_mol_L)
+                {
+                    scenario.Lagoon.PH_mol_L = value;
+                    OnPropertyChanged("PH_mol_L");
                 }
             }
         }
