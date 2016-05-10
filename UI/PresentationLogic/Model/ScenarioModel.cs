@@ -42,8 +42,8 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
             {
                 if (value != getSimulationYear())
                 {
-                    scenario.StartDate = new DateTime(value, 1, 1);
-                    scenario.StopDate = new DateTime(value, 12, 31);
+                    StartDate = new DateTime(value, 1, 1);
+                    StopDate = new DateTime(value, 12, 31);
                 }
             }
         }
