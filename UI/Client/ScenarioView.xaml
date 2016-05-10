@@ -75,7 +75,15 @@
                         </Grid>
 
                         <!-- Dates -->
-                        <TextBlock Grid.Row="2">Start Date:</TextBlock>
+                        <TextBlock Grid.Row="2">Simulation year</TextBlock>
+                        <TextBox Name="txtScenarioYear"
+                             Grid.Row="2" 
+                             Grid.Column="1" 
+                             InputScope="Number" 
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=SimulationYear}"/>
+                        <!--<TextBlock Grid.Row="2">Start Date:</TextBlock>
                         <DatePicker Name="dateScenarioStartDate" 
                                 Grid.Row="2" 
                                 Grid.Column="1" 
@@ -90,7 +98,7 @@
                                 Height="{StaticResource InputHeight}" 
                                 VerticalAlignment="Top"
                                 SelectedDateFormat="Long"
-                                SelectedDate="{Binding Path=StopDate}"/>
+                                SelectedDate="{Binding Path=StopDate}"/>-->
                     </Grid>
                     <!--#endregion -->
 
@@ -106,6 +114,10 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -154,7 +166,7 @@
                              VerticalAlignment="Top"
                              Text="{Binding Path=CowDryMatterIntake}"
                              />
-
+                        
                         <TextBlock Grid.Row="3">Milk production (kg/d):</TextBlock>
                         <TextBox Name="txtCowMilkProduction"
                              Grid.Row="3" 
@@ -172,6 +184,42 @@
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
                              Text="{Binding Path=CowCrudeProteinDiet}" />
+
+                        <TextBlock Grid.Row="5">Starch in diet (%):</TextBlock>
+                        <TextBox Name="txtStarchDiet_percent"
+                             Grid.Row="5" 
+                             Grid.Column="1" 
+                             InputScope="Number"
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=StarchDiet_percent}" />
+
+                        <TextBlock Grid.Row="6">Acid detergent fiber in diet (%):</TextBlock>
+                        <TextBox Name="txtAcidDetergentFiberDiet_percent"
+                             Grid.Row="6" 
+                             Grid.Column="1" 
+                             InputScope="Number"
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=AcidDetergentFiberDiet_percent}" />
+
+                        <TextBlock Grid.Row="7">Metabolizable energy in diet (MJ/d):</TextBlock>
+                        <TextBox Name="txtMetabolizableEnergyDiet_MJ_d"
+                             Grid.Row="7" 
+                             Grid.Column="1" 
+                             InputScope="Number"
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=MetabolizableEnergyDiet_MJ_d}" />
+
+                        <TextBlock Grid.Row="8">PH of manure (mol/L):</TextBlock>
+                        <TextBox Name="txtPhManure_mol_L"
+                             Grid.Row="8" 
+                             Grid.Column="1" 
+                             InputScope="Number"
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=PhManure_mol_L}" />
                     </Grid>
                     <!--#endregion Cow -->
 
@@ -187,6 +235,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -231,6 +280,16 @@
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
                              Text="{Binding Path=BarnNumberCows}"/>
+
+                        <!-- Cleaning freq -->
+                        <TextBlock Grid.Row="3">Cleaning frequency (cnt/day):</TextBlock>
+                        <TextBox Name="txtCleaningFrequency"
+                             Grid.Row="3" 
+                             Grid.Column="1" 
+                             InputScope="Number"
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=CleaningFrequency}"/>
                     </Grid>
                     <!--#endregion Barn -->
 
@@ -406,6 +465,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
                         <!-- Header -->
@@ -447,6 +507,15 @@
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
                              Text="{Binding Path=LagoonVolumeMax}"/>
+
+                        <TextBlock Grid.Row="3">PH of manure entering (mol/L):</TextBlock>
+                        <TextBox Name="txtPH_mol_L" 
+                             Grid.Row="3" 
+                             Grid.Column="1" 
+                             InputScope="Number"
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=PH_mol_L}"/>
                     </Grid>
                     <!--#endregion -->
 
@@ -490,7 +559,7 @@
                         </Border>
 
                         <!-- Dates -->
-                        <TextBlock Grid.Row="1">Date:</TextBlock>
+                        <TextBlock Grid.Row="1">Date (year must match sim year):</TextBlock>
                         <DatePicker Name="dateFertigationDate" 
                                 Grid.Row="1" 
                                 Grid.Column="1" 
@@ -498,7 +567,6 @@
                                 VerticalAlignment="Top"
                                 SelectedDateFormat="Long"
                                 SelectedDate="{Binding Path=FertigationDate}"/>
-                        
                         <!-- Amount Removed -->
                         <TextBlock Grid.Row="2">Amount removed (%):</TextBlock>
                         <TextBox Name="txtFertigationAmnt" 
