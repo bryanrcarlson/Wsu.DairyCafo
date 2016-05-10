@@ -121,6 +121,17 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
 
                 CurrentScenario = new ScenarioModel(new Scenario());
 
+                // Create directory structure
+                try
+                {
+                    writer.SetupDir(filePath);
+                }
+                catch(InvalidOperationException e)
+                {
+                    System.Windows.MessageBox.Show(e.Message);
+                }
+
+                // Create new scenario files and load
                 try
                 {
                     writer.Write(CurrentScenario.GetScenario(), filePath);

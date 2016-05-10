@@ -12,14 +12,14 @@ namespace Wsu.DairyCafo.DataAccess
 {
     public class ScenarioWriter : IScenarioWriter
     {
-        private readonly ScenarioFile dDp;
-        private readonly ScenarioFile fDp;
+        private readonly IScenarioFile dDp;
+        private readonly IScenarioFile fDp;
         private readonly IScenarioDefaults defaults;
         private readonly string fieldDirName;
 
         public ScenarioWriter(
-            ScenarioFile dairyScenario,
-            ScenarioFile cropSystScenario,
+            IScenarioFile dairyScenario,
+            IScenarioFile cropSystScenario,
             IScenarioDefaults defaults,
             string fieldDirName = "Fields"
             )
@@ -28,6 +28,20 @@ namespace Wsu.DairyCafo.DataAccess
             this.fDp = cropSystScenario;
             this.defaults = defaults;
             this.fieldDirName = fieldDirName;
+        }
+        /// <summary>
+        /// Sets up a Dairy-CropSyst scenario directory
+        /// </summary>
+        /// <param name="dirPath">
+        ///  Path where scenario files/folder are created
+        /// </param>
+        public void SetupDir(string dirPath)
+        {
+            if (!Directory.Exists(dirPath))
+                throw new NullReferenceException("Dir does not exist");
+
+            Directory.CreateDirectory(Path.Combine(dirPath, "Output"));
+            Directory.CreateDirectory(Path.Combine(dirPath, "Fields"));
         }
         public void Write(Scenario s, string dirPath)
         {
