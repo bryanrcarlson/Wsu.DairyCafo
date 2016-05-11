@@ -7,7 +7,7 @@ using Wsu.DairyCafo.DataAccess.Core;
 
 namespace Wsu.DairyCafo.DataAccess.Tests.Stubs
 {
-    class ScenarioFileStub : IScenarioFile
+    public class ScenarioFileStub : IScenarioFile
     {
         public string LoadedPath
         {

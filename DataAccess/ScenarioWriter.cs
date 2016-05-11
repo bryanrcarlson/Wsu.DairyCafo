@@ -66,9 +66,9 @@ namespace Wsu.DairyCafo.DataAccess
 
             // Clear contents
             // TODO: do something with the backup
-            Dictionary<string, Dictionary<string, string>> backup =
-                dDp.Clear();
-            File.WriteAllText(dDp.LoadedPath, String.Empty);
+//            Dictionary<string, Dictionary<string, string>> backup =
+//                dDp.Clear();
+//            File.WriteAllText(dDp.LoadedPath, String.Empty);
 
 
             dDp.SetSection("version", defaults.GetVersionDefaults());

@@ -173,7 +173,9 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             try
             {
                 writer.Write(this.currentScenario.GetScenario());
-                writer.WriteField(this.currentScenario.GetScenario());
+                if(currentScenario.FieldEnabled)
+                    writer.WriteField(this.currentScenario.GetScenario());
+                System.Windows.MessageBox.Show("File saved");
             }
             catch(Exception e)
             {
