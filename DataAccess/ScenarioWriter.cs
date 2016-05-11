@@ -227,15 +227,27 @@ namespace Wsu.DairyCafo.DataAccess
                     ? ""
                     : s.Field.Id;
 
-            // Expand fert management to instances of ferts
-            DateTime currDt = s.Fertigation.ApplicationDate_date;
             int i = 0;
-            do
+            if(s.Fertigation.Repetition_d > 0)
             {
+                // Expand fert management to instances of ferts
+                DateTime currDt = s.Fertigation.ApplicationDate_date;
+                
+                do
+                {
+                    i++;
+                    writeFertigation(s.Fertigation, i, getYYYYDOYString(currDt));
+                    currDt = currDt.AddDays(s.Fertigation.Repetition_d);
+                } while (currDt < s.StopDate);
+            }
+            else
+            {
+                // Just write one fert
                 i++;
-                writeFertigation(s.Fertigation, i, getYYYYDOYString(currDt));
-                currDt = currDt.AddDays(s.Fertigation.Repetition_d);
-            } while (currDt < s.StopDate);
+                writeFertigation(s.Fertigation, i, getYYYYDOYString(
+                    s.Fertigation.ApplicationDate_date));
+                
+            }
 
             return i;
         }

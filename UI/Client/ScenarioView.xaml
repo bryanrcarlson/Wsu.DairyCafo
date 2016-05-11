@@ -8,6 +8,8 @@
     <System:Double x:Key="InputHeight">30</System:Double>
     <System:Double x:Key="WindowWidth">500</System:Double>
 
+    <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    
     <DataTemplate DataType="{x:Type model:ScenarioModel}">
         <Grid>
             <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -82,7 +84,8 @@
                              InputScope="Number" 
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=SimulationYear}"/>
+                             Text="{Binding Path=SimulationYear,
+                                UpdateSourceTrigger=PropertyChanged}"/>
                         <!--<TextBlock Grid.Row="2">Start Date:</TextBlock>
                         <DatePicker Name="dateScenarioStartDate" 
                                 Grid.Row="2" 
