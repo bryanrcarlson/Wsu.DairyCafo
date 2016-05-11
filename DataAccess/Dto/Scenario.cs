@@ -86,5 +86,21 @@ namespace Wsu.DairyCafo.DataAccess.Dto
             this.Field = new Field();
             this.ReceiveOffFarmBiomass = new ReceiveOffFarmBiomass();
         }
+        public int GetCountBarn()
+        {
+            return Barn.Enabled ? 1 : 0;
+        }
+        public int GetCountCow()
+        {
+            return Cow.Enabled ? 1 : 0;
+        }
+        public int GetCountManureSeparator()
+        {
+            throw new NotImplementedException();
+            //int count = 0;
+            //if (AnaerobicDigester.Enabled) count++;
+            //
+            //return count;
+        }
     }
 }

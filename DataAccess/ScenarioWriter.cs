@@ -66,21 +66,33 @@ namespace Wsu.DairyCafo.DataAccess
 
             // Clear contents
             // TODO: do something with the backup
-//            Dictionary<string, Dictionary<string, string>> backup =
-//                dDp.Clear();
-//            File.WriteAllText(dDp.LoadedPath, String.Empty);
+            //            Dictionary<string, Dictionary<string, string>> backup =
+            //                dDp.Clear();
+            //            File.WriteAllText(dDp.LoadedPath, String.Empty);
 
+            var d = new DefaultScenario();
 
             dDp.SetSection("version", defaults.GetVersionDefaults());
-            var sVals = defaults.GetScenarioDefaults();
+
+            //var sVals = defaults.GetScenarioDefaults();
+            var sVals = new Dictionary<string, string>();
+            sVals.Add("details_URL", s.DetailsUrl);
+            sVals.Add("description", s.Description);
             sVals.Add("weather", s.PathToWeatherFile.ToString());
             sVals.Add("start_date", getYYYYDOYString(s.StartDate));
             sVals.Add("stop_date", getYYYYDOYString(s.StopDate));
-            
+            sVals.Add("accumulations", d.s.Accumulations.ToString());
+            sVals.Add("simulation_period_mode", d.s.SimulationPeriodMode.ToString());
+            sVals.Add("irrigation_pump_model", d.s.IrrigationPumpModel.ToString());
+            sVals.Add("parameterized_scenario", d.s.ParameterizedScenario.ToString());
+            sVals.Add("cow_description:count", d.s.GetCountCow().ToString());
+            sVals.Add("barn:count", d.s.GetCountBarn().ToString());
+
             writeCow(s);
             writeBarn(s);
             writeLagoon(s);
 
+            int numReceiveOffFarmBiomass = writeReceiveOffFarmBiomass(s);
             int numSeparators = writeSeparatorsAndStorage(s);
             int numStorageTanks = numSeparators > 0 ? numSeparators : 1; // lagoon + tanks between separators
 
@@ -91,6 +103,7 @@ namespace Wsu.DairyCafo.DataAccess
             sVals.Add("manure_separator:count", numSeparators.ToString());
             sVals.Add("manure_storage:count", numStorageTanks.ToString());
             sVals.Add("fertigation:count", numFertigations.ToString());
+            sVals.Add("receive_off_farm_biomass:count", numReceiveOffFarmBiomass.ToString());
 
             dDp.SetSection("dairy scenario", sVals);
 
@@ -117,21 +130,39 @@ namespace Wsu.DairyCafo.DataAccess
         }
         private void writeBarn(Scenario s)
         {
-            var vals = defaults.GetBarnDefaults();
-            vals.Add("manure_alley_surface_area", 
+            //var vals = defaults.GetBarnDefaults();
+            var vals = new Dictionary<string, string>();
+            vals.Add("ID", s.Barn.Id);
+            vals.Add("enable", s.Barn.Enabled.ToString().ToLower());
+            vals.Add("manure_alley_surface_area",
                 s.Barn.ManureAlleyArea_m2.ToString());
+            vals.Add("flush_system", s.Barn.FlushSystem.ToString().ToLower());
+            vals.Add("bedding", s.Barn.Bedding);
+            vals.Add("bedding_addition", s.Barn.BeddingAddition.ToString());
             vals.Add("cow_population",
                 s.Barn.NumberCows_cnt.ToString());
+            vals.Add("cow_description", s.Barn.CowDescription);
+            vals.Add("cleaning_frequency", s.Barn.CleaningFrequency.ToString());
 
             dDp.SetSection("barn:1", vals);
         }
         private void writeCow(Scenario s)
         {
-            var vals = defaults.GetCowDefaults();
+            var vals = new Dictionary<string, string>();
+
+            //var vals = defaults.GetCowDefaults();
+            vals.Add("ID", s.Cow.Id);
+            vals.Add("enable", s.Cow.Enabled.ToString().ToLower());
             vals.Add("body_mass", s.Cow.BodyMass_kg.ToString());
             vals.Add("dry_matter_intake", s.Cow.DryMatterIntake_kg_d.ToString());
             vals.Add("milk_production", s.Cow.MilkProduction_kg_d.ToString());
             vals.Add("diet_crude_protein", s.Cow.CrudeProteinDiet_percent.ToString());
+
+            vals.Add("diet_starch", s.Cow.StarchDiet_percent.ToString());
+            vals.Add("diet_ADF", s.Cow.AcidDetergentFiberDiet_percent.ToString());
+            vals.Add("lactating", s.Cow.IsLactating.ToString().ToLower());
+            vals.Add("diet_ME_intake", s.Cow.MetabolizableEnergyDiet_MJ_d.ToString());
+            vals.Add("manure_pH", s.Cow.PhManure_mol_L.ToString());
 
             dDp.SetSection("cow_description:1", vals);
         }
@@ -143,6 +174,33 @@ namespace Wsu.DairyCafo.DataAccess
 
             // Lagoon is always the first manure storage; before holding tanks
             dDp.SetSection("manure_storage:1", vals);
+        }
+        private int writeReceiveOffFarmBiomass(Scenario s)
+        {
+            var vals = new Dictionary<string, string>();
+            vals.Add("ID", s.ReceiveOffFarmBiomass.Id);
+            vals.Add("enable", Convert.ToString(s.ReceiveOffFarmBiomass.Enabled));
+            vals.Add("application_date", getYYYYDOYString(s.ReceiveOffFarmBiomass.ApplicationDate));
+            vals.Add("destination_facility_ID", s.ReceiveOffFarmBiomass.DestinationFacilityID);
+            vals.Add("mass", s.ReceiveOffFarmBiomass.Biomatter.Mass_kg.ToString());
+            vals.Add("biomatter", s.ReceiveOffFarmBiomass.BiomatterLabel);
+            vals.Add("h2o_kg", s.ReceiveOffFarmBiomass.Biomatter.H2o_kg.ToString());
+            vals.Add("nitrogen_urea_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenUrea_kg.ToString());
+            vals.Add("nitrogen_ammonical_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenAmmonical_kg.ToString());
+            vals.Add("nitrogen_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenOrganic_kg.ToString());
+            vals.Add("carbon_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonInorganic_kg.ToString());
+            vals.Add("carbon_organic_fast_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicFast_kg.ToString());
+            vals.Add("carbon_organic_slow_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicSlow_kg.ToString());
+            vals.Add("carbon_organic_resilient_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicResilient_kg.ToString());
+            vals.Add("phosphorus_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.PhosphorusInorganic_kg.ToString());
+            vals.Add("phosphorus_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.PhosphorusOrganic_kg.ToString());
+            vals.Add("potassium_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.PotassiumInorganic_kg.ToString());
+            vals.Add("potassium_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.PotassiumOrganic_kg.ToString());
+            vals.Add("decomposition_constant_fast", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantFast.ToString());
+            vals.Add("decomposition_constant_slow", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantSlow.ToString());
+            vals.Add("decomposition_constant_resilient", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantResilient.ToString());
+
+            return s.ReceiveOffFarmBiomass.Enabled ? 1 : 0;
         }
         private int writeSeparatorsAndStorage(Scenario s)
         {

@@ -12,8 +12,8 @@ namespace Wsu.DairyCafo.DataAccess.Core
         {
             Dictionary<string, string> d = new Dictionary<string, string>()
             {
-                { "details_URL", "" },
-                { "description", "" },
+                //{ "details_URL", "" },
+                //{ "description", "" },
                 { "accumulations", "3" },
                 { "simulation_period_mode", "multiyear" },
                 { "irrigation_pump_model", "" },

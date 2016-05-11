@@ -58,6 +58,7 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             Assert.AreEqual(635, sut.Cow.BodyMass_kg);
             Assert.AreEqual(true, sut.Cow.IsLactating);
             Assert.AreEqual(8, sut.Cow.PhManure_mol_L);
+            Assert.AreEqual(150, sut.Cow.MetabolizableEnergyDiet_MJ_d);
 
             // [barn]
             Assert.AreEqual("sand", sut.Barn.Bedding);
@@ -103,11 +104,12 @@ namespace Wsu.DairyCafo.DataAccess.Tests
 
             // [barn]
             Assert.AreEqual(3000, sut.Barn.NumberCows_cnt);
-            // Assert.IsNull(sut.Barn.CleaningFrequency); //TODO: Move this to a test that checks for undefined values
+            Assert.AreEqual(3, sut.Barn.CleaningFrequency);
 
             // [manure_storage] (lagoon)
             Assert.AreEqual(38250.0, sut.Lagoon.SurfaceArea_m2);
             Assert.AreEqual(153000.0, sut.Lagoon.VolumeMax_m3);
+            Assert.AreEqual(8.5, sut.Lagoon.PH_mol_L);
 
             // [manure_separator] (AD)
             Assert.AreEqual("AD", sut.AnaerobicDigester.Id);
