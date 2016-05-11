@@ -153,7 +153,8 @@
                              InputScope="Number" 
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CowBodyMass}"
+                             Text="{Binding Path=CowBodyMass, 
+                                UpdateSourceTrigger=PropertyChanged}"
                              />
 
                         <!-- Dry matter intake -->
@@ -164,7 +165,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CowDryMatterIntake}"
+                             Text="{Binding Path=CowDryMatterIntake, 
+                                UpdateSourceTrigger=PropertyChanged}"
                              />
                         
                         <TextBlock Grid.Row="3">Milk production (kg/d):</TextBlock>
@@ -174,7 +176,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CowMilkProduction}" />
+                             Text="{Binding Path=CowMilkProduction, 
+                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock Grid.Row="4">Crude protein in diet (%):</TextBlock>
                         <TextBox Name="txtCowCrudeProteinDiet"
@@ -183,7 +186,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CowCrudeProteinDiet}" />
+                             Text="{Binding Path=CowCrudeProteinDiet, 
+                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock Grid.Row="5">Starch in diet (%):</TextBlock>
                         <TextBox Name="txtStarchDiet_percent"
@@ -192,7 +196,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=StarchDiet_percent}" />
+                             Text="{Binding Path=StarchDiet_percent, 
+                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock Grid.Row="6">Acid detergent fiber in diet (%):</TextBlock>
                         <TextBox Name="txtAcidDetergentFiberDiet_percent"
@@ -201,7 +206,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=AcidDetergentFiberDiet_percent}" />
+                             Text="{Binding Path=AcidDetergentFiberDiet_percent, 
+                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock Grid.Row="7">Metabolizable energy in diet (MJ/d):</TextBlock>
                         <TextBox Name="txtMetabolizableEnergyDiet_MJ_d"
@@ -210,7 +216,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=MetabolizableEnergyDiet_MJ_d}" />
+                             Text="{Binding Path=MetabolizableEnergyDiet_MJ_d, 
+                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock Grid.Row="8">PH of manure (mol/L):</TextBlock>
                         <TextBox Name="txtPhManure_mol_L"
@@ -219,7 +226,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=PhManure_mol_L}" />
+                             Text="{Binding Path=PhManure_mol_L, 
+                                UpdateSourceTrigger=PropertyChanged}" />
                     </Grid>
                     <!--#endregion Cow -->
 
@@ -269,7 +277,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=BarnManureAlleyArea}"/>
+                             Text="{Binding Path=BarnManureAlleyArea, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
 
                         <!-- Cow num -->
                         <TextBlock Grid.Row="2">Number of cows (cnt):</TextBlock>
@@ -279,7 +288,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=BarnNumberCows}"/>
+                             Text="{Binding Path=BarnNumberCows, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
 
                         <!-- Cleaning freq -->
                         <TextBlock Grid.Row="3">Cleaning frequency (cnt/day):</TextBlock>
@@ -289,7 +299,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CleaningFrequency}"/>
+                             Text="{Binding Path=CleaningFrequency, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <!--#endregion Barn -->
 
@@ -496,7 +507,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=LagoonSurfaceArea}"/>
+                             Text="{Binding Path=LagoonSurfaceArea, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
 
                         <!-- Max Volume -->
                         <TextBlock Grid.Row="2">Max volume (m3):</TextBlock>
@@ -506,7 +518,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=LagoonVolumeMax}"/>
+                             Text="{Binding Path=LagoonVolumeMax, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
 
                         <TextBlock Grid.Row="3">PH of manure entering (mol/L):</TextBlock>
                         <TextBox Name="txtPH_mol_L" 
@@ -515,7 +528,8 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=PH_mol_L}"/>
+                             Text="{Binding Path=PH_mol_L, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <!--#endregion -->
 
@@ -575,7 +589,8 @@
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
                             VerticalAlignment="Top"
-                            Text="{Binding Path=FertigationAmnt}"/>
+                            Text="{Binding Path=FertigationAmnt, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
                         <!-- Repetition -->
                         <TextBlock Grid.Row="3">Repeats every (days):</TextBlock>
                         <TextBox Name="txtRepetition" 
@@ -584,7 +599,8 @@
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
                             VerticalAlignment="Top"
-                            Text="{Binding Path=FertigationRepetition}"/>
+                            Text="{Binding Path=FertigationRepetition, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <!--#endregion -->
                     <!--#region Field -->
@@ -632,7 +648,8 @@
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
                             VerticalAlignment="Top"
-                            Text="{Binding Path=FieldArea}"/>
+                            Text="{Binding Path=FieldArea, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <!--#endregion -->
 
