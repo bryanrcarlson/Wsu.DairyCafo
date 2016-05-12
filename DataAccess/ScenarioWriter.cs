@@ -81,6 +81,7 @@ namespace Wsu.DairyCafo.DataAccess
             sVals.Add("weather", s.PathToWeatherFile.ToString());
             sVals.Add("start_date", getYYYYDOYString(s.StartDate));
             sVals.Add("stop_date", getYYYYDOYString(s.StopDate));
+            //TODO: replace these default values with the actual scenario values -- defaults should be set at scenario creation.  Just because the UI doesn't show some values doesn't mean the model doesn't have them!
             sVals.Add("accumulations", d.s.Accumulations.ToString());
             sVals.Add("simulation_period_mode", d.s.SimulationPeriodMode.ToString());
             sVals.Add("irrigation_pump_model", d.s.IrrigationPumpModel.ToString());
@@ -90,12 +91,16 @@ namespace Wsu.DairyCafo.DataAccess
 
             writeCow(s);
             writeBarn(s);
+            
+
+            
+            //int numSeparators = writeSeparatorsAndStorage(s);
+            writeSeparatorsAndStorage(s);
+            int numSeparators = s.GetCountManureSeparator();
+            //int numStorageTanks = numSeparators > 0 ? numSeparators : 1; // lagoon + tanks between separators
+            int numStorageTanks = s.GetCountManureStorage();
             writeLagoon(s);
-
             int numReceiveOffFarmBiomass = writeReceiveOffFarmBiomass(s);
-            int numSeparators = writeSeparatorsAndStorage(s);
-            int numStorageTanks = numSeparators > 0 ? numSeparators : 1; // lagoon + tanks between separators
-
             writeFertigationManagement(s);
 
             int numFertigations = writeFertigations(s);
@@ -168,19 +173,30 @@ namespace Wsu.DairyCafo.DataAccess
         }
         private void writeLagoon(Scenario s)
         {
-            var vals = defaults.GetLagoonDefaults();
+            //var vals = defaults.GetLagoonDefaults();
+            var vals = new Dictionary<string, string>();
+            vals.Add("ID", s.Lagoon.Id);
+            vals.Add("enable", s.Lagoon.Enabled.ToString().ToLower());
+            vals.Add("style", s.Lagoon.Style);
+            vals.Add("fresh_manure", 
+                s.Lagoon.DoesContainFreshManure.ToString().ToLower());
             vals.Add("surface_area", s.Lagoon.SurfaceArea_m2.ToString());
             vals.Add("volume_max", s.Lagoon.VolumeMax_m3.ToString());
-
-            // Lagoon is always the first manure storage; before holding tanks
-            dDp.SetSection("manure_storage:1", vals);
+            vals.Add("pH", s.Lagoon.PH_mol_L.ToString());
+            // Lagoon is always the last manure storage
+            int numStorage = s.GetCountManureStorage();
+            dDp.SetSection("manure_storage:"+numStorage.ToString(), vals);
         }
         private int writeReceiveOffFarmBiomass(Scenario s)
         {
             var vals = new Dictionary<string, string>();
             vals.Add("ID", s.ReceiveOffFarmBiomass.Id);
-            vals.Add("enable", Convert.ToString(s.ReceiveOffFarmBiomass.Enabled));
-            vals.Add("application_date", getYYYYDOYString(s.ReceiveOffFarmBiomass.ApplicationDate));
+            vals.Add("enable", s.ReceiveOffFarmBiomass.Enabled.ToString().ToLower());
+            // Determine application date -- assume DateTime.Min means 0
+            if (s.ReceiveOffFarmBiomass.ApplicationDate == DateTime.MinValue)
+                vals.Add("application_date", "0");
+            else
+                vals.Add("application_date", getYYYYDOYString(s.ReceiveOffFarmBiomass.ApplicationDate));
             vals.Add("destination_facility_ID", s.ReceiveOffFarmBiomass.DestinationFacilityID);
             vals.Add("mass", s.ReceiveOffFarmBiomass.Biomatter.Mass_kg.ToString());
             vals.Add("biomatter", s.ReceiveOffFarmBiomass.BiomatterLabel);
@@ -200,14 +216,17 @@ namespace Wsu.DairyCafo.DataAccess
             vals.Add("decomposition_constant_slow", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantSlow.ToString());
             vals.Add("decomposition_constant_resilient", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantResilient.ToString());
 
+            dDp.SetSection("receive_off_farm_biomass:1", vals);
+
             return s.ReceiveOffFarmBiomass.Enabled ? 1 : 0;
         }
         private int writeSeparatorsAndStorage(Scenario s)
         {
             SortedList<int,ManureSeparator> seps = sortManureSeparators(s);
             int sepsWritten = 0;
-            // Last in list will pass manure to lagoon
-            //seps[seps.Count - 1].LiquidFacility = s.Lagoon.Id;
+            Dictionary<string, string> manureStorageDict = 
+                new Dictionary<string, string>();
+            string currSectionId = "";
 
             // First in list will always get manure from barn
             string sourceId = s.Barn.Id;
@@ -226,10 +245,22 @@ namespace Wsu.DairyCafo.DataAccess
                     sourceId = liqId;
 
                     // Write holding tank
-                    string sect = "manure_storage:" + (i + 2).ToString(); // +2 because zerobased and lagoon is 1
-                    var d = defaults.GetHoldingTankDefaults();
+                    string sect = "manure_storage:" + (i + 1).ToString(); // +1 because zerobased
+                   
+                    var d = new Dictionary<string, string>();
                     d.Add("ID", seps[i].LiquidFacility);
-                    dDp.SetSection(sect, d);
+                    // Merges the default dictionary into the curr dictionary
+                    //avoiding duplicates
+                    foreach(var item in defaults.GetHoldingTankDefaults())
+                    {
+                        if (!d.ContainsKey(item.Key))
+                            d.Add(item.Key, item.Value);
+                    }
+
+                    manureStorageDict = d;
+                    currSectionId = sect;
+
+                    
                 }
                 else // This is last separator, so pass to lagoon
                 {
@@ -243,13 +274,15 @@ namespace Wsu.DairyCafo.DataAccess
                 string manSepCnt = "manure_separator:" + (i + 1).ToString();
                 Dictionary<string, string> vals = new Dictionary<string, string>();
                 vals.Add("ID", seps[i].Id);
-                vals.Add("enable",seps[i].Enabled.ToString());
+                vals.Add("enable",seps[i].Enabled.ToString().ToLower());
                 vals.Add("style", seps[i].Style);
                 vals.Add("source_facility", seps[i].SourceFacility);
                 vals.Add("liquid_facility", seps[i].LiquidFacility);
                 vals.Add("solids_facility", seps[i].SolidFacility);
 
                 dDp.SetSection(manSepCnt, vals);
+                if(manureStorageDict.Count > 0)
+                    dDp.SetSection(currSectionId,manureStorageDict);
 
                 sepsWritten++;
             }

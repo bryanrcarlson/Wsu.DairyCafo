@@ -96,11 +96,21 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         }
         public int GetCountManureSeparator()
         {
-            throw new NotImplementedException();
-            //int count = 0;
-            //if (AnaerobicDigester.Enabled) count++;
-            //
-            //return count;
+            int count = 0;
+            if (AnaerobicDigester.Enabled) count++;
+            if (CourseSeparator.Enabled) count++;
+            if (FineSeparator.Enabled) count++;
+            if (NutrientRecovery.Enabled) count++;
+
+            return count;
+        }
+        public int GetCountManureStorage()
+        {
+            int numSep = GetCountManureSeparator();
+            
+            // We have lagoon plus a storage inbetween each separator
+            int count = numSep > 0 ? numSep : 0;
+            return count;
         }
     }
 }

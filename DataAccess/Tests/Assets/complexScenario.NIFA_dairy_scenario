@@ -47,6 +47,13 @@ style=anaerobic digester
 source_facility=barn
 liquid_facility=AD tank
 solids_facility=<off-site>
+[manure_storage:1]
+ID=AD tank
+enable=true
+style=tank
+fresh_manure=true
+surface_area=10000
+volume_max=16000
 [manure_separator:2]
 ID=course sep
 enable=true
@@ -54,6 +61,13 @@ style=fiber separator
 source_facility=AD tank
 liquid_facility=CS tank
 solids_facility=<off-site>
+[manure_storage:2]
+ID=CS tank
+enable=true
+style=tank
+fresh_manure=true
+surface_area=10000
+volume_max=16000
 [manure_separator:3]
 ID=fine sep
 enable=true
@@ -61,6 +75,13 @@ style=dissolved air flotation
 source_facility=CS tank
 liquid_facility=FS tank
 solids_facility=<off-site>
+[manure_storage:3]
+ID=FS tank
+enable=true
+style=tank
+fresh_manure=true
+surface_area=10000
+volume_max=16000
 [manure_separator:4]
 ID=nut rec
 enable=true
@@ -68,42 +89,13 @@ style=ammonia stripper
 source_facility=FS tank
 liquid_facility=lagoon
 solids_facility=<off-site>
-[manure_storage:1]
-ID=AD tank
-enable=true
-style=tank
-fresh_manure=true
-surface_area=10000.00  Area of the flat surface
-surface_area_units=
-volume_max=16000.00  Capacity
-volume_max_units=
-[manure_storage:2]
-ID=CS tank
-enable=true
-style=tank
-fresh_manure=true
-surface_area=10000.00  Area of the flat surface
-surface_area_units=
-volume_max=16000.00  Capacity
-volume_max_units=
-[manure_storage:3]
-ID=FS tank
-enable=true
-style=tank
-fresh_manure=true
-surface_area=10000.00  Area of the flat surface
-surface_area_units=
-volume_max=16000.00  Capacity
-volume_max_units=
 [manure_storage:4]
 ID=lagoon
 enable=true
 style=lagoon_aerobic
 fresh_manure=true
-surface_area=38250.0  Area of the flat surface
-surface_area_units=
-volume_max=153000.0  Capacity
-volume_max_units=
+surface_area=38250
+volume_max=153000
 pH=8.5
 [receive_off_farm_biomass:1]
 ID=init_lagoon
@@ -126,7 +118,7 @@ potassium_inorganic_kg=2050.08
 potassium_organic_kg=0
 decomposition_constant_fast=0.254867
 decomposition_constant_slow=0.015624
-decomposition_constant_resilient=2.74e-6
+decomposition_constant_resilient=2.74E-06
 [fertigation_management]
 enable=true
 application_method=surface_broadcast_no_incorporation
@@ -135,7 +127,7 @@ application_date=2015365
 removal=90
 num_days_to_repeat=365
 from_storage=lagoon
-to_field=corn
+to_field=field
 [fertigation:1]
 enable=true
 application_method=surface_broadcast_no_incorporation
@@ -143,4 +135,4 @@ ID=fert2015365
 application_date=2015365
 removal=90
 from_storage=lagoon
-to_field=corn
+to_field=field

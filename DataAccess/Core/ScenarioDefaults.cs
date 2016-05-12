@@ -81,8 +81,8 @@ namespace Wsu.DairyCafo.DataAccess.Core
                 { "enable", "true" },
                 { "style", "tank" },
                 { "fresh_manure", "true" },
-                { "surface_area", "10000.0" },
-                { "volume_max", "16000.0" }
+                { "surface_area", "10000" },
+                { "volume_max", "16000" }
             };
 
             return d;
