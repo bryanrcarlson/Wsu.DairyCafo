@@ -124,11 +124,12 @@ namespace Wsu.DairyCafo.DataAccess.Tests.Helpers
                 {
                     Id = "fert-management",
                     Enabled = true,
+                    ApplicationMethod = "surface_broadcast_no_incorporation",
                     ApplicationDate_date = new DateTime(2015, 12, 31),
                     AmountRemoved_percent = 90,
                     Repetition_d = 365,
                     SourceFacility_id = "lagoon",
-                    TargetField_id = "corn"
+                    TargetField_id = "field"
                 },
                 Cow = new Cow()
                 {
@@ -159,7 +160,7 @@ namespace Wsu.DairyCafo.DataAccess.Tests.Helpers
             Scenario s = new Scenario()
             {
                 DetailsUrl = @"http://foo.io",
-                Description = "This is just a test",
+                Description = "",
                 PathToWeatherFile = @"D:\WsuData\NIFA\Simulation\Database\Weather\paterson.UED",
                 StartDate = new DateTime(1979, 1, 1),
                 StopDate = new DateTime(1979, 12, 31),
@@ -167,6 +168,20 @@ namespace Wsu.DairyCafo.DataAccess.Tests.Helpers
                 SimulationPeriodMode = "multiyear",
                 IrrigationPumpModel = "",
                 ParameterizedScenario = 1,
+                Cow = new Cow()
+                {
+                    Id = "herd",
+                    Enabled = true,
+                    BodyMass_kg = 635,
+                    DryMatterIntake_kg_d = 24,
+                    MilkProduction_kg_d = 34,
+                    CrudeProteinDiet_percent = 17.6,
+                    StarchDiet_percent = 12.83,
+                    AcidDetergentFiberDiet_percent = 26.08,
+                    IsLactating = true,
+                    MetabolizableEnergyDiet_MJ_d = 150,
+                    PhManure_mol_L = 8
+                },
                 Barn = new Barn()
                 {
                     Id = "barn",
@@ -257,25 +272,12 @@ namespace Wsu.DairyCafo.DataAccess.Tests.Helpers
                 {
                     Id = "fert-management",
                     Enabled = false,
+                    ApplicationMethod = "surface_broadcast_no_incorporation",
                     ApplicationDate_date = new DateTime(2015, 12, 31),
                     AmountRemoved_percent = 90,
                     Repetition_d = 365,
                     SourceFacility_id = "lagoon",
-                    TargetField_id = "corn"
-                },
-                Cow = new Cow()
-                {
-                    Id = "herd",
-                    Enabled = true,
-                    BodyMass_kg = 635,
-                    DryMatterIntake_kg_d = 24,
-                    MilkProduction_kg_d = 34,
-                    CrudeProteinDiet_percent = 17.6,
-                    StarchDiet_percent = 0.0,
-                    AcidDetergentFiberDiet_percent = 0,
-                    IsLactating = true,
-                    MetabolizableEnergyDiet_MJ_d = 150,
-                    PhManure_mol_L = 8
+                    TargetField_id = "field"
                 },
                 Field = new Field()
                 {

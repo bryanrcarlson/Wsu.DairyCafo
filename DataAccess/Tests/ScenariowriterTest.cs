@@ -38,7 +38,7 @@ namespace Wsu.DairyCafo.DataAccess.Tests
         }
 
         [TestMethod]
-        public void Write_ValidScenario_WritesAllValues()
+        public void Write_ComplexScenario_WritesAllValues()
         {
             // Arrange
             var i = new Injector();
@@ -59,6 +59,30 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             bool filesMatch = checkFilesMatch(
                 Path.Combine(scenDirPath, ".NIFA_dairy_scenario").ToString(),
                 @"Assets\complexScenario.NIFA_dairy_scenario");
+            Assert.IsTrue(filesMatch);
+        }
+        [TestMethod]
+        public void Write_SimpleScenario_WritesAllValues()
+        {
+            // Arrange
+            var i = new Injector();
+            var s = i.GetSimpleScenario();
+
+            Directory.CreateDirectory(scenDirPath);
+
+            var field = new ScenarioFile();
+            var dairy = new ScenarioFile();
+            var scenDefaults = new ScenarioDefaults();
+
+            var sut = new ScenarioWriter(dairy, field, scenDefaults);
+
+            // Act
+            sut.Write(s, scenDirPath);
+
+            // Assert
+            bool filesMatch = checkFilesMatch(
+                Path.Combine(scenDirPath, ".NIFA_dairy_scenario").ToString(),
+                @"Assets\simpleScenario.NIFA_dairy_scenario");
             Assert.IsTrue(filesMatch);
         }
 

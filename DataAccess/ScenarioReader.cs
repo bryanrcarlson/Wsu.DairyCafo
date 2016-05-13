@@ -313,6 +313,8 @@ namespace Wsu.DairyCafo.DataAccess
             string sect = "fertigation_management";
             string id = dDp.GetValue(sect, "ID");
             string enabled = dDp.GetValueOnly(sect, "enable");
+            string applicationMethod 
+                = dDp.GetValueOnly(sect, "application_method");
             string date_string = dDp.GetValueOnly(sect, "application_date");
 
             
@@ -325,6 +327,7 @@ namespace Wsu.DairyCafo.DataAccess
             {
                 Id = id,
                 Enabled = Convert.ToBoolean(enabled),
+                ApplicationMethod = applicationMethod,
                 ApplicationDate_date = !String.IsNullOrEmpty(date_string)
                     ? parseDateFromIniFile(date_string)
                     : DateTime.Now,

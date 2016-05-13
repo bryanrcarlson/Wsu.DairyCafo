@@ -189,36 +189,40 @@ namespace Wsu.DairyCafo.DataAccess
         }
         private int writeReceiveOffFarmBiomass(Scenario s)
         {
-            var vals = new Dictionary<string, string>();
-            vals.Add("ID", s.ReceiveOffFarmBiomass.Id);
-            vals.Add("enable", s.ReceiveOffFarmBiomass.Enabled.ToString().ToLower());
-            // Determine application date -- assume DateTime.Min means 0
-            if (s.ReceiveOffFarmBiomass.ApplicationDate == DateTime.MinValue)
-                vals.Add("application_date", "0");
-            else
-                vals.Add("application_date", getYYYYDOYString(s.ReceiveOffFarmBiomass.ApplicationDate));
-            vals.Add("destination_facility_ID", s.ReceiveOffFarmBiomass.DestinationFacilityID);
-            vals.Add("mass", s.ReceiveOffFarmBiomass.Biomatter.Mass_kg.ToString());
-            vals.Add("biomatter", s.ReceiveOffFarmBiomass.BiomatterLabel);
-            vals.Add("h2o_kg", s.ReceiveOffFarmBiomass.Biomatter.H2o_kg.ToString());
-            vals.Add("nitrogen_urea_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenUrea_kg.ToString());
-            vals.Add("nitrogen_ammonical_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenAmmonical_kg.ToString());
-            vals.Add("nitrogen_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenOrganic_kg.ToString());
-            vals.Add("carbon_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonInorganic_kg.ToString());
-            vals.Add("carbon_organic_fast_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicFast_kg.ToString());
-            vals.Add("carbon_organic_slow_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicSlow_kg.ToString());
-            vals.Add("carbon_organic_resilient_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicResilient_kg.ToString());
-            vals.Add("phosphorus_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.PhosphorusInorganic_kg.ToString());
-            vals.Add("phosphorus_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.PhosphorusOrganic_kg.ToString());
-            vals.Add("potassium_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.PotassiumInorganic_kg.ToString());
-            vals.Add("potassium_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.PotassiumOrganic_kg.ToString());
-            vals.Add("decomposition_constant_fast", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantFast.ToString());
-            vals.Add("decomposition_constant_slow", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantSlow.ToString());
-            vals.Add("decomposition_constant_resilient", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantResilient.ToString());
+            if (s.ReceiveOffFarmBiomass.Enabled)
+            {
+                var vals = new Dictionary<string, string>();
+                vals.Add("ID", s.ReceiveOffFarmBiomass.Id);
+                vals.Add("enable", s.ReceiveOffFarmBiomass.Enabled.ToString().ToLower());
+                // Determine application date -- assume DateTime.Min means 0
+                if (s.ReceiveOffFarmBiomass.ApplicationDate == DateTime.MinValue)
+                    vals.Add("application_date", "0");
+                else
+                    vals.Add("application_date", getYYYYDOYString(s.ReceiveOffFarmBiomass.ApplicationDate));
+                vals.Add("destination_facility_ID", s.ReceiveOffFarmBiomass.DestinationFacilityID);
+                vals.Add("mass", s.ReceiveOffFarmBiomass.Biomatter.Mass_kg.ToString());
+                vals.Add("biomatter", s.ReceiveOffFarmBiomass.BiomatterLabel);
+                vals.Add("h2o_kg", s.ReceiveOffFarmBiomass.Biomatter.H2o_kg.ToString());
+                vals.Add("nitrogen_urea_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenUrea_kg.ToString());
+                vals.Add("nitrogen_ammonical_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenAmmonical_kg.ToString());
+                vals.Add("nitrogen_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.NitrogenOrganic_kg.ToString());
+                vals.Add("carbon_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonInorganic_kg.ToString());
+                vals.Add("carbon_organic_fast_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicFast_kg.ToString());
+                vals.Add("carbon_organic_slow_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicSlow_kg.ToString());
+                vals.Add("carbon_organic_resilient_kg", s.ReceiveOffFarmBiomass.Biomatter.CarbonOrganicResilient_kg.ToString());
+                vals.Add("phosphorus_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.PhosphorusInorganic_kg.ToString());
+                vals.Add("phosphorus_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.PhosphorusOrganic_kg.ToString());
+                vals.Add("potassium_inorganic_kg", s.ReceiveOffFarmBiomass.Biomatter.PotassiumInorganic_kg.ToString());
+                vals.Add("potassium_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.PotassiumOrganic_kg.ToString());
+                vals.Add("decomposition_constant_fast", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantFast.ToString());
+                vals.Add("decomposition_constant_slow", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantSlow.ToString());
+                vals.Add("decomposition_constant_resilient", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantResilient.ToString());
 
-            dDp.SetSection("receive_off_farm_biomass:1", vals);
+                dDp.SetSection("receive_off_farm_biomass:1", vals);
 
-            return s.ReceiveOffFarmBiomass.Enabled ? 1 : 0;
+                return 1;
+            }
+            else { return 0;  }
         }
         private int writeSeparatorsAndStorage(Scenario s)
         {
@@ -292,8 +296,11 @@ namespace Wsu.DairyCafo.DataAccess
         private void writeFertigationManagement(Scenario s)
         {
             // Write fert management (unique to this application)
-            var vals = defaults.GetFertigationDefaults();
-            vals.Add("ID", "fert-management");
+            //var vals = defaults.GetFertigationDefaults();
+            var vals = new Dictionary<string, string>();
+            vals.Add("ID", s.Fertigation.Id);
+            vals.Add("enable", s.Fertigation.Enabled.ToString().ToLower());
+            vals.Add("application_method", s.Fertigation.ApplicationMethod);
             vals.Add("application_date",
                 getYYYYDOYString(s.Fertigation.ApplicationDate_date));
             vals.Add("removal", s.Fertigation.AmountRemoved_percent.ToString());
@@ -352,9 +359,12 @@ namespace Wsu.DairyCafo.DataAccess
         {
             string sect = "fertigation:" + IdCount.ToString();
 
-            var vals = defaults.GetFertigationDefaults();
+            //var vals = defaults.GetFertigationDefaults();
+            var vals = new Dictionary<string, string>();
             vals.Add("ID", "fert" + date);
-            vals.Add("application_date", date);
+            vals.Add("enable", f.Enabled.ToString().ToLower());
+            vals.Add("application_method", f.ApplicationMethod);
+            vals.Add("application_date", date);        
             vals.Add("removal", f.AmountRemoved_percent.ToString());
             vals.Add("from_storage", f.SourceFacility_id);
             vals.Add("to_field", f.TargetField_id);
