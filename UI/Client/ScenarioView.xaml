@@ -30,7 +30,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
+                            <!--<RowDefinition Height="Auto" />-->
                         </Grid.RowDefinitions>
 
                         <!-- Header -->
@@ -77,7 +77,7 @@
                         </Grid>
 
                         <!-- Dates -->
-                        <TextBlock Grid.Row="2">Simulation year</TextBlock>
+                        <!--<TextBlock Grid.Row="2">Simulation year</TextBlock>
                         <TextBox Name="txtScenarioYear"
                              Grid.Row="2" 
                              Grid.Column="1" 
@@ -86,7 +86,7 @@
                              VerticalAlignment="Top"
                              Text="{Binding Path=SimulationYear,
                                 UpdateSourceTrigger=PropertyChanged}"/>
-                        <!--<TextBlock Grid.Row="2">Start Date:</TextBlock>
+                        <TextBlock Grid.Row="2">Start Date:</TextBlock>
                         <DatePicker Name="dateScenarioStartDate" 
                                 Grid.Row="2" 
                                 Grid.Column="1" 
@@ -144,7 +144,10 @@
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
-                                <!--<ToggleSwitch Grid.Column="1"  />-->
+                                <!--<CheckBox Name="cbxCowEnabled"
+                                          Grid.Column="1"
+                                          IsChecked="{Binding Path=CowEnabled}"
+                                          IsHitTestVisible="False"/>-->
                             </Grid>
                         </Border>
 
@@ -156,8 +159,7 @@
                              InputScope="Number" 
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CowBodyMass, 
-                                UpdateSourceTrigger=PropertyChanged}"
+                             Text="{Binding Path=CowBodyMass}"
                              />
 
                         <!-- Dry matter intake -->
@@ -168,8 +170,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CowDryMatterIntake, 
-                                UpdateSourceTrigger=PropertyChanged}"
+                             Text="{Binding Path=CowDryMatterIntake}"
                              />
                         
                         <TextBlock Grid.Row="3">Milk production (kg/d):</TextBlock>
@@ -179,8 +180,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CowMilkProduction, 
-                                UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding Path=CowMilkProduction}" />
 
                         <TextBlock Grid.Row="4">Crude protein in diet (%):</TextBlock>
                         <TextBox Name="txtCowCrudeProteinDiet"
@@ -189,8 +189,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CowCrudeProteinDiet, 
-                                UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding Path=CowCrudeProteinDiet}" />
 
                         <TextBlock Grid.Row="5">Starch in diet (%):</TextBlock>
                         <TextBox Name="txtStarchDiet_percent"
@@ -199,8 +198,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=StarchDiet_percent, 
-                                UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding Path=StarchDiet_percent}" />
 
                         <TextBlock Grid.Row="6">Acid detergent fiber in diet (%):</TextBlock>
                         <TextBox Name="txtAcidDetergentFiberDiet_percent"
@@ -209,8 +207,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=AcidDetergentFiberDiet_percent, 
-                                UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding Path=AcidDetergentFiberDiet_percent}" />
 
                         <TextBlock Grid.Row="7">Metabolizable energy in diet (MJ/d):</TextBlock>
                         <TextBox Name="txtMetabolizableEnergyDiet_MJ_d"
@@ -219,18 +216,16 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=MetabolizableEnergyDiet_MJ_d, 
-                                UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding Path=MetabolizableEnergyDiet_MJ_d}" />
 
-                        <TextBlock Grid.Row="8">PH of manure (mol/L):</TextBlock>
+                        <TextBlock Grid.Row="8">pH of manure (mol/L):</TextBlock>
                         <TextBox Name="txtPhManure_mol_L"
                              Grid.Row="8" 
                              Grid.Column="1" 
-                             InputScope="Number"
+                             InputScope="Digits"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=PhManure_mol_L, 
-                                UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding Path=PhManure_mol_L}" />
                     </Grid>
                     <!--#endregion Cow -->
 
@@ -268,7 +263,10 @@
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
-                                <!--<ToggleSwitch Grid.Column="1"  />-->
+                                <!--<CheckBox Name="cbxBarnEnabled"
+                                          Grid.Column="1"
+                                          IsChecked="{Binding Path=BarnEnabled}"
+                                          IsHitTestVisible="False"/>-->
                             </Grid>
                         </Border>
 
@@ -280,8 +278,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=BarnManureAlleyArea, 
-                                UpdateSourceTrigger=PropertyChanged}"/>
+                             Text="{Binding Path=BarnManureAlleyArea}"/>
 
                         <!-- Cow num -->
                         <TextBlock Grid.Row="2">Number of cows (cnt):</TextBlock>
@@ -291,8 +288,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=BarnNumberCows, 
-                                UpdateSourceTrigger=PropertyChanged}"/>
+                             Text="{Binding Path=BarnNumberCows}"/>
 
                         <!-- Cleaning freq -->
                         <TextBlock Grid.Row="3">Cleaning frequency (cnt/day):</TextBlock>
@@ -302,8 +298,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=CleaningFrequency, 
-                                UpdateSourceTrigger=PropertyChanged}"/>
+                             Text="{Binding Path=CleaningFrequency}"/>
                     </Grid>
                     <!--#endregion Barn -->
 
@@ -510,8 +505,7 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=LagoonSurfaceArea, 
-                                UpdateSourceTrigger=PropertyChanged}"/>
+                             Text="{Binding Path=LagoonSurfaceArea}"/>
 
                         <!-- Max Volume -->
                         <TextBlock Grid.Row="2">Max volume (m3):</TextBlock>
@@ -521,10 +515,9 @@
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=LagoonVolumeMax, 
-                                UpdateSourceTrigger=PropertyChanged}"/>
+                             Text="{Binding Path=LagoonVolumeMax}"/>
 
-                        <TextBlock Grid.Row="3">PH of manure entering (mol/L):</TextBlock>
+                        <TextBlock Grid.Row="3">pH of manure entering (mol/L):</TextBlock>
                         <TextBox Name="txtPH_mol_L" 
                              Grid.Row="3" 
                              Grid.Column="1" 
@@ -592,8 +585,7 @@
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
                             VerticalAlignment="Top"
-                            Text="{Binding Path=FertigationAmnt, 
-                                UpdateSourceTrigger=PropertyChanged}"/>
+                            Text="{Binding Path=FertigationAmnt}"/>
                         <!-- Repetition -->
                         <TextBlock Grid.Row="3">Repeats every (days):</TextBlock>
                         <TextBox Name="txtRepetition" 
@@ -602,8 +594,7 @@
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
                             VerticalAlignment="Top"
-                            Text="{Binding Path=FertigationRepetition, 
-                                UpdateSourceTrigger=PropertyChanged}"/>
+                            Text="{Binding Path=FertigationRepetition}"/>
                     </Grid>
                     <!--#endregion -->
                     <!--#region Field -->
@@ -651,8 +642,7 @@
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
                             VerticalAlignment="Top"
-                            Text="{Binding Path=FieldArea, 
-                                UpdateSourceTrigger=PropertyChanged}"/>
+                            Text="{Binding Path=FieldArea}"/>
                     </Grid>
                     <!--#endregion -->
 
@@ -670,7 +660,8 @@
             </Grid.RowDefinitions>
             <Menu Grid.Row="0" 
                   FontSize="15"
-                  Width="{StaticResource WindowWidth}">
+                  Width="{StaticResource WindowWidth}"
+                  FocusManager.IsFocusScope="False">
                 <MenuItem Header="_File">
                     <MenuItem Header="_New"
                               Command="{Binding NewScenarioCommand}"/>

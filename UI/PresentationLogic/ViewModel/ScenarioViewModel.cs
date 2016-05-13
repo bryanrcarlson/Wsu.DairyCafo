@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using Wsu.IO.Core;
 using Wsu.IO.Runner;
 using System.IO;
+using System.Windows.Data;
 
 namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
 {
@@ -119,7 +120,8 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             {
                 currentWorkingDir = new DirectoryInfo(Path.GetDirectoryName(filePath));
 
-                CurrentScenario = new ScenarioModel(new Scenario());
+                CurrentScenario = new ScenarioModel(
+                    new DefaultScenario().s);
 
                 // Create directory structure
                 try
