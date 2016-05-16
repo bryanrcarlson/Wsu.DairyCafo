@@ -86,5 +86,52 @@ namespace Wsu.DairyCafo.DataAccess.Dto
             this.Field = new Field();
             this.ReceiveOffFarmBiomass = new ReceiveOffFarmBiomass();
         }
+        public int GetCountBarn()
+        {
+            return Barn.Enabled ? 1 : 0;
+        }
+        public int GetCountCow()
+        {
+            return Cow.Enabled ? 1 : 0;
+        }
+        public int GetCountManureSeparator()
+        {
+            int count = 0;
+            if (AnaerobicDigester.Enabled) count++;
+            if (CourseSeparator.Enabled) count++;
+            if (FineSeparator.Enabled) count++;
+            if (NutrientRecovery.Enabled) count++;
+
+            return count;
+        }
+        public int GetCountManureStorage()
+        {
+            int numSep = GetCountManureSeparator();
+            
+            // We have lagoon plus a storage inbetween each separator
+            int count = numSep > 0 ? numSep : 0;
+            return count;
+        }
+        public int GetCountReceiveOffFarmBiomass()
+        {
+            return ReceiveOffFarmBiomass.Enabled ? 1 : 0;
+        }
+        public int GetCountFertigation()
+        {
+            if(!Fertigation.Enabled)
+            {
+                return 0;
+            }
+
+            int count = 1;
+
+            int numDays = (StopDate - StartDate).Days + 1;
+            if (Fertigation.Repetition_d > 0)
+            {
+                count = numDays / Fertigation.Repetition_d;
+            }
+
+            return count;
+        }
     }
 }

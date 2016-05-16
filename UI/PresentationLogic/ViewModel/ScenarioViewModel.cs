@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using Wsu.IO.Core;
 using Wsu.IO.Runner;
 using System.IO;
+using System.Windows.Data;
 
 namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
 {
@@ -119,8 +120,20 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             {
                 currentWorkingDir = new DirectoryInfo(Path.GetDirectoryName(filePath));
 
-                CurrentScenario = new ScenarioModel(new Scenario());
+                CurrentScenario = new ScenarioModel(
+                    new DefaultScenario().s);
 
+                // Create directory structure
+                try
+                {
+                    writer.SetupDir(filePath);
+                }
+                catch(InvalidOperationException e)
+                {
+                    System.Windows.MessageBox.Show(e.Message);
+                }
+
+                // Create new scenario files and load
                 try
                 {
                     writer.Write(CurrentScenario.GetScenario(), filePath);
@@ -149,20 +162,22 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 {
                     System.Windows.MessageBox.Show(e.Message);
                 }
-                    Scenario s = reader.Parse();
 
-                    ScenarioModel sm = new ScenarioModel(s);
+                Scenario s = reader.Parse();
 
-                    CurrentScenario = sm;
-            }
-            
+                ScenarioModel sm = new ScenarioModel(s);
+
+                CurrentScenario = sm;
+            } 
         }
         private void saveScenario()
         {
             try
             {
                 writer.Write(this.currentScenario.GetScenario());
-                writer.WriteField(this.currentScenario.GetScenario());
+                if(currentScenario.FieldEnabled)
+                    writer.WriteField(this.currentScenario.GetScenario());
+                System.Windows.MessageBox.Show("File saved.");
             }
             catch(Exception e)
             {

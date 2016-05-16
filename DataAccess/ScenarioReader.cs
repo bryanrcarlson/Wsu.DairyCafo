@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Wsu.DairyCafo.DataAccess.Core;
 using Wsu.DairyCafo.DataAccess.Dto;
@@ -32,25 +33,18 @@ namespace Wsu.DairyCafo.DataAccess
         /// <exception cref="ArgumentException">Cannot find/load CafoDairy scenario</exception>
         public void Load(string filePath)
         {
-            if(!dDp.Load(filePath))
+            bool didLoad = dDp.Load(filePath);
+            if (!didLoad)
             {
                 throw new ArgumentException("File path not valid");
             }
-            if(!String.IsNullOrEmpty(dDp.LoadedPath))
+
+            if (!String.IsNullOrEmpty(dDp.LoadedPath))
             {
                 // Load Field scenario
                 string dairyDir = Path.GetDirectoryName(filePath);
                 string fieldDir = Path.Combine(dairyDir, fieldDirName);
 
-                //TODO: Create a FieldsDirectory (or name it more generic?) class that
-                //has the following functions.  Ultimatly, should only return
-                //a string to be used to set/load fDp.
-//                if(!Directory.Exists(fieldDir))
-//                {
-//                    //Directory.CreateDirectory(fieldDir);
-//                    throw new NullReferenceException("Directory \"" +
-//                        fieldDirName + "\" does not exist so we created one for you.  Please add a dir with a CropSyst scenario to it.");
-//                }
                 if(Directory.Exists(fieldDir))
                 {
                     string[] fields = Directory.GetDirectories(fieldDir);
@@ -62,16 +56,7 @@ namespace Wsu.DairyCafo.DataAccess
                         fDp.Load(fieldFile);
                     }
                 }
-//                string[] fields = Directory.GetDirectories(fieldDir);
-//
-//                if(fields.Length > 0)
-//                {
-//                    // Currently only supporting one field
-//                    string fieldFile = Path.Combine(fields[0], ".CropSyst_scenario");
-//                    fDp.Load(fieldFile);
-//                }
             }
-            
         }
         public Scenario Parse()
         {
@@ -229,7 +214,7 @@ namespace Wsu.DairyCafo.DataAccess
                 string decomposition_constant_slow = 
                     dDp.GetValueOnly(sect, "decomposition_constant_slow");
                 string decomposition_constant_resilient = 
-                    dDp.GetValueOnly(sect, "IDdecomposition_constant_resilient");
+                    dDp.GetValueOnly(sect, "decomposition_constant_resilient");
 
                 Biomatter manure = new Biomatter()
                 {
@@ -313,6 +298,8 @@ namespace Wsu.DairyCafo.DataAccess
             string sect = "fertigation_management";
             string id = dDp.GetValue(sect, "ID");
             string enabled = dDp.GetValueOnly(sect, "enable");
+            string applicationMethod 
+                = dDp.GetValueOnly(sect, "application_method");
             string date_string = dDp.GetValueOnly(sect, "application_date");
 
             
@@ -325,6 +312,7 @@ namespace Wsu.DairyCafo.DataAccess
             {
                 Id = id,
                 Enabled = Convert.ToBoolean(enabled),
+                ApplicationMethod = applicationMethod,
                 ApplicationDate_date = !String.IsNullOrEmpty(date_string)
                     ? parseDateFromIniFile(date_string)
                     : DateTime.Now,

@@ -8,6 +8,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
 {
     public class Fertigation : Entity
     {
+        public string ApplicationMethod { get; set; }
         public DateTime ApplicationDate_date { get; set; }
         public double AmountRemoved_percent { get; set; }
         public string SourceFacility_id { get; set; }
@@ -15,6 +16,5 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public int Repetition_d { get; set; }
 
         // removal_units
-        // application_method
     }
 }

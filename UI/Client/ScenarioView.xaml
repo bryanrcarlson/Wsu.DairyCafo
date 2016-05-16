@@ -8,6 +8,8 @@
     <System:Double x:Key="InputHeight">30</System:Double>
     <System:Double x:Key="WindowWidth">500</System:Double>
 
+    <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    
     <DataTemplate DataType="{x:Type model:ScenarioModel}">
         <Grid>
             <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -28,7 +30,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
+                            <!--<RowDefinition Height="Auto" />-->
                         </Grid.RowDefinitions>
 
                         <!-- Header -->
@@ -75,15 +77,16 @@
                         </Grid>
 
                         <!-- Dates -->
-                        <TextBlock Grid.Row="2">Simulation year</TextBlock>
+                        <!--<TextBlock Grid.Row="2">Simulation year</TextBlock>
                         <TextBox Name="txtScenarioYear"
                              Grid.Row="2" 
                              Grid.Column="1" 
                              InputScope="Number" 
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=SimulationYear}"/>
-                        <!--<TextBlock Grid.Row="2">Start Date:</TextBlock>
+                             Text="{Binding Path=SimulationYear,
+                                UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Row="2">Start Date:</TextBlock>
                         <DatePicker Name="dateScenarioStartDate" 
                                 Grid.Row="2" 
                                 Grid.Column="1" 
@@ -141,7 +144,10 @@
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
-                                <!--<ToggleSwitch Grid.Column="1"  />-->
+                                <!--<CheckBox Name="cbxCowEnabled"
+                                          Grid.Column="1"
+                                          IsChecked="{Binding Path=CowEnabled}"
+                                          IsHitTestVisible="False"/>-->
                             </Grid>
                         </Border>
 
@@ -212,11 +218,11 @@
                              VerticalAlignment="Top"
                              Text="{Binding Path=MetabolizableEnergyDiet_MJ_d}" />
 
-                        <TextBlock Grid.Row="8">PH of manure (mol/L):</TextBlock>
+                        <TextBlock Grid.Row="8">pH of manure (mol/L):</TextBlock>
                         <TextBox Name="txtPhManure_mol_L"
                              Grid.Row="8" 
                              Grid.Column="1" 
-                             InputScope="Number"
+                             InputScope="Digits"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
                              Text="{Binding Path=PhManure_mol_L}" />
@@ -257,7 +263,10 @@
                                    FontSize="{StaticResource H1FontSize}"
                                    VerticalAlignment="Bottom"
                                    Padding="0,0,0,5"/>
-                                <!--<ToggleSwitch Grid.Column="1"  />-->
+                                <!--<CheckBox Name="cbxBarnEnabled"
+                                          Grid.Column="1"
+                                          IsChecked="{Binding Path=BarnEnabled}"
+                                          IsHitTestVisible="False"/>-->
                             </Grid>
                         </Border>
 
@@ -508,14 +517,15 @@
                              VerticalAlignment="Top"
                              Text="{Binding Path=LagoonVolumeMax}"/>
 
-                        <TextBlock Grid.Row="3">PH of manure entering (mol/L):</TextBlock>
+                        <TextBlock Grid.Row="3">pH of manure entering (mol/L):</TextBlock>
                         <TextBox Name="txtPH_mol_L" 
                              Grid.Row="3" 
                              Grid.Column="1" 
                              InputScope="Number"
                              Height="{StaticResource InputHeight}" 
                              VerticalAlignment="Top"
-                             Text="{Binding Path=PH_mol_L}"/>
+                             Text="{Binding Path=PH_mol_L, 
+                                UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <!--#endregion -->
 
@@ -650,7 +660,8 @@
             </Grid.RowDefinitions>
             <Menu Grid.Row="0" 
                   FontSize="15"
-                  Width="{StaticResource WindowWidth}">
+                  Width="{StaticResource WindowWidth}"
+                  FocusManager.IsFocusScope="False">
                 <MenuItem Header="_File">
                     <MenuItem Header="_New"
                               Command="{Binding NewScenarioCommand}"/>
