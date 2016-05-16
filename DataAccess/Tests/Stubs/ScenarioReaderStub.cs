@@ -10,6 +10,11 @@ namespace Wsu.DairyCafo.DataAccess.Tests.Stubs
 {
     public class ScenarioReaderStub : IScenarioReader
     {
+        public bool Clean()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Load(string filePath)
         {
             throw new NotImplementedException();

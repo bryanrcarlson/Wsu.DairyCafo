@@ -112,5 +112,26 @@ namespace Wsu.DairyCafo.DataAccess.Dto
             int count = numSep > 0 ? numSep : 0;
             return count;
         }
+        public int GetCountReceiveOffFarmBiomass()
+        {
+            return ReceiveOffFarmBiomass.Enabled ? 1 : 0;
+        }
+        public int GetCountFertigation()
+        {
+            if(!Fertigation.Enabled)
+            {
+                return 0;
+            }
+
+            int count = 1;
+
+            int numDays = (StopDate - StartDate).Days + 1;
+            if (Fertigation.Repetition_d > 0)
+            {
+                count = numDays / Fertigation.Repetition_d;
+            }
+
+            return count;
+        }
     }
 }

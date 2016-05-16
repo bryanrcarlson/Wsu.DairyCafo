@@ -22,6 +22,11 @@ namespace Wsu.DairyCafo.DataAccess.Tests.Stubs
             throw new NotImplementedException();
         }
 
+        public Dictionary<string, Dictionary<string, string>> Clear(string sectionName)
+        {
+            throw new NotImplementedException();
+        }
+
         public Dictionary<string, string> GetSection(string sectionName)
         {
             throw new NotImplementedException();

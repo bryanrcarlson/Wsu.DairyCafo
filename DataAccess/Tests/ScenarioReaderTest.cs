@@ -14,8 +14,8 @@ namespace Wsu.DairyCafo.DataAccess.Tests
         public void Load_InvalidPath_ThrowsException()
         {
             // Arrange
-            var field = new FalseLoadScenarioFileStub();
-            var dairy = new FalseLoadScenarioFileStub();
+            var field = new ScenarioFile();
+            var dairy = new ScenarioFile();
 
             var sut = new ScenarioReader(field, dairy);
 

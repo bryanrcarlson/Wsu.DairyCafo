@@ -162,13 +162,13 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 {
                     System.Windows.MessageBox.Show(e.Message);
                 }
-                    Scenario s = reader.Parse();
 
-                    ScenarioModel sm = new ScenarioModel(s);
+                Scenario s = reader.Parse();
 
-                    CurrentScenario = sm;
-            }
-            
+                ScenarioModel sm = new ScenarioModel(s);
+
+                CurrentScenario = sm;
+            } 
         }
         private void saveScenario()
         {
@@ -177,7 +177,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 writer.Write(this.currentScenario.GetScenario());
                 if(currentScenario.FieldEnabled)
                     writer.WriteField(this.currentScenario.GetScenario());
-                System.Windows.MessageBox.Show("File saved");
+                System.Windows.MessageBox.Show("File saved.");
             }
             catch(Exception e)
             {

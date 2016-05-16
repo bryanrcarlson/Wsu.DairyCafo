@@ -47,13 +47,6 @@ style=anaerobic digester
 source_facility=barn
 liquid_facility=AD tank
 solids_facility=<off-site>
-[manure_storage:1]
-ID=AD tank
-enable=true
-style=tank
-fresh_manure=true
-surface_area=10000
-volume_max=16000
 [manure_separator:2]
 ID=course sep
 enable=true
@@ -61,13 +54,6 @@ style=fiber separator
 source_facility=AD tank
 liquid_facility=CS tank
 solids_facility=<off-site>
-[manure_storage:2]
-ID=CS tank
-enable=true
-style=tank
-fresh_manure=true
-surface_area=10000
-volume_max=16000
 [manure_separator:3]
 ID=fine sep
 enable=true
@@ -75,13 +61,6 @@ style=dissolved air flotation
 source_facility=CS tank
 liquid_facility=FS tank
 solids_facility=<off-site>
-[manure_storage:3]
-ID=FS tank
-enable=true
-style=tank
-fresh_manure=true
-surface_area=10000
-volume_max=16000
 [manure_separator:4]
 ID=nut rec
 enable=true
@@ -89,6 +68,27 @@ style=ammonia stripper
 source_facility=FS tank
 liquid_facility=lagoon
 solids_facility=<off-site>
+[manure_storage:1]
+ID=AD tank
+enable=true
+style=tank
+fresh_manure=true
+surface_area=10000
+volume_max=16000
+[manure_storage:2]
+ID=CS tank
+enable=true
+style=tank
+fresh_manure=true
+surface_area=10000
+volume_max=16000
+[manure_storage:3]
+ID=FS tank
+enable=true
+style=tank
+fresh_manure=true
+surface_area=10000
+volume_max=16000
 [manure_storage:4]
 ID=lagoon
 enable=true
@@ -118,7 +118,7 @@ potassium_inorganic_kg=2050.08
 potassium_organic_kg=0
 decomposition_constant_fast=0.254867
 decomposition_constant_slow=0.015624
-decomposition_constant_resilient=2.74E-06
+decomposition_constant_resilient=2.74e-06
 [fertigation_management]
 ID=fert-management
 enable=true

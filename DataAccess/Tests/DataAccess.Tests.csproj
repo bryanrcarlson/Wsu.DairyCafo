@@ -62,6 +62,8 @@
     <Compile Include="Stubs\ScenarioWriterCheckFcnCalls.cs" />
     <Compile Include="Stubs\ScenarioWriterStub.cs" />
     <Compile Include="ScenarioTest.cs" />
+    <Compile Include="ScenarioFileTest.cs" />
+    <Compile Include="IntegrationTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\IO\Wsu.IO.csproj">
@@ -76,6 +78,9 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Assets\complexScenario.NIFA_dairy_scenario">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\extraManureStorageAndFertigationScenario.NIFA_dairy_scenario">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Assets\simpleScenario.NIFA_dairy_scenario">

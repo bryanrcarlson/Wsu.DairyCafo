@@ -59,68 +59,94 @@ namespace Wsu.DairyCafo.DataAccess
 
             Write(s);
         }
-        public void Write(Scenario s)
+
+        /// <summary>
+        /// Write a Wsu.DairyCafo.DataAccess.Dto.Scenario to a Dairy-CropSyst
+        /// parameter file.
+        /// <note>If file specified by Scenario exists, then overwrites values.
+        /// This function deletes all [fertigation:x] and [manure_storage:x]
+        /// sections before writing new ones.</note>
+        /// </summary>
+        /// <param name="scenario"></param>
+        public void Write(Scenario scenario)
         {
             if (String.IsNullOrEmpty(dDp.LoadedPath))
                 throw new NullReferenceException("Cannot write, no scenario file loaded");
 
-            // Clear contents
-            // TODO: do something with the backup
-            //            Dictionary<string, Dictionary<string, string>> backup =
-            //                dDp.Clear();
-            //            File.WriteAllText(dDp.LoadedPath, String.Empty);
-
-            var d = new DefaultScenario();
+            // Clear scenario file before writing
+            dDp.Clear();
+            // NOTE: Use 'clean()' if user needs custom sections defined
+            //clean();
 
             dDp.SetSection("version", defaults.GetVersionDefaults());
 
             //var sVals = defaults.GetScenarioDefaults();
             var sVals = new Dictionary<string, string>();
-            sVals.Add("details_URL", s.DetailsUrl);
-            sVals.Add("description", s.Description);
-            sVals.Add("weather", s.PathToWeatherFile.ToString());
-            sVals.Add("start_date", getYYYYDOYString(s.StartDate));
-            sVals.Add("stop_date", getYYYYDOYString(s.StopDate));
-            //TODO: replace these default values with the actual scenario values -- defaults should be set at scenario creation.  Just because the UI doesn't show some values doesn't mean the model doesn't have them!
-            sVals.Add("accumulations", d.s.Accumulations.ToString());
-            sVals.Add("simulation_period_mode", d.s.SimulationPeriodMode.ToString());
-            sVals.Add("irrigation_pump_model", d.s.IrrigationPumpModel.ToString());
-            sVals.Add("parameterized_scenario", d.s.ParameterizedScenario.ToString());
-            sVals.Add("cow_description:count", d.s.GetCountCow().ToString());
-            sVals.Add("barn:count", d.s.GetCountBarn().ToString());
-
-            writeCow(s);
-            writeBarn(s);
-            
-
-            
-            //int numSeparators = writeSeparatorsAndStorage(s);
-            writeSeparatorsAndStorage(s);
-            int numSeparators = s.GetCountManureSeparator();
-            //int numStorageTanks = numSeparators > 0 ? numSeparators : 1; // lagoon + tanks between separators
-            int numStorageTanks = s.GetCountManureStorage();
-            writeLagoon(s);
-            int numReceiveOffFarmBiomass = writeReceiveOffFarmBiomass(s);
-            writeFertigationManagement(s);
-
-            int numFertigations = writeFertigations(s);
-
-            sVals.Add("manure_separator:count", numSeparators.ToString());
-            sVals.Add("manure_storage:count", numStorageTanks.ToString());
-            sVals.Add("fertigation:count", numFertigations.ToString());
-            sVals.Add("receive_off_farm_biomass:count", numReceiveOffFarmBiomass.ToString());
-
+            sVals.Add("details_URL", scenario.DetailsUrl);
+            sVals.Add("description", scenario.Description);
+            sVals.Add("weather", scenario.PathToWeatherFile.ToString());
+            sVals.Add("start_date", getYYYYDOYString(scenario.StartDate));
+            sVals.Add("stop_date", getYYYYDOYString(scenario.StopDate));
+            sVals.Add("accumulations", scenario.Accumulations.ToString());
+            sVals.Add("simulation_period_mode", scenario.SimulationPeriodMode.ToString());
+            sVals.Add("irrigation_pump_model", scenario.IrrigationPumpModel.ToString());
+            sVals.Add("parameterized_scenario", scenario.ParameterizedScenario.ToString());
+            sVals.Add("cow_description:count", scenario.GetCountCow().ToString());
+            sVals.Add("barn:count", scenario.GetCountBarn().ToString());
+            sVals.Add("manure_separator:count", scenario.GetCountManureSeparator().ToString());
+            sVals.Add("manure_storage:count", scenario.GetCountManureStorage().ToString());
+            sVals.Add("fertigation:count", scenario.GetCountFertigation().ToString());
+            sVals.Add("receive_off_farm_biomass:count", scenario.GetCountReceiveOffFarmBiomass().ToString());
             dDp.SetSection("dairy scenario", sVals);
 
-            List<string> sectionOrder = new List<string>()
-            {
-                "version", "dairy scenario"
-            };
-            if (!dDp.Save(dDp.LoadedPath, sectionOrder))
+            writeCow(scenario);
+            writeBarn(scenario);
+            
+            writeSeparatorsAndStorage(scenario);
+            int numSeparators = scenario.GetCountManureSeparator();
+            int numStorageTanks = scenario.GetCountManureStorage();
+            writeLagoon(scenario);
+            int numReceiveOffFarmBiomass = writeReceiveOffFarmBiomass(scenario);
+            writeFertigationManagement(scenario);
+
+            int numFertigations = writeFertigations(scenario);
+ 
+            if (!dDp.Save(dDp.LoadedPath, getSectionOrder(scenario)))
             {
                 throw new OperationCanceledException("Failed to save file"); 
             }
                   
+        }
+        public bool clean()
+        {
+            // Clean [fertigation:x] and [manure_storage:x], keep lagoon
+            Dictionary<string, string> lagoon = new Dictionary<string, string>();
+
+            if (dDp.GetSection("manure_storage:1").Count > 0)
+            {
+                bool isLagoon = false;
+                int count = 1;
+
+                do
+                {
+                    string sect = "manure_storage:" + count;
+                    string ID = dDp.GetValue(sect, "ID");
+                    lagoon = dDp.GetSection(sect);
+                    if (ID == "lagoon") isLagoon = true;
+                    count++;
+                } while (!isLagoon);
+            }
+
+            // Clean
+            dDp.Clear("fertigation");
+            dDp.Clear("manure_storage");
+            dDp.Clear("manure_separator");
+
+            // Re-add lagoon
+            if (lagoon.Count > 0)
+                dDp.SetSection("manure_storage:1", lagoon);
+
+            return true;
         }
         public void WriteField(Scenario s)
         {
@@ -216,7 +242,7 @@ namespace Wsu.DairyCafo.DataAccess
                 vals.Add("potassium_organic_kg", s.ReceiveOffFarmBiomass.Biomatter.PotassiumOrganic_kg.ToString());
                 vals.Add("decomposition_constant_fast", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantFast.ToString());
                 vals.Add("decomposition_constant_slow", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantSlow.ToString());
-                vals.Add("decomposition_constant_resilient", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantResilient.ToString());
+                vals.Add("decomposition_constant_resilient", s.ReceiveOffFarmBiomass.Biomatter.DecompositionConstantResilient.ToString().ToLower());
 
                 dDp.SetSection("receive_off_farm_biomass:1", vals);
 
@@ -397,6 +423,60 @@ namespace Wsu.DairyCafo.DataAccess
                     fixedManagementPath);
 
             fDp.Save(fDp.LoadedPath);
+        }
+        //private void clearSection()
+        private List<string> getSectionOrder(Scenario s)
+        {
+            // TODO: Actually count number of sects/storage and set values manually
+            List<string> sectionOrder = new List<string>()
+            {
+                "version", "dairy scenario"
+            };
+
+            if (s.GetCountCow() > 0)
+            {
+                for (int i = 1; i <= s.GetCountCow(); i++)
+                {
+                    sectionOrder.Add("cow_description:" + i);
+                }
+            }
+            if (s.GetCountBarn() > 0)
+            {
+                for (int i = 1; i <= s.GetCountBarn(); i++)
+                {
+                    sectionOrder.Add("barn:" + i);
+                }
+            }
+            if (s.GetCountManureSeparator() > 0)
+            {
+                for (int i = 1; i <= s.GetCountManureSeparator(); i++)
+                {
+                    sectionOrder.Add("manure_separator:" + i);
+                }
+            }
+            if (s.GetCountManureStorage() > 0)
+            {
+                for (int i = 1; i <= s.GetCountManureStorage(); i++)
+                {
+                    sectionOrder.Add("manure_storage:" + i);
+                }
+            }
+            if (s.GetCountReceiveOffFarmBiomass() > 0)
+            {
+                for (int i = 1; i <= s.GetCountReceiveOffFarmBiomass(); i++)
+                {
+                    sectionOrder.Add("receive_off_farm_biomass:" + i);
+                }
+            }
+            sectionOrder.Add("fertigation_management");
+            if(s.GetCountFertigation() > 0)
+            {
+                for (int i = 1; i <= s.GetCountFertigation(); i++)
+                {
+                    sectionOrder.Add("fertigation:" + i);
+                }
+            }
+            return sectionOrder;
         }
         private SortedList<int,ManureSeparator> sortManureSeparators(Scenario s)
         {
