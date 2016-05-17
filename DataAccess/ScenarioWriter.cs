@@ -16,18 +16,24 @@ namespace Wsu.DairyCafo.DataAccess
         private readonly IScenarioFile fDp;
         private readonly IScenarioDefaults defaults;
         private readonly string fieldDirName;
+        private readonly string dairyScenarioFilename;
+        private readonly string fieldScenarioFilename;
 
         public ScenarioWriter(
             IScenarioFile dairyScenario,
             IScenarioFile cropSystScenario,
             IScenarioDefaults defaults,
-            string fieldDirName = "Fields"
+            string fieldDirName = "Fields",
+            string dairyScenarioFilename = ".NIFA_dairy_scenario",
+            string fieldScenarioFilename = ".CropSyst_scenario"
             )
         {
             this.dDp = dairyScenario;
             this.fDp = cropSystScenario;
             this.defaults = defaults;
             this.fieldDirName = fieldDirName;
+            this.dairyScenarioFilename = dairyScenarioFilename;
+            this.fieldScenarioFilename = fieldScenarioFilename;
         }
         /// <summary>
         /// Sets up a Dairy-CropSyst scenario directory
@@ -48,7 +54,7 @@ namespace Wsu.DairyCafo.DataAccess
             if (!Directory.Exists(dirPath))
                 throw new NullReferenceException("Dir does not exist");
 
-            string filePath = Path.Combine(dirPath, ".NIFA_dairy_scenario");
+            string filePath = Path.Combine(dirPath, dairyScenarioFilename);
 
             if (File.Exists(filePath))
                 throw new InvalidOperationException("File already exists, aborting");
@@ -152,6 +158,7 @@ namespace Wsu.DairyCafo.DataAccess
         {
             try
             {
+                copyField(s);
                 writeField(s);
             }
             catch (NullReferenceException e)
@@ -348,7 +355,7 @@ namespace Wsu.DairyCafo.DataAccess
             s.Fertigation.SourceFacility_id = s.Lagoon.Id;
             s.Fertigation.TargetField_id = 
                 String.IsNullOrEmpty(s.Field.Id) 
-                    ? ""
+                    ? "<off-site>"
                     : s.Field.Id;
 
             int i = 0;
@@ -397,10 +404,46 @@ namespace Wsu.DairyCafo.DataAccess
 
             dDp.SetSection(sect, vals);
         }
+        private void copyField(Scenario s)
+        {
+            if (String.IsNullOrEmpty(fDp.LoadedPath))
+                throw new NullReferenceException("Error setting up field; path not loaded");
+
+            string dirName = 
+                new DirectoryInfo(Path.GetDirectoryName(fDp.LoadedPath)).Name;
+
+            if(s.Field.Enabled && dirName != s.Field.Crop)
+            {
+                // Burn current field dir and copy a new one from templates
+                string SourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"Assets\Fields", s.Field.Crop);
+                if (!Directory.Exists(SourcePath))
+                    throw new ArgumentException("Error setting up field; specified crop does not exist");
+                string currFieldDir = Path.GetDirectoryName(fDp.LoadedPath);
+                string DestinationPath = Path.Combine(Directory.GetParent(currFieldDir).ToString(), s.Field.Crop);
+                
+                Directory.Delete(Path.GetDirectoryName(fDp.LoadedPath), true);
+                Directory.CreateDirectory(DestinationPath);
+
+                //Create all of the directories
+                foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
+                    SearchOption.AllDirectories))
+                    Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
+
+                //Copy all the files & Replaces any files with the same name
+                foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
+                    SearchOption.AllDirectories))
+                    File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
+
+                // Reload file
+                fDp.Load(Path.Combine(DestinationPath, fieldScenarioFilename));
+            }
+
+
+        }
         private void writeField(Scenario s)
         {
             if (String.IsNullOrEmpty(fDp.LoadedPath))
-                throw new NullReferenceException("Cannot write field scenario, no file loaded");
+                throw new NullReferenceException("Cannot write field scenario; no file loaded");
 
             // Delete fertigation file
             string fertPath = Path.Combine(
@@ -413,6 +456,9 @@ namespace Wsu.DairyCafo.DataAccess
 
             // Set field area
             fDp.SetValue("field", "size", s.Field.Area_ha.ToString());
+
+            // Set enabled
+            fDp.SetValue("field", "enable", s.Field.Enabled.ToString().ToLower());
 
             // Set fixed management to apply fertigation from manure storage (lagoon)
             string fixedManagementPath = "";

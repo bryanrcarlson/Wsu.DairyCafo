@@ -361,22 +361,23 @@ namespace Wsu.DairyCafo.DataAccess
                 s.Field = new Field()
                 {
                     Enabled = false,
-                    Id = ""
+                    Id = "field"
                 };
             }
             else
             {
                 string id = new DirectoryInfo(fDp.LoadedPath).Parent.ToString();
                 string area = fDp.GetValueOnly("field", "size");
-
+                string isEnabled = fDp.GetValueOnly("field", "enable");
+                if (String.IsNullOrEmpty(isEnabled)) isEnabled = "false";
                 s.Field = new Field()
                 {
                     Id = id,
-                    Enabled = true,
-                    Area_ha = Convert.ToDouble(area)
+                    Enabled = Convert.ToBoolean(isEnabled),
+                    Area_ha = Convert.ToDouble(area),
+                    Crop = id
                 };
             }
-            
         }
 
         /// <summary>
