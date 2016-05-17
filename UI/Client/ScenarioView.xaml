@@ -611,6 +611,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
                         <!-- Header -->
@@ -635,14 +636,22 @@
                         </Border>
 
                         <!-- Area -->
-                        <TextBlock Grid.Row="2">Area (ha):</TextBlock>
+                        <TextBlock Grid.Row="1">Area (ha):</TextBlock>
                         <TextBox Name="txtFieldArea" 
-                            Grid.Row="2" 
+                            Grid.Row="1" 
                             Grid.Column="1" 
                             InputScope="Number"
                             Height="{StaticResource InputHeight}" 
                             VerticalAlignment="Top"
                             Text="{Binding Path=FieldArea}"/>
+                        
+                        <!-- Crop -->
+                        <TextBlock Grid.Row="2">Crop:</TextBlock>
+                        <ComboBox Name="cbox"
+                                  Grid.Row="2"
+                                  Grid.Column="1"
+                                  ItemsSource="{Binding Path=FieldCrops}"
+                                  SelectedValue="{Binding Path=FieldCrop}"/>
                     </Grid>
                     <!--#endregion -->
 

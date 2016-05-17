@@ -105,5 +105,6 @@ namespace Wsu.DairyCafo.DataAccess
             string[] s = iniString.Split(' ');
             return s[0];
         }
+
     }
 }

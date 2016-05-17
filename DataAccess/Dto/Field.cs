@@ -9,5 +9,6 @@ namespace Wsu.DairyCafo.DataAccess.Dto
     public class Field : Entity
     {
         public double Area_ha { get; set; }
+        public string Crop { get; set; }
     }
 }

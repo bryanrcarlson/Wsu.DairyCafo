@@ -73,30 +73,6 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
             }
         }
         //== Cow
-        //public string CowId
-        //{
-        //    get { return scenario.Cow.Id; }
-        //    set
-        //    {
-        //        if (value != scenario.Cow.Id)
-        //        {
-        //            scenario.Cow.Id = value;
-        //            OnPropertyChanged("CowId");
-        //        }
-        //    }
-        //}
-        //public bool CowEnabled
-        //{
-        //    get { return scenario.Cow.Enabled; }
-        //    set
-        //    {
-        //        if (value != scenario.Cow.Enabled)
-        //        {
-        //            scenario.Cow.Enabled = value;
-        //            OnPropertyChanged("CowEnabled");
-        //        }
-        //    }
-        //}
         public double CowBodyMass
         {
             get { return scenario.Cow.BodyMass_kg; }
@@ -396,6 +372,22 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                     OnPropertyChanged("FieldEnabled");
                 }
             }
+        }
+        public string FieldCrop
+        {
+            get { return scenario.Field.Crop; }
+            set
+            {
+                if(value != scenario.Field.Crop)
+                {
+                    scenario.Field.Crop = value;
+                    OnPropertyChanged("FieldCrop");
+                }
+            }
+        }
+        public string[] FieldCrops
+        {
+            get { return new string[] { "alfalfa", "corn"  }; }
         }
         #endregion // Properties
         #region 'structors
