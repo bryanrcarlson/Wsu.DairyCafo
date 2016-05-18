@@ -190,10 +190,23 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 || String.IsNullOrEmpty(currentWorkingDir.ToString()))
                 throw new NullReferenceException("No scenario loaded");
 
+            // TODO: Change path to be in same dir
             FileInfo program = new FileInfo(@"C:\Program Files (x86)\CS_suite_4\NIFA\dairy\scenario_run.exe");
             string arguments = "\"" + currentWorkingDir.ToString() + "\"";
             if (!currentScenario.FieldEnabled)
                 arguments += " -f";
+
+            if (currentScenario.OutputEnabled)
+            {
+                // User wants output, check if Excel is installed
+                Type officeType = Type.GetTypeFromProgID("Excel.Application");
+                if (officeType == null)
+                {
+                    arguments += " -o";
+                    System.Windows.MessageBox.Show("Cannot generate output, Excel not found");
+                }
+            }
+            else { arguments += " -o"; }
 
             var runner = new ExeRunner(program);
 
