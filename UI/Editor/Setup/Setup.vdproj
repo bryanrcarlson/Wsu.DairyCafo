@@ -45,6 +45,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_30331B0A44D64BAA84752294ED95485B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5823DC58B22D46BD81A9D22B66F76822"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -93,6 +99,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BB01038EB1384A6888E08D2B9ECBA502"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
         "OwnerKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
         "MsmSig" = "8:_UNDEFINED"
@@ -112,6 +124,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C8550A0E04EC464CA6056186840867A7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D867DD38BF364B2A9859C22A8911AEB2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -335,6 +353,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_30331B0A44D64BAA84752294ED95485B"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\corn\\.CropSyst_scenario"
+            "TargetName" = "8:.CropSyst_scenario"
+            "Tag" = "8:"
+            "Folder" = "8:_B5645936662B477EA829882636B02DDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5823DC58B22D46BD81A9D22B66F76822"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\debug\\nutrients-template.xlsm"
@@ -517,6 +555,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BB01038EB1384A6888E08D2B9ECBA502"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\CS_suite_4\\CropSyst\\CropSyst_4.exe"
+            "TargetName" = "8:CropSyst_4.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BD129EAEDEDC3BE1E3425EFF40DBA067"
             {
             "AssemblyRegister" = "3:1"
@@ -568,6 +626,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D867DD38BF364B2A9859C22A8911AEB2"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\alfalfa\\.CropSyst_scenario"
+            "TargetName" = "8:.CropSyst_scenario"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5CE7A488254AB2A31BDEAD48E089FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E21E83931BBA41F1BCD07C66B0EA54D9"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\Qt5Guid.dll"
@@ -604,6 +682,50 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_39051FBF84AC4E02B76C42AD8F57C857"
+                    {
+                    "Name" = "8:Assets"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_95389B47B914436D916E69D8977AA7D7"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_49F15FE879C049809FD457FABBD7549D"
+                            {
+                            "Name" = "8:Fields"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_4DA4BDD0A36C4508BE4B9BD8F2F41477"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B5645936662B477EA829882636B02DDF"
+                                    {
+                                    "Name" = "8:corn"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_9CD8A45383464D56B4A04381AF155ED5"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_EF5CE7A488254AB2A31BDEAD48E089FB"
+                                    {
+                                    "Name" = "8:alfalfa"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_63F4FFE00FFD41C78B3D505B2B99FAA0"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_A71E1B955FF24F27B19B6B8CA90D2B96"
@@ -645,7 +767,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dairy-CropSyst"
         "ProductCode" = "8:{EBF4D12C-27B2-4DEA-A109-6E9B53D8E752}"
-        "PackageCode" = "8:{64DCB808-79A9-4948-BCEE-0FA1012CDA9C}"
+        "PackageCode" = "8:{A612130B-06E5-4256-A397-64C7509D4CD0}"
         "UpgradeCode" = "8:{FB066AC0-D7C4-49D3-856A-A93183A5C634}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

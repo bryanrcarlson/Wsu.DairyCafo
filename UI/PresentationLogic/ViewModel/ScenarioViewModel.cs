@@ -190,8 +190,15 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 || String.IsNullOrEmpty(currentWorkingDir.ToString()))
                 throw new NullReferenceException("No scenario loaded");
 
-            // TODO: Change path to be in same dir
-            FileInfo program = new FileInfo(@"C:\Program Files (x86)\CS_suite_4\NIFA\dairy\scenario_run.exe");
+            //FileInfo program = new FileInfo(@"C:\Program Files (x86)\CS_suite_4\NIFA\dairy\scenario_run.exe");
+            string appPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            FileInfo program = new FileInfo(Path.Combine(appPath, "scenario_run.exe"));
+            if (!program.Exists)
+            {
+                System.Windows.MessageBox.Show("Cannot run scenario, program not found");
+                return;
+            }
+
             string arguments = "\"" + currentWorkingDir.ToString() + "\"";
             if (!currentScenario.FieldEnabled)
                 arguments += " -f";
