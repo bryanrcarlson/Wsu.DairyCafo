@@ -724,6 +724,39 @@
                                     }
                                 }
                             }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_8FDC6FFDCFAC41A487E47BC0B055B5A7"
+                            {
+                            "Name" = "8:Database"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_019B67E961F94C5CAFEAF859002F6261"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B794B9271420404AA1D5B147BC3B5AFA"
+                                    {
+                                    "Name" = "8:Weather"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_1F0B432401624DB2AD964680ACA497CD"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F435049CB6B842A68703322C08ECA1CD"
+                                    {
+                                    "Name" = "8:Soil"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_9A524C3FF212440D8932CF05CB5F18A4"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
