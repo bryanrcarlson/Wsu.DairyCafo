@@ -91,6 +91,8 @@ namespace Wsu.DairyCafo.DataAccess
             sVals.Add("details_URL", scenario.DetailsUrl);
             sVals.Add("description", scenario.Description);
             sVals.Add("weather", scenario.PathToWeatherFile.ToString());
+            sVals.Add("latitude", scenario.Latitude.ToString());
+            sVals.Add("longitude", scenario.Longitude.ToString());
             sVals.Add("start_date", getYYYYDOYString(scenario.StartDate));
             sVals.Add("stop_date", getYYYYDOYString(scenario.StopDate));
             sVals.Add("accumulations", scenario.Accumulations.ToString());

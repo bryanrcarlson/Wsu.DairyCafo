@@ -75,7 +75,12 @@ namespace Wsu.DairyCafo.DataAccess
             s.ParameterizedScenario =
                 Convert.ToInt16(dDp.GetValueOnly("dairy scenario", 
                 "parameterized_scenario"));
-
+            s.Latitude =
+                Convert.ToDouble(dDp.GetValueOnly("dairy scenario",
+                "latitude"));
+            s.Longitude =
+                Convert.ToDouble(dDp.GetValueOnly("dairy scenario",
+                "longitude"));
             string sd = dDp.GetValueOnly("dairy scenario", "start_date");
             s.StartDate = !String.IsNullOrEmpty(sd) 
                 ? parseDateFromIniFile(sd) 

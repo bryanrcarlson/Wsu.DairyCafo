@@ -57,7 +57,9 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             Assert.AreEqual(
                 s.PathToWeatherFile, 
                 sut.PathToWeatherFile);
-            
+            Assert.AreEqual(s.Latitude, sut.Latitude);
+            Assert.AreEqual(s.Longitude, sut.Longitude);
+
             // [cow_description]
             Assert.AreEqual(s.Cow.BodyMass_kg, sut.Cow.BodyMass_kg);
             Assert.AreEqual(s.Cow.IsLactating, sut.Cow.IsLactating);
@@ -114,6 +116,8 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             Assert.AreEqual(
                 s.SimulationPeriodMode,
                 sut.SimulationPeriodMode);
+            Assert.AreEqual(s.Latitude, sut.Latitude);
+            Assert.AreEqual(s.Longitude, sut.Longitude);
 
             // [barn]
             Assert.AreEqual(s.Barn.NumberCows_cnt, sut.Barn.NumberCows_cnt);

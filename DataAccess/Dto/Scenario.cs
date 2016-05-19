@@ -42,6 +42,8 @@ namespace Wsu.DairyCafo.DataAccess.Dto
         public string Description { get; set; }
         public bool OutputEnabled { get; set; }
         public string PathToWeatherFile { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime StopDate { get; set; }
         public int Accumulations { get; set; }
