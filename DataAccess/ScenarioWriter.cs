@@ -15,6 +15,7 @@ namespace Wsu.DairyCafo.DataAccess
         private readonly IScenarioFile dDp;
         private readonly IScenarioFile fDp;
         private readonly IScenarioDefaults defaults;
+        private readonly IWeatherExtractor weatherExtractor;
         private readonly string fieldDirName;
         private readonly string dairyScenarioFilename;
         private readonly string fieldScenarioFilename;
@@ -23,6 +24,7 @@ namespace Wsu.DairyCafo.DataAccess
             IScenarioFile dairyScenario,
             IScenarioFile cropSystScenario,
             IScenarioDefaults defaults,
+            IWeatherExtractor weatherExtractor,
             string fieldDirName = "Fields",
             string dairyScenarioFilename = ".NIFA_dairy_scenario",
             string fieldScenarioFilename = ".CropSyst_scenario"
@@ -31,6 +33,7 @@ namespace Wsu.DairyCafo.DataAccess
             this.dDp = dairyScenario;
             this.fDp = cropSystScenario;
             this.defaults = defaults;
+            this.weatherExtractor = weatherExtractor;
             this.fieldDirName = fieldDirName;
             this.dairyScenarioFilename = dairyScenarioFilename;
             this.fieldScenarioFilename = fieldScenarioFilename;
@@ -124,6 +127,14 @@ namespace Wsu.DairyCafo.DataAccess
                 throw new OperationCanceledException("Failed to save file"); 
             }
                   
+        }
+        public string SetupWeather(Scenario scenario)
+        {
+            // Find current weather file
+            // Copy files from database to Fields directory if not already present
+            
+            throw new NotImplementedException();
+            return weatherExtractor.GetWeather(scenario.Latitude, scenario.Longitude);
         }
         public bool clean()
         {
@@ -439,8 +450,6 @@ namespace Wsu.DairyCafo.DataAccess
                 // Reload file
                 fDp.Load(Path.Combine(DestinationPath, fieldScenarioFilename));
             }
-
-
         }
         private void writeField(Scenario s)
         {

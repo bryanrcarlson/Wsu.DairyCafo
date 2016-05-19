@@ -26,7 +26,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         private ScenarioModel currentScenario;
         private ICommand newScenarioCommand;
         private ICommand getScenarioCommand;
-        private ICommand selectWeatherCommand;
+        //private ICommand selectWeatherCommand;
         private ICommand saveScenarioCommand;
         private ICommand runScenarioCommand;
         private DirectoryInfo currentWorkingDir;    //TODO: Clear/update this when appropiate
@@ -172,11 +172,29 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         }
         private void saveScenario()
         {
+            // Get soil and weather from lat/lon
+            try
+            {
+                double lat = currentScenario.Latitude;
+                double lon = currentScenario.Longitude;
+
+                string pathToWeather = writer.SetupWeather(currentScenario.GetScenario());
+            }
+            catch(Exception e)
+            {
+                System.Windows.MessageBox.Show(
+                    "Error getting soil and weather files, using defaults", 
+                    e.Message);
+                // Save default soil/weather
+            }
+
+            // Write scenario and field files
             try
             {
                 writer.Write(this.currentScenario.GetScenario());
                 if(currentScenario.FieldEnabled)
                     writer.WriteField(this.currentScenario.GetScenario());
+
                 System.Windows.MessageBox.Show("File saved.");
             }
             catch(Exception e)
