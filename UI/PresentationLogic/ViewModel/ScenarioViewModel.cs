@@ -81,16 +81,16 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 return saveScenarioCommand;
             }
         }
-        public ICommand SelectWeatherCommand
-        {
-            get
-            {
-                selectWeatherCommand = new RelayCommand(
-                    param => browseWeatherFileDialog()
-                );
-                return selectWeatherCommand;
-            }
-        }
+        //public ICommand SelectWeatherCommand
+        //{
+        //    get
+        //    {
+        //        selectWeatherCommand = new RelayCommand(
+        //            param => browseWeatherFileDialog()
+        //        );
+        //        return selectWeatherCommand;
+        //    }
+        //}
         public ICommand RunScenarioCommand
         {
             get
@@ -221,27 +221,27 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             
             runner.TryExecute(arguments, out exitCode);
         }
-        private void browseWeatherFileDialog()
-        {
-            // Create OpenFileDialog
-            Microsoft.Win32.OpenFileDialog dlg =
-                new Microsoft.Win32.OpenFileDialog();
+        //private void browseWeatherFileDialog()
+        //{
+        //    // Create OpenFileDialog
+        //    Microsoft.Win32.OpenFileDialog dlg =
+        //        new Microsoft.Win32.OpenFileDialog();
 
-            // Set filter
-            dlg.DefaultExt = ".UED";
-            dlg.Filter = "UED Files (*.UED)|*.UED";
+        //    // Set filter
+        //    dlg.DefaultExt = ".UED";
+        //    dlg.Filter = "UED Files (*.UED)|*.UED";
 
-            // Display dialog
-            Nullable<bool> result = dlg.ShowDialog();
+        //    // Display dialog
+        //    Nullable<bool> result = dlg.ShowDialog();
 
-            // Get selected file name and display
-            if (result == true)
-            {
-                // Open document
-                string filename = dlg.FileName;
-                CurrentScenario.PathToWeatherFile = filename;
-            }
-        }
+        //    // Get selected file name and display
+        //    if (result == true)
+        //    {
+        //        // Open document
+        //        string filename = dlg.FileName;
+        //        CurrentScenario.PathToWeatherFile = filename;
+        //    }
+        //}
         private string newScenarioDialog()
         {
             using(FolderBrowserDialog fbd = new FolderBrowserDialog())

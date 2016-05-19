@@ -31,18 +31,42 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
-        public string PathToWeatherFile
+        public double Latitude
         {
-            get { return scenario.PathToWeatherFile; }
+            get { return scenario.Latitude; }
             set
             {
-                if (value != scenario.PathToWeatherFile)
+                if (value != scenario.Latitude)
                 {
-                    scenario.PathToWeatherFile = value;
-                    OnPropertyChanged("PathToWeatherFile");
+                    scenario.Latitude = value;
+                    OnPropertyChanged("Latitude");
                 }
             }
         }
+        public double Longitude
+        {
+            get { return scenario.Longitude; }
+            set
+            {
+                if (value != scenario.Longitude)
+                {
+                    scenario.Longitude = value;
+                    OnPropertyChanged("Longitude");
+                }
+            }
+        }
+        //public string PathToWeatherFile
+        //{
+        //get { return scenario.PathToWeatherFile; }
+        //set
+        //{
+        //if (value != scenario.PathToWeatherFile)
+        //{
+        //scenario.PathToWeatherFile = value;
+        //OnPropertyChanged("PathToWeatherFile");
+        //}
+        //}
+        //}
         public int SimulationYear
         {
             get
