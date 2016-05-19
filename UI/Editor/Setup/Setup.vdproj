@@ -800,7 +800,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dairy-CropSyst"
         "ProductCode" = "8:{EBF4D12C-27B2-4DEA-A109-6E9B53D8E752}"
-        "PackageCode" = "8:{A612130B-06E5-4256-A397-64C7509D4CD0}"
+        "PackageCode" = "8:{EFFC6397-ED71-4954-99D5-F2E149297F51}"
         "UpgradeCode" = "8:{FB066AC0-D7C4-49D3-856A-A93183A5C634}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1321,7 +1321,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
             {
-            "SourcePath" = "8:..\\..\\Client\\obj\\Debug\\Wsu.DairyCafo.UI.Client.exe"
+            "SourcePath" = "8:..\\..\\Client\\obj\\Debug\\Client.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
