@@ -40,6 +40,7 @@ namespace Wsu.DairyCafo.DataAccess.Dto
     {
         public string DetailsUrl { get; set; }
         public string Description { get; set; }
+        public bool OutputEnabled { get; set; }
         public string PathToWeatherFile { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime StopDate { get; set; }

@@ -19,7 +19,18 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
         {
             return this.scenario;
         }
-
+        public bool OutputEnabled
+        {
+            get { return scenario.OutputEnabled; }
+            set
+            {
+                if (value != scenario.OutputEnabled)
+                {
+                    scenario.OutputEnabled = value;
+                    OnPropertyChanged("OutputEnabled");
+                }
+            }
+        }
         public string PathToWeatherFile
         {
             get { return scenario.PathToWeatherFile; }

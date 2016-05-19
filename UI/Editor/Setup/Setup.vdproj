@@ -45,6 +45,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_30331B0A44D64BAA84752294ED95485B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5823DC58B22D46BD81A9D22B66F76822"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -93,6 +99,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BB01038EB1384A6888E08D2B9ECBA502"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
         "OwnerKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
         "MsmSig" = "8:_UNDEFINED"
@@ -117,6 +129,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D867DD38BF364B2A9859C22A8911AEB2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -125,12 +143,6 @@
         {
         "MsmKey" = "8:_E21E83931BBA41F1BCD07C66B0EA54D9"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -157,6 +169,12 @@
         "OwnerKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -175,6 +193,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -191,6 +225,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -212,7 +254,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.5"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.5.2"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=395269"
                 }
@@ -297,6 +339,26 @@
             "TargetName" = "8:libstdc++-6.dll"
             "Tag" = "8:"
             "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_30331B0A44D64BAA84752294ED95485B"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\corn\\.CropSyst_scenario"
+            "TargetName" = "8:.CropSyst_scenario"
+            "Tag" = "8:"
+            "Folder" = "8:_B5645936662B477EA829882636B02DDF"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -493,6 +555,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BB01038EB1384A6888E08D2B9ECBA502"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\CS_suite_4\\CropSyst\\CropSyst_4.exe"
+            "TargetName" = "8:CropSyst_4.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BD129EAEDEDC3BE1E3425EFF40DBA067"
             {
             "AssemblyRegister" = "3:1"
@@ -544,6 +626,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D867DD38BF364B2A9859C22A8911AEB2"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\alfalfa\\.CropSyst_scenario"
+            "TargetName" = "8:.CropSyst_scenario"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5CE7A488254AB2A31BDEAD48E089FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E21E83931BBA41F1BCD07C66B0EA54D9"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\Qt5Guid.dll"
@@ -572,7 +674,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_3B9F570D12B94D78B2DA2BA71C009E7D"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder]\\CS_suite_4\\NIFA\\dairy"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\DairyCropSyst"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
@@ -580,6 +682,83 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_39051FBF84AC4E02B76C42AD8F57C857"
+                    {
+                    "Name" = "8:Assets"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_95389B47B914436D916E69D8977AA7D7"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_49F15FE879C049809FD457FABBD7549D"
+                            {
+                            "Name" = "8:Fields"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_4DA4BDD0A36C4508BE4B9BD8F2F41477"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B5645936662B477EA829882636B02DDF"
+                                    {
+                                    "Name" = "8:corn"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_9CD8A45383464D56B4A04381AF155ED5"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_EF5CE7A488254AB2A31BDEAD48E089FB"
+                                    {
+                                    "Name" = "8:alfalfa"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_63F4FFE00FFD41C78B3D505B2B99FAA0"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_8FDC6FFDCFAC41A487E47BC0B055B5A7"
+                            {
+                            "Name" = "8:Database"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_019B67E961F94C5CAFEAF859002F6261"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B794B9271420404AA1D5B147BC3B5AFA"
+                                    {
+                                    "Name" = "8:Weather"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_1F0B432401624DB2AD964680ACA497CD"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F435049CB6B842A68703322C08ECA1CD"
+                                    {
+                                    "Name" = "8:Soil"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_9A524C3FF212440D8932CF05CB5F18A4"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_A71E1B955FF24F27B19B6B8CA90D2B96"
@@ -607,31 +786,9 @@
         }
         "LaunchCondition"
         {
-            "{836E08B8-0285-4809-BA42-01DB6754A45D}:_52A6649CAFC84ED4A5726F772BFD216F"
-            {
-            "Name" = "8:CropSystMustBeInstalled"
-            "Condition" = "8:CROPSYST_EXE_EXISTS"
-            "Message" = "8:Please install CropSyst first"
-            "InstallUrl" = "8:http://modeling.bsyse.wsu.edu/CS_Suite/CropSyst/index.html"
-            }
         }
         "Locator"
         {
-            "{39E1837C-0DB9-45A2-89C8-438377A77565}:_26487FBF69AD48AD8CF5C3BDF11B28C6"
-            {
-            "Name" = "8:CropSystExe"
-            "Folder" = "8:[ProgramFilesFolder]"
-            "Depth" = "2:4"
-            "FileName" = "8:cropsyst_4.exe"
-            "MinVesion" = "8:"
-            "MaxVersion" = "8:"
-            "MinSize" = "8:"
-            "MaxSize" = "8:"
-            "MinDate" = "8:"
-            "MaxDate" = "8:"
-            "Languages" = "8:"
-            "Property" = "8:CROPSYST_EXE_EXISTS"
-            }
         }
         "MsiBootstrapper"
         {
@@ -643,7 +800,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dairy-CropSyst"
         "ProductCode" = "8:{EBF4D12C-27B2-4DEA-A109-6E9B53D8E752}"
-        "PackageCode" = "8:{C780752B-D8EE-4CAA-87D6-3280C613830E}"
+        "PackageCode" = "8:{EFFC6397-ED71-4954-99D5-F2E149297F51}"
         "UpgradeCode" = "8:{FB066AC0-D7C4-49D3-856A-A93183A5C634}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1164,7 +1321,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
             {
-            "SourcePath" = "8:..\\..\\Client\\obj\\Debug\\Wsu.DairyCafo.UI.Client.exe"
+            "SourcePath" = "8:..\\..\\Client\\obj\\Debug\\Client.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
