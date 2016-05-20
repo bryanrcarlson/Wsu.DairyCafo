@@ -178,14 +178,17 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 double lat = currentScenario.Latitude;
                 double lon = currentScenario.Longitude;
 
-                string pathToWeather = writer.SetupWeather(currentScenario.GetScenario());
+                string pathToWeather = 
+                    writer.SetupWeather(currentScenario.GetScenario());
+
+                currentScenario.GetScenario().PathToWeatherFile = pathToWeather;
             }
             catch(Exception e)
             {
                 System.Windows.MessageBox.Show(
-                    "Error getting soil and weather files, using defaults", 
+                    "Error finding weather file, aborting", 
                     e.Message);
-                // Save default soil/weather
+                return;
             }
 
             // Write scenario and field files

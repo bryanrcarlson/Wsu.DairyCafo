@@ -134,9 +134,11 @@ namespace Wsu.DairyCafo.DataAccess
             // Copy files from database to Fields directory if not already present
             
             //throw new NotImplementedException();
-            string nearestWeather = weatherExtractor.GetWeather(scenario.Latitude, scenario.Longitude);
+            string nearestWeather = weatherExtractor.GetWeather(
+                    scenario.Latitude, 
+                    scenario.Longitude);
 
-            return "";
+            return nearestWeather;
         }
         public bool clean()
         {
@@ -480,6 +482,27 @@ namespace Wsu.DairyCafo.DataAccess
                     "parameter_filenames", 
                     "fixed_management", 
                     fixedManagementPath);
+
+            
+            if (File.Exists(s.PathToWeatherFile))
+            {
+                // Set weather
+                fDp.SetValue(
+                    "parameter_filenames",
+                    "weather_database",
+                    s.PathToWeatherFile);
+
+                // Set soil
+                DirectoryInfo weatherDatabase = Directory.GetParent(s.PathToWeatherFile);
+                string pathToSoilFile = Path.Combine(
+                    weatherDatabase.Parent.FullName.ToString(), 
+                    "Soil", 
+                    Path.GetFileNameWithoutExtension(s.PathToWeatherFile) + ".CS_soil");
+                fDp.SetValue(
+                    "parameter_filenames",
+                    "soil",
+                    pathToSoilFile);
+            }
 
             fDp.Save(fDp.LoadedPath);
         }
