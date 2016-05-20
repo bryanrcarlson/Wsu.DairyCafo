@@ -16,11 +16,12 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             ScenarioFile dairy = new ScenarioFile();
             ScenarioFile field = new ScenarioFile();
             ScenarioDefaults d = new ScenarioDefaults();
+            WeatherGrabber g = new WeatherGrabber(@"Assets\Database\Weather");
             string readPath = @"Assets\complexScenario.NIFA_dairy_scenario";
             string writePath = @"Assets\IntegrationTest";
             string comparePath = @"Assets\simpleScenario.NIFA_dairy_scenario";
             ScenarioReader r = new ScenarioReader(dairy, field);
-            ScenarioWriter w = new ScenarioWriter(dairy, field, d);
+            ScenarioWriter w = new ScenarioWriter(dairy, field, d, g);
 
             Directory.CreateDirectory(writePath);
 

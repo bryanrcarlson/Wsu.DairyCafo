@@ -133,8 +133,10 @@ namespace Wsu.DairyCafo.DataAccess
             // Find current weather file
             // Copy files from database to Fields directory if not already present
             
-            throw new NotImplementedException();
-            return weatherExtractor.GetWeather(scenario.Latitude, scenario.Longitude);
+            //throw new NotImplementedException();
+            string nearestWeather = weatherExtractor.GetWeather(scenario.Latitude, scenario.Longitude);
+
+            return "";
         }
         public bool clean()
         {

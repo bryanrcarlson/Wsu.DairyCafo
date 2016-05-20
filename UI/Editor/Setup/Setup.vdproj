@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0476F6AE7B0843AE834833EE1EA255D7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
         "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,6 +52,12 @@
         "Entry"
         {
         "MsmKey" = "8:_30331B0A44D64BAA84752294ED95485B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4F7CD5F0943C492D9B2238DFEA7A0E43"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -93,7 +105,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_76B442C26E554942B87F0945E4E43854"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8571148B292C414DA3B5E86AA0707ECB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_89071415CBEE43BC87DE72E6D08CFE30"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_98B05624837D4563BE63002A38939F63"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -142,6 +172,12 @@
         "Entry"
         {
         "MsmKey" = "8:_E21E83931BBA41F1BCD07C66B0EA54D9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EB1FA068545546248548C6A5392D3AB0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -232,6 +268,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -262,6 +306,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0476F6AE7B0843AE834833EE1EA255D7"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\476411814.UED"
+            "TargetName" = "8:476411814.UED"
+            "Tag" = "8:"
+            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0BB2F2FA95AD1FB39EB80A796244AE1B"
             {
             "AssemblyRegister" = "3:1"
@@ -359,6 +423,26 @@
             "TargetName" = "8:.CropSyst_scenario"
             "Tag" = "8:"
             "Folder" = "8:_B5645936662B477EA829882636B02DDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4F7CD5F0943C492D9B2238DFEA7A0E43"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\470611756.UED"
+            "TargetName" = "8:470611756.UED"
+            "Tag" = "8:"
+            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -535,12 +619,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_76B442C26E554942B87F0945E4E43854"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\470211856.UED"
+            "TargetName" = "8:470211856.UED"
+            "Tag" = "8:"
+            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8571148B292C414DA3B5E86AA0707ECB"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\debug\\scenario_run.exe"
             "TargetName" = "8:scenario_run.exe"
             "Tag" = "8:"
             "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_89071415CBEE43BC87DE72E6D08CFE30"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\457211864.UED"
+            "TargetName" = "8:457211864.UED"
+            "Tag" = "8:"
+            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_98B05624837D4563BE63002A38939F63"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\467711710.UED"
+            "TargetName" = "8:467711710.UED"
+            "Tag" = "8:"
+            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -652,6 +796,26 @@
             "TargetName" = "8:Qt5Guid.dll"
             "Tag" = "8:"
             "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EB1FA068545546248548C6A5392D3AB0"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\467211698.UED"
+            "TargetName" = "8:467211698.UED"
+            "Tag" = "8:"
+            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -800,7 +964,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dairy-CropSyst"
         "ProductCode" = "8:{EBF4D12C-27B2-4DEA-A109-6E9B53D8E752}"
-        "PackageCode" = "8:{EFFC6397-ED71-4954-99D5-F2E149297F51}"
+        "PackageCode" = "8:{6D668C55-994B-44EB-9222-7D921422F3C1}"
         "UpgradeCode" = "8:{FB066AC0-D7C4-49D3-856A-A93183A5C634}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

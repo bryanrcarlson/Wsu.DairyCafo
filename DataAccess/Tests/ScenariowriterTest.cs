@@ -20,11 +20,12 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             // Arrange
             var field = new ScenarioFileStub();
             var dairy = new ScenarioFileStub();
+            var grabber = new WeatherGrabber(@"Assets\Database\Weather");
             var scenDefaults = new ScenarioDefaults();
 
             Directory.CreateDirectory(scenDirPath);
 
-            var sut = new ScenarioWriter(field, dairy, scenDefaults);
+            var sut = new ScenarioWriter(field, dairy, scenDefaults, grabber);
             
             // Act
             sut.SetupDir(scenDirPath);
@@ -49,8 +50,9 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             var field = new ScenarioFile();
             var dairy = new ScenarioFile();
             var scenDefaults = new ScenarioDefaults();
+            var grabber = new WeatherGrabber(@"Assets\Database\Weather");
 
-            var sut = new ScenarioWriter(dairy, field, scenDefaults);
+            var sut = new ScenarioWriter(dairy, field, scenDefaults, grabber);
 
             // Act
             sut.Write(s, scenDirPath);
@@ -73,8 +75,9 @@ namespace Wsu.DairyCafo.DataAccess.Tests
             var field = new ScenarioFile();
             var dairy = new ScenarioFile();
             var scenDefaults = new ScenarioDefaults();
+            var grabber = new WeatherGrabber(@"Assets\Database\Weather");
 
-            var sut = new ScenarioWriter(dairy, field, scenDefaults);
+            var sut = new ScenarioWriter(dairy, field, scenDefaults, grabber);
 
             // Act
             sut.Write(s, scenDirPath);

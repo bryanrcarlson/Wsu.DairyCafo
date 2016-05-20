@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,12 @@ namespace Wsu.DairyCafo.UI.Client
             ScenarioFile dairyScenario = new ScenarioFile();
             ScenarioFile fieldScenario = new ScenarioFile();
             ScenarioDefaults defaults = new ScenarioDefaults();
+            string pathToWeatherDatabase = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Assets", "Database", "Weather");
+            WeatherGrabber grabber = new WeatherGrabber(pathToWeatherDatabase);
             ScenarioReader reader =
                 new ScenarioReader(dairyScenario, fieldScenario);
             ScenarioWriter writer =
-                new ScenarioWriter(dairyScenario, fieldScenario, defaults);
+                new ScenarioWriter(dairyScenario, fieldScenario, defaults, grabber);
             ScenarioViewModel context = new ScenarioViewModel(reader, writer);
 
             client.DataContext = context;

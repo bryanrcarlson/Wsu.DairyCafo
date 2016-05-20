@@ -15,6 +15,11 @@ namespace Wsu.DairyCafo.DataAccess.Tests.Stubs
             throw new NotImplementedException();
         }
 
+        public string SetupWeather(Scenario scenario)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Write(Scenario s)
         {
             throw new NotImplementedException();
