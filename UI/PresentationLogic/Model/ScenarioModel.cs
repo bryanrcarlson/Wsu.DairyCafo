@@ -341,6 +341,11 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
             {
                 if(value != scenario.Fertigation.ApplicationDate_date)
                 {
+                    // Override to always make same year as Simulation
+                    value = new DateTime(
+                        scenario.StartDate.Year,
+                        value.Month,
+                        value.Day);
                     scenario.Fertigation.ApplicationDate_date = value;
                     OnPropertyChanged("FertigationDate");
                 }

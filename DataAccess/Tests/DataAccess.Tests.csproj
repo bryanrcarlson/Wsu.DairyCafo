@@ -80,6 +80,9 @@
     <None Include="Assets\complexScenario.NIFA_dairy_scenario">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Assets\Database\Weather\46.3931N_120.0410W.UED">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Assets\extraManureStorageAndFertigationScenario.NIFA_dairy_scenario">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
