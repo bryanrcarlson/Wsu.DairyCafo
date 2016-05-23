@@ -15,6 +15,7 @@ namespace Wsu.DairyCafo.DataAccess
         private readonly IScenarioFile dDp;
         private readonly IScenarioFile fDp;
         private readonly IScenarioDefaults defaults;
+        private readonly IWeatherExtractor weatherExtractor;
         private readonly string fieldDirName;
         private readonly string dairyScenarioFilename;
         private readonly string fieldScenarioFilename;
@@ -23,6 +24,7 @@ namespace Wsu.DairyCafo.DataAccess
             IScenarioFile dairyScenario,
             IScenarioFile cropSystScenario,
             IScenarioDefaults defaults,
+            IWeatherExtractor weatherExtractor,
             string fieldDirName = "Fields",
             string dairyScenarioFilename = ".NIFA_dairy_scenario",
             string fieldScenarioFilename = ".CropSyst_scenario"
@@ -31,6 +33,7 @@ namespace Wsu.DairyCafo.DataAccess
             this.dDp = dairyScenario;
             this.fDp = cropSystScenario;
             this.defaults = defaults;
+            this.weatherExtractor = weatherExtractor;
             this.fieldDirName = fieldDirName;
             this.dairyScenarioFilename = dairyScenarioFilename;
             this.fieldScenarioFilename = fieldScenarioFilename;
@@ -91,6 +94,8 @@ namespace Wsu.DairyCafo.DataAccess
             sVals.Add("details_URL", scenario.DetailsUrl);
             sVals.Add("description", scenario.Description);
             sVals.Add("weather", scenario.PathToWeatherFile.ToString());
+            sVals.Add("latitude", scenario.Latitude.ToString());
+            sVals.Add("longitude", scenario.Longitude.ToString());
             sVals.Add("start_date", getYYYYDOYString(scenario.StartDate));
             sVals.Add("stop_date", getYYYYDOYString(scenario.StopDate));
             sVals.Add("accumulations", scenario.Accumulations.ToString());
@@ -122,6 +127,18 @@ namespace Wsu.DairyCafo.DataAccess
                 throw new OperationCanceledException("Failed to save file"); 
             }
                   
+        }
+        public string SetupWeather(Scenario scenario)
+        {
+            // Find current weather file
+            // Copy files from database to Fields directory if not already present
+            
+            //throw new NotImplementedException();
+            string nearestWeather = weatherExtractor.GetWeather(
+                    scenario.Latitude, 
+                    scenario.Longitude);
+
+            return nearestWeather;
         }
         public bool clean()
         {
@@ -158,7 +175,31 @@ namespace Wsu.DairyCafo.DataAccess
         {
             try
             {
-                copyField(s);
+                if (!String.IsNullOrEmpty(fDp.LoadedPath))
+                {
+                    // Don't replace fields if template didn't change
+                    string dirName =
+                        new DirectoryInfo(Path.GetDirectoryName(fDp.LoadedPath))
+                        .Name;
+
+                    if (dirName != s.Field.Crop)
+                    {
+                        string dirPath = Path.GetDirectoryName(fDp.LoadedPath);
+                        Directory.Delete(dirPath, true);
+                        copyFieldTemplate(
+                            s, 
+                            Directory.GetParent(dirPath).ToString());
+                    }
+                }
+                else
+                {
+                    // No field loaded, need to create one
+                    string pathToParentDir = Path.Combine(
+                        Path.GetDirectoryName(dDp.LoadedPath),
+                        fieldDirName);
+                    copyFieldTemplate(s, pathToParentDir);
+                }
+
                 writeField(s);
             }
             catch (NullReferenceException e)
@@ -404,7 +445,74 @@ namespace Wsu.DairyCafo.DataAccess
 
             dDp.SetSection(sect, vals);
         }
-        private void copyField(Scenario s)
+        private string createField(Scenario s)
+        {
+            string pathToDairyScenario = Path.GetDirectoryName(dDp.LoadedPath);
+            DirectoryInfo createdDir =
+                Directory.CreateDirectory(
+                    Path.Combine(
+                        pathToDairyScenario, 
+                    fieldDirName, 
+                    s.Field.Crop));
+            return createdDir.ToString();
+        }
+        private void copyFieldTemplate(Scenario s, string pathToParentDir)
+        {
+            if (!Directory.Exists(pathToParentDir))
+                throw new ArgumentException("Copy to path does not exist");
+
+            string sourcePath = 
+                Path.Combine(
+                    Directory.GetCurrentDirectory(), 
+                @"Assets\Fields", 
+                s.Field.Crop);
+            string destinationPath = 
+                Path.Combine(pathToParentDir, s.Field.Crop);
+
+            Directory.CreateDirectory(destinationPath);
+
+            //Create all of the directories
+            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*",
+                SearchOption.AllDirectories))
+                Directory.CreateDirectory(dirPath.Replace(sourcePath, destinationPath));
+
+            //Copy all the files & Replaces any files with the same name
+            foreach (string newPath in Directory.GetFiles(sourcePath, "*.*",
+                SearchOption.AllDirectories))
+                File.Copy(newPath, newPath.Replace(sourcePath, destinationPath), true);
+
+            // Reload file
+            fDp.Load(Path.Combine(destinationPath, fieldScenarioFilename));
+        }
+        private void replaceWithFieldTemplate(Scenario s, string pathToReplace)
+        {
+            if (Directory.Exists(pathToReplace))
+                throw new ArgumentException("Path to replace does not exist");
+
+            // Burn current field dir and copy a new one from templates
+            string SourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"Assets\Fields", s.Field.Crop);
+            if (!Directory.Exists(SourcePath))
+                throw new ArgumentException("Error setting up field; specified crop does not exist");
+            //string currFieldDir = pathToReplace;
+            string DestinationPath = Path.Combine(Directory.GetParent(pathToReplace).ToString(), s.Field.Crop);
+
+            Directory.Delete(pathToReplace, true);
+            Directory.CreateDirectory(DestinationPath);
+
+            //Create all of the directories
+            foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
+                SearchOption.AllDirectories))
+                Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
+
+            //Copy all the files & Replaces any files with the same name
+            foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
+                SearchOption.AllDirectories))
+                File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
+
+            // Reload file
+            fDp.Load(Path.Combine(DestinationPath, fieldScenarioFilename));
+        }
+        private void _copyFieldTemplate(Scenario s)
         {
             if (String.IsNullOrEmpty(fDp.LoadedPath))
                 throw new NullReferenceException("Error setting up field; path not loaded");
@@ -437,8 +545,6 @@ namespace Wsu.DairyCafo.DataAccess
                 // Reload file
                 fDp.Load(Path.Combine(DestinationPath, fieldScenarioFilename));
             }
-
-
         }
         private void writeField(Scenario s)
         {
@@ -448,8 +554,8 @@ namespace Wsu.DairyCafo.DataAccess
             // Delete fertigation file
             string fertPath = Path.Combine(
                 Path.GetDirectoryName(fDp.LoadedPath),
-                "Database",
-                "Management",
+                //"Database",
+                //"Management",
                 "fertigation.CS_management");
             if (File.Exists(fertPath))
                 File.Delete(fertPath);
@@ -467,6 +573,27 @@ namespace Wsu.DairyCafo.DataAccess
                     "parameter_filenames", 
                     "fixed_management", 
                     fixedManagementPath);
+
+            
+            if (File.Exists(s.PathToWeatherFile))
+            {
+                // Set weather
+                fDp.SetValue(
+                    "parameter_filenames",
+                    "weather_database",
+                    s.PathToWeatherFile);
+
+                // Set soil
+                DirectoryInfo weatherDatabase = Directory.GetParent(s.PathToWeatherFile);
+                string pathToSoilFile = Path.Combine(
+                    weatherDatabase.Parent.FullName.ToString(), 
+                    "Soil", 
+                    Path.GetFileNameWithoutExtension(s.PathToWeatherFile) + ".CS_soil");
+                fDp.SetValue(
+                    "parameter_filenames",
+                    "soil",
+                    pathToSoilFile);
+            }
 
             fDp.Save(fDp.LoadedPath);
         }

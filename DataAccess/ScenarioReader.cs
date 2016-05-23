@@ -39,22 +39,40 @@ namespace Wsu.DairyCafo.DataAccess
                 throw new ArgumentException("File path not valid");
             }
 
-            if (!String.IsNullOrEmpty(dDp.LoadedPath))
+            //if (!String.IsNullOrEmpty(dDp.LoadedPath))
+            //{
+            //    // Load Field scenario
+            //    string dairyDir = Path.GetDirectoryName(filePath);
+            //    string fieldDir = Path.Combine(dairyDir, fieldDirName);
+            //
+            //    if(Directory.Exists(fieldDir))
+            //    {
+            //        string[] fields = Directory.GetDirectories(fieldDir);
+            //
+            //        if (fields.Length > 0)
+            //        {
+            //            // Currently only supporting one field
+            //            string fieldFile = Path.Combine(fields[0], ".CropSyst_scenario");
+            //            fDp.Load(fieldFile);
+            //        }
+            //    }
+            //}
+        }
+        public void LoadField(string pathToScenarioDir)
+        {
+            // Load Field scenario
+            string dairyDir = pathToScenarioDir;
+            string fieldDir = Path.Combine(dairyDir, fieldDirName);
+
+            if (Directory.Exists(fieldDir))
             {
-                // Load Field scenario
-                string dairyDir = Path.GetDirectoryName(filePath);
-                string fieldDir = Path.Combine(dairyDir, fieldDirName);
+                string[] fields = Directory.GetDirectories(fieldDir);
 
-                if(Directory.Exists(fieldDir))
+                if (fields.Length > 0)
                 {
-                    string[] fields = Directory.GetDirectories(fieldDir);
-
-                    if (fields.Length > 0)
-                    {
-                        // Currently only supporting one field
-                        string fieldFile = Path.Combine(fields[0], ".CropSyst_scenario");
-                        fDp.Load(fieldFile);
-                    }
+                    // Currently only supporting one field
+                    string fieldFile = Path.Combine(fields[0], ".CropSyst_scenario");
+                    fDp.Load(fieldFile);
                 }
             }
         }
@@ -75,7 +93,12 @@ namespace Wsu.DairyCafo.DataAccess
             s.ParameterizedScenario =
                 Convert.ToInt16(dDp.GetValueOnly("dairy scenario", 
                 "parameterized_scenario"));
-
+            s.Latitude =
+                Convert.ToDouble(dDp.GetValueOnly("dairy scenario",
+                "latitude"));
+            s.Longitude =
+                Convert.ToDouble(dDp.GetValueOnly("dairy scenario",
+                "longitude"));
             string sd = dDp.GetValueOnly("dairy scenario", "start_date");
             s.StartDate = !String.IsNullOrEmpty(sd) 
                 ? parseDateFromIniFile(sd) 

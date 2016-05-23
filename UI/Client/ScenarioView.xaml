@@ -30,6 +30,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <!--<RowDefinition Height="Auto" />-->
                         </Grid.RowDefinitions>
 
@@ -53,8 +54,30 @@
                             </Grid>
                         </Border>
 
+                        <!-- Latitude -->
+                        <TextBlock Grid.Row="1">Latitude (DD):</TextBlock>
+                        <TextBox Name="txtLatitude"
+                             Grid.Row="1" 
+                             Grid.Column="1" 
+                             InputScope="Number" 
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Latitude}"
+                             />
+
+                        <!-- Longitude -->
+                        <TextBlock Grid.Row="2">Longitude (DD):</TextBlock>
+                        <TextBox Name="txtLongitude"
+                             Grid.Row="2" 
+                             Grid.Column="1" 
+                             InputScope="Number" 
+                             Height="{StaticResource InputHeight}" 
+                             VerticalAlignment="Top"
+                             Text="{Binding Path=Longitude}"
+                             />
+
                         <!-- Weather -->
-                        <TextBlock Grid.Row="1">Weather file:</TextBlock>
+                        <!--<TextBlock Grid.Row="1">Weather file:</TextBlock>
                         <Grid Grid.Row="1" Grid.Column="2" Height="Auto">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
@@ -74,7 +97,7 @@
                                  VerticalAlignment="Top"
                                  TextAlignment="Left"
                                  Text="{Binding Path=PathToWeatherFile}"/>
-                        </Grid>
+                        </Grid>-->
 
                         <!-- Dates -->
                         <!--<TextBlock Grid.Row="2">Simulation year</TextBlock>

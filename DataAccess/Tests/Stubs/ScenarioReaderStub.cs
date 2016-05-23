@@ -20,6 +20,11 @@ namespace Wsu.DairyCafo.DataAccess.Tests.Stubs
             throw new NotImplementedException();
         }
 
+        public void LoadField(string pathToScenarioDir)
+        {
+            throw new NotImplementedException();
+        }
+
         public Scenario Parse()
         {
             throw new NotImplementedException();

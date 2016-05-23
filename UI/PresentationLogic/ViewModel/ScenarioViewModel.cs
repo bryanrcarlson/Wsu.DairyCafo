@@ -23,10 +23,11 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         #region Fields
         private readonly IScenarioReader reader;
         private readonly IScenarioWriter writer;
+
         private ScenarioModel currentScenario;
         private ICommand newScenarioCommand;
         private ICommand getScenarioCommand;
-        private ICommand selectWeatherCommand;
+        //private ICommand selectWeatherCommand;
         private ICommand saveScenarioCommand;
         private ICommand runScenarioCommand;
         private DirectoryInfo currentWorkingDir;    //TODO: Clear/update this when appropiate
@@ -81,16 +82,16 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 return saveScenarioCommand;
             }
         }
-        public ICommand SelectWeatherCommand
-        {
-            get
-            {
-                selectWeatherCommand = new RelayCommand(
-                    param => browseWeatherFileDialog()
-                );
-                return selectWeatherCommand;
-            }
-        }
+        //public ICommand SelectWeatherCommand
+        //{
+        //    get
+        //    {
+        //        selectWeatherCommand = new RelayCommand(
+        //            param => browseWeatherFileDialog()
+        //        );
+        //        return selectWeatherCommand;
+        //    }
+        //}
         public ICommand RunScenarioCommand
         {
             get
@@ -137,6 +138,8 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 try
                 {
                     writer.Write(CurrentScenario.GetScenario(), filePath);
+                    //reader.LoadField(Path.GetDirectoryName(filePath));
+                    writer.WriteField(this.currentScenario.GetScenario());
                 }
                 catch(InvalidOperationException e)
                 {
@@ -157,6 +160,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 try
                 {
                     reader.Load(sFile);
+                    reader.LoadField(Path.GetDirectoryName(sFile));
                 }
                 catch(NullReferenceException e)
                 {
@@ -172,11 +176,32 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         }
         private void saveScenario()
         {
+            // Get soil and weather from lat/lon
+            try
+            {
+                double lat = currentScenario.Latitude;
+                double lon = currentScenario.Longitude;
+
+                string pathToWeather = 
+                    writer.SetupWeather(currentScenario.GetScenario());
+
+                currentScenario.GetScenario().PathToWeatherFile = pathToWeather;
+            }
+            catch(Exception e)
+            {
+                System.Windows.MessageBox.Show(
+                    "Error finding weather file, aborting", 
+                    e.Message);
+                return;
+            }
+
+            // Write scenario and field files
             try
             {
                 writer.Write(this.currentScenario.GetScenario());
                 if(currentScenario.FieldEnabled)
                     writer.WriteField(this.currentScenario.GetScenario());
+
                 System.Windows.MessageBox.Show("File saved.");
             }
             catch(Exception e)
@@ -215,33 +240,48 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             }
             else { arguments += " -o"; }
 
-            var runner = new ExeRunner(program);
+            //var runner = new ExeRunner(program);
+            var runner = new ExeRunnerOutput(program);
 
             int exitCode;
-            
-            runner.TryExecute(arguments, out exitCode);
-        }
-        private void browseWeatherFileDialog()
-        {
-            // Create OpenFileDialog
-            Microsoft.Win32.OpenFileDialog dlg =
-                new Microsoft.Win32.OpenFileDialog();
 
-            // Set filter
-            dlg.DefaultExt = ".UED";
-            dlg.Filter = "UED Files (*.UED)|*.UED";
+            runner.Initialize(currentWorkingDir);
+            bool didRun = runner.TryExecute(arguments, out exitCode);
 
-            // Display dialog
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Get selected file name and display
-            if (result == true)
+            using (StreamWriter file =
+                new StreamWriter(Path.Combine(currentWorkingDir.ToString(), "Output", "log.txt")))
             {
-                // Open document
-                string filename = dlg.FileName;
-                CurrentScenario.PathToWeatherFile = filename;
+                file.Write(runner.GetErrorString());
+                file.Write(runner.GetOutputString());
+                file.Close();
             }
+
+            if (didRun)
+                System.Windows.MessageBox.Show("Scenario ran");
+            else
+                System.Windows.MessageBox.Show("Error running scenario", runner.GetErrorString());
         }
+        //private void browseWeatherFileDialog()
+        //{
+        //    // Create OpenFileDialog
+        //    Microsoft.Win32.OpenFileDialog dlg =
+        //        new Microsoft.Win32.OpenFileDialog();
+
+        //    // Set filter
+        //    dlg.DefaultExt = ".UED";
+        //    dlg.Filter = "UED Files (*.UED)|*.UED";
+
+        //    // Display dialog
+        //    Nullable<bool> result = dlg.ShowDialog();
+
+        //    // Get selected file name and display
+        //    if (result == true)
+        //    {
+        //        // Open document
+        //        string filename = dlg.FileName;
+        //        CurrentScenario.PathToWeatherFile = filename;
+        //    }
+        //}
         private string newScenarioDialog()
         {
             using(FolderBrowserDialog fbd = new FolderBrowserDialog())
