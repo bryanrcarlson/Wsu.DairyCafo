@@ -704,7 +704,9 @@
                 </MenuItem>
                 <MenuItem Header="_Scenario">
                     <MenuItem Header="_Run"
-                              Command="{Binding RunScenarioCommand}"/>
+                              Command="{Binding RunScenarioWithOutputCommand}"/>
+                    <MenuItem Header="_Run (no output)"
+                              Command="{Binding RunScenarioNoOutputCommand}"/>
                 </MenuItem>
             </Menu>
             

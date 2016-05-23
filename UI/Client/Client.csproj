@@ -119,9 +119,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Assets\Database\Soil\46.3931N_120.0410W.CS_soil" />
     <None Include="Assets\Database\Soil\48.9832N_122.4680W.CS_soil">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Assets\Database\Weather\46.3931N_120.0410W.UED" />
     <None Include="Assets\Database\Weather\48.9832N_122.4680W.UED">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

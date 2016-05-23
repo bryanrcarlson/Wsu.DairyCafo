@@ -29,7 +29,9 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         private ICommand getScenarioCommand;
         //private ICommand selectWeatherCommand;
         private ICommand saveScenarioCommand;
-        private ICommand runScenarioCommand;
+        //private ICommand runScenarioCommand;
+        private ICommand runScenarioNoOutputCommand;
+        private ICommand runScenarioWithOutputCommand;
         private DirectoryInfo currentWorkingDir;    //TODO: Clear/update this when appropiate
         #endregion // Fields
 
@@ -92,14 +94,24 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         //        return selectWeatherCommand;
         //    }
         //}
-        public ICommand RunScenarioCommand
+        public ICommand RunScenarioWithOutputCommand
         {
             get
             {
-                runScenarioCommand = new RelayCommand(
-                    param => runScenario()
+                runScenarioWithOutputCommand = new RelayCommand(
+                    param => runScenarioWithOutput()
                 );
-                return runScenarioCommand;
+                return runScenarioWithOutputCommand;
+            }
+        }
+        public ICommand RunScenarioNoOutputCommand
+        {
+            get
+            {
+                runScenarioNoOutputCommand = new RelayCommand(
+                    param => runScenarioNoOutput()
+                );
+                return runScenarioNoOutputCommand;
             }
         }
         #endregion // Public Properties/Commands
@@ -209,6 +221,16 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 System.Windows.MessageBox.Show(e.Message);
             }
         }
+        private void runScenarioNoOutput()
+        {
+            currentScenario.OutputEnabled = false;
+            runScenario();
+        }
+        private void runScenarioWithOutput()
+        {
+            currentScenario.OutputEnabled = true;
+            runScenario();
+        }
         private void runScenario()
         {
             if (currentWorkingDir == null
@@ -251,8 +273,12 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             using (StreamWriter file =
                 new StreamWriter(Path.Combine(currentWorkingDir.ToString(), "Output", "log.txt")))
             {
+                file.WriteLine("== Error ==");
                 file.Write(runner.GetErrorString());
+
+                file.WriteLine("== Output ==");
                 file.Write(runner.GetOutputString());
+
                 file.Close();
             }
 
