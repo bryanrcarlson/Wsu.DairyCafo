@@ -10,6 +10,7 @@ namespace Wsu.DairyCafo.DataAccess.Core
     public interface IScenarioReader
     {
         void Load(string filePath);
+        void LoadField(string pathToScenarioDir);
         Scenario Parse();
     }
 }

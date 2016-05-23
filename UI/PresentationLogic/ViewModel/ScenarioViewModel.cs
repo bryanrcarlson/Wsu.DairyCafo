@@ -23,6 +23,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
         #region Fields
         private readonly IScenarioReader reader;
         private readonly IScenarioWriter writer;
+
         private ScenarioModel currentScenario;
         private ICommand newScenarioCommand;
         private ICommand getScenarioCommand;
@@ -137,6 +138,8 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 try
                 {
                     writer.Write(CurrentScenario.GetScenario(), filePath);
+                    //reader.LoadField(Path.GetDirectoryName(filePath));
+                    writer.WriteField(this.currentScenario.GetScenario());
                 }
                 catch(InvalidOperationException e)
                 {
@@ -157,6 +160,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 try
                 {
                     reader.Load(sFile);
+                    reader.LoadField(Path.GetDirectoryName(sFile));
                 }
                 catch(NullReferenceException e)
                 {
@@ -236,11 +240,26 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             }
             else { arguments += " -o"; }
 
-            var runner = new ExeRunner(program);
+            //var runner = new ExeRunner(program);
+            var runner = new ExeRunnerOutput(program);
 
             int exitCode;
-            
-            runner.TryExecute(arguments, out exitCode);
+
+            runner.Initialize(currentWorkingDir);
+            bool didRun = runner.TryExecute(arguments, out exitCode);
+
+            using (StreamWriter file =
+                new StreamWriter(Path.Combine(currentWorkingDir.ToString(), "Output", "log.txt")))
+            {
+                file.Write(runner.GetErrorString());
+                file.Write(runner.GetOutputString());
+                file.Close();
+            }
+
+            if (didRun)
+                System.Windows.MessageBox.Show("Scenario ran");
+            else
+                System.Windows.MessageBox.Show("Error running scenario", runner.GetErrorString());
         }
         //private void browseWeatherFileDialog()
         //{

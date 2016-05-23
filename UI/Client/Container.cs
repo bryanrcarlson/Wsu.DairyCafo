@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Wsu.DairyCafo.DataAccess;
 using Wsu.DairyCafo.DataAccess.Core;
 using Wsu.DairyCafo.UI.PresentationLogic.ViewModel;

@@ -134,13 +134,14 @@ namespace Wsu.DairyCafo.DataAccess.Core
                     AmountRemoved_percent = 90,
                     Repetition_d = 90,
                     SourceFacility_id = "lagoon",
-                    TargetField_id = "field"
+                    TargetField_id = "corn"
                 },
                 Field = new Field()
                 {
-                    Id = "field",
-                    Enabled = false,
-                    Area_ha = 2000
+                    Id = "corn",
+                    Enabled = true,
+                    Area_ha = 2000,
+                    Crop = "corn"
                 }
             };
         }

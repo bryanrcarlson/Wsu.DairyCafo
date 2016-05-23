@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0476F6AE7B0843AE834833EE1EA255D7"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
         "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
@@ -57,7 +51,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4F7CD5F0943C492D9B2238DFEA7A0E43"
+        "MsmKey" = "8:_51B183A3AD144ECE90960079DA88E154"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -105,25 +99,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_76B442C26E554942B87F0945E4E43854"
+        "MsmKey" = "8:_696DFC824571408A983BE10E1C51F2DE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8571148B292C414DA3B5E86AA0707ECB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_89071415CBEE43BC87DE72E6D08CFE30"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_98B05624837D4563BE63002A38939F63"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -142,13 +124,13 @@
         "Entry"
         {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
+        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -177,12 +159,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EB1FA068545546248548C6A5392D3AB0"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
@@ -190,13 +166,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
+        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -208,7 +178,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
+        "OwnerKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -306,26 +282,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0476F6AE7B0843AE834833EE1EA255D7"
-            {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\476411814.UED"
-            "TargetName" = "8:476411814.UED"
-            "Tag" = "8:"
-            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0BB2F2FA95AD1FB39EB80A796244AE1B"
             {
             "AssemblyRegister" = "3:1"
@@ -333,11 +289,6 @@
             "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0BB2F2FA95AD1FB39EB80A796244AE1B"
-                    {
-                    "Name" = "8:Wsu.DairyCafo.DataAccess.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Wsu.DairyCafo.DataAccess.dll"
             "TargetName" = "8:"
@@ -437,12 +388,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4F7CD5F0943C492D9B2238DFEA7A0E43"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_51B183A3AD144ECE90960079DA88E154"
             {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\470611756.UED"
-            "TargetName" = "8:470611756.UED"
+            "SourcePath" = "8:..\\..\\Client\\bin\\Debug\\Assets\\Database\\Soil\\48.9832N_122.4680W.CS_soil"
+            "TargetName" = "8:48.9832N_122.4680W.CS_soil"
             "Tag" = "8:"
-            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
+            "Folder" = "8:_F435049CB6B842A68703322C08ECA1CD"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -504,11 +455,6 @@
             "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.UI.PresentationLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_5F868099A15972FD887DE63551609C27"
-                    {
-                    "Name" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
             "TargetName" = "8:"
@@ -555,11 +501,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_625ACCDC3FEE796A64D2F00CE184C6AA"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -619,10 +560,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_76B442C26E554942B87F0945E4E43854"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_696DFC824571408A983BE10E1C51F2DE"
             {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\470211856.UED"
-            "TargetName" = "8:470211856.UED"
+            "SourcePath" = "8:..\\..\\Client\\bin\\Debug\\Assets\\Database\\Weather\\48.9832N_122.4680W.UED"
+            "TargetName" = "8:48.9832N_122.4680W.UED"
             "Tag" = "8:"
             "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
             "Condition" = "8:"
@@ -645,46 +586,6 @@
             "TargetName" = "8:scenario_run.exe"
             "Tag" = "8:"
             "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_89071415CBEE43BC87DE72E6D08CFE30"
-            {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\457211864.UED"
-            "TargetName" = "8:457211864.UED"
-            "Tag" = "8:"
-            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_98B05624837D4563BE63002A38939F63"
-            {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\467711710.UED"
-            "TargetName" = "8:467711710.UED"
-            "Tag" = "8:"
-            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -726,11 +627,6 @@
             "AssemblyAsmDisplayName" = "8:Wsu.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BD129EAEDEDC3BE1E3425EFF40DBA067"
-                    {
-                    "Name" = "8:Wsu.IO.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Wsu.IO.dll"
             "TargetName" = "8:"
@@ -796,26 +692,6 @@
             "TargetName" = "8:Qt5Guid.dll"
             "Tag" = "8:"
             "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EB1FA068545546248548C6A5392D3AB0"
-            {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\467211698.UED"
-            "TargetName" = "8:467211698.UED"
-            "Tag" = "8:"
-            "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

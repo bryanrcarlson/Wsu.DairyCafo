@@ -62,15 +62,28 @@ namespace Wsu.DairyCafo.DataAccess
             List<GeoCoordinate> locations = new List<GeoCoordinate>();
 
             // Parses files that are named with their geocoordinates
-            // 457211864.UED
+            // 48.9832N_122.4680W.UED
 
             string[] files = Directory.GetFiles(pathToWeatherDir);
 
             foreach(string file in files)
             {
                 string filename = Path.GetFileNameWithoutExtension(file);
-                double lat = Convert.ToDouble(filename.Substring(0, 4)) / 100;
-                double lon = Convert.ToDouble(filename.Substring(4, 5)) / 100;
+
+                // Split lat and lon by "_"
+                string[] split = filename.Split('_');
+                if (split.Length != 2)
+                    throw new FormatException("Unable to parse filename");
+
+                // Parse lat - assume first     
+                double lat = Convert.ToDouble(split[0].Substring(0,split[0].Length - 1));
+                bool isSouth = (split[0].Last() == 'S');
+                if (isSouth) lat *= -1;
+
+                // Parse lon - assume second     
+                double lon = Convert.ToDouble(split[1].Substring(0, split[1].Length - 1));
+                bool isWest = (split[1].Last() == 'W');
+                if (isWest) lon *= -1;
 
                 locations.Add(new GeoCoordinate(lat, lon));
             }
@@ -80,10 +93,13 @@ namespace Wsu.DairyCafo.DataAccess
 
         private string convertGeoCoordinateToFilename(GeoCoordinate geoCoordinate)
         {
-            string lat = geoCoordinate.Latitude.ToString("N2");
-            string lon = geoCoordinate.Longitude.ToString("N2");
+            string lat = Math.Abs(geoCoordinate.Latitude).ToString("N4");
+            lat = geoCoordinate.Latitude > 0 ? lat + "N" : lat + "S";
 
-            string filename = lat.Replace(".", "") + lon.Replace(".", "") + ".UED";
+            string lon = Math.Abs(geoCoordinate.Longitude).ToString("N4");
+            lon = geoCoordinate.Longitude > 0 ? lon + "E" : lon + "W";
+
+            string filename = lat + "_" + lon + ".UED";
 
             if (File.Exists(Path.Combine(pathToWeatherDatabase, filename)))
                 return filename;
