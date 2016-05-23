@@ -463,8 +463,8 @@ namespace Wsu.DairyCafo.DataAccess
             // Delete fertigation file
             string fertPath = Path.Combine(
                 Path.GetDirectoryName(fDp.LoadedPath),
-                "Database",
-                "Management",
+                //"Database",
+                //"Management",
                 "fertigation.CS_management");
             if (File.Exists(fertPath))
                 File.Delete(fertPath);
