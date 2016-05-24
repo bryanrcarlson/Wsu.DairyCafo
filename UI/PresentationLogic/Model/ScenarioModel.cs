@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
 {
     public class ScenarioModel : ObservableObject
     {
+
         #region Fields
         private Scenario scenario;
         #endregion //Fields
@@ -82,7 +84,6 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
-
         public DateTime StartDate
         {
             get { return scenario.StartDate; }
@@ -107,6 +108,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
+        
         //== Cow
         public double CowBodyMass
         {
@@ -168,7 +170,6 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
-
         public double AcidDetergentFiberDiet_percent
         {
             get { return scenario.Cow.AcidDetergentFiberDiet_percent; }
@@ -181,7 +182,6 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
-
         public double MetabolizableEnergyDiet_MJ_d
         {
             get { return scenario.Cow.MetabolizableEnergyDiet_MJ_d; }
@@ -194,7 +194,6 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
-
         public double PhManure_mol_L
         {
             get { return scenario.Cow.PhManure_mol_L; }
@@ -207,6 +206,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
+        
         //== Barn
         public double BarnManureAlleyArea
         {
@@ -351,6 +351,32 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 }
             }
         }
+        public int FertigationDayOfYear
+        {
+            get { return scenario.Fertigation.ApplicationDate_date.DayOfYear; }
+            set {
+                if (value != scenario.Fertigation.ApplicationDate_date.DayOfYear)
+                {
+                    DateTime newDt = new DateTime(scenario.StartDate.Year, 1, 1)
+                        .AddDays(value - 1);
+                    scenario.Fertigation.ApplicationDate_date = newDt;
+                }
+            }
+        }
+        //public string FertigationMonth
+        //{
+        //    get { return scenario.Fertigation.ApplicationDate_date.Month.ToString("MMMM"); }
+        //    set
+        //    {
+        //        if(value != scenario.Fertigation.ApplicationDate_date.Month.ToString("en-US"))
+        //        {
+        //            int month = DateTime.ParseExact(value, "MMMM", new CultureInfo("en-US")).Month;
+
+        //            DateTime newDt = new DateTime(scenario.StartDate.Year, month, scenario.Fertigation.ApplicationDate_date.Day);
+        //            scenario.Fertigation.ApplicationDate_date = newDt;
+        //        }
+        //    }
+        //}
         public double FertigationAmnt
         {
             get { return scenario.Fertigation.AmountRemoved_percent; }

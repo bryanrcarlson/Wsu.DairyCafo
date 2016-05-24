@@ -592,14 +592,23 @@
                         </Border>
 
                         <!-- Dates -->
-                        <TextBlock Grid.Row="1">Date (year must match sim year):</TextBlock>
+                        <!--<TextBlock Grid.Row="1">Date (year must match sim year):</TextBlock>
                         <DatePicker Name="dateFertigationDate" 
                                 Grid.Row="1" 
                                 Grid.Column="1" 
                                 Height="{StaticResource InputHeight}" 
                                 VerticalAlignment="Top"
                                 SelectedDateFormat="Long"
-                                SelectedDate="{Binding Path=FertigationDate}"/>
+                                SelectedDate="{Binding Path=FertigationDate}"/>-->
+                        <!-- Day of year -->
+                        <TextBlock Grid.Row="1">Day of year:</TextBlock>
+                        <TextBox Name="txtFertDoy" 
+                            Grid.Row="1" 
+                            Grid.Column="1" 
+                            InputScope="Number"
+                            Height="{StaticResource InputHeight}" 
+                            VerticalAlignment="Top"
+                            Text="{Binding Path=FertigationDayOfYear}"/>
                         <!-- Amount Removed -->
                         <TextBlock Grid.Row="2">Amount removed (%):</TextBlock>
                         <TextBox Name="txtFertigationAmnt" 
