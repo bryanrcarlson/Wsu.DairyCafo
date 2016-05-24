@@ -693,7 +693,7 @@
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type viewmodel:ScenarioViewModel}">
-        <Grid >
+        <Grid>
             
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -701,7 +701,6 @@
             </Grid.RowDefinitions>
             <Menu Grid.Row="0" 
                   FontSize="15"
-                  Width="{StaticResource WindowWidth}"
                   FocusManager.IsFocusScope="False">
                 <MenuItem Header="_File">
                     <MenuItem Header="_New"
