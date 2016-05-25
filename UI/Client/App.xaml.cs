@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,7 +28,7 @@ namespace Wsu.DairyCafo.UI.Client
             //See: http://stackoverflow.com/a/25508012/1621156
 
             Container container = new Container();
-            container.ResolveMainWindow().Show();
+            container.ResolveMainWindow(e.Args).Show();
         }
     }
 }

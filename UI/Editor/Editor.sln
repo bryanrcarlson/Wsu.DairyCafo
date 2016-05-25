@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wsu.CropSyst", "..\..\..\Cr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLogic.Tests", "..\PresentationLogic\Tests\PresentationLogic.Tests.csproj", "{645B3B66-48E9-4287-ACA4-ABD81125CA37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetPermissions", "Setup\Scripts\SetPermissions\SetPermissions.csproj", "{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,14 @@ Global
 		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Release|x64.ActiveCfg = Release|Any CPU
 		{645B3B66-48E9-4287-ACA4-ABD81125CA37}.Release|x64.Build.0 = Release|Any CPU
+		{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}.Debug|x64.Build.0 = Debug|Any CPU
+		{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}.Release|x64.ActiveCfg = Release|Any CPU
+		{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

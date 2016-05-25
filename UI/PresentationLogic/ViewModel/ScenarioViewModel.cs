@@ -114,6 +114,10 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 return runScenarioNoOutputCommand;
             }
         }
+        public void GetScenario(string pathToScenarioFile)
+        {
+            loadScenario(pathToScenarioFile);
+        }
         #endregion // Public Properties/Commands
 
         #region 'structors
@@ -168,23 +172,28 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
             string sFile = loadScenarioFileDialog();
             if(!String.IsNullOrEmpty(sFile))
             {
-                currentWorkingDir = new DirectoryInfo(Path.GetDirectoryName(sFile));
-                try
-                {
-                    reader.Load(sFile);
-                    reader.LoadField(Path.GetDirectoryName(sFile));
-                }
-                catch(NullReferenceException e)
-                {
-                    System.Windows.MessageBox.Show(e.Message);
-                }
-
-                Scenario s = reader.Parse();
-
-                ScenarioModel sm = new ScenarioModel(s);
-
-                CurrentScenario = sm;
+                loadScenario(sFile);
             } 
+        }
+        private void loadScenario(string pathToScenarioFile)
+        {
+            currentWorkingDir = new DirectoryInfo(
+                Path.GetDirectoryName(pathToScenarioFile));
+            try
+            {
+                reader.Load(pathToScenarioFile);
+                reader.LoadField(Path.GetDirectoryName(pathToScenarioFile));
+            }
+            catch (NullReferenceException e)
+            {
+                System.Windows.MessageBox.Show(e.Message);
+            }
+
+            Scenario s = reader.Parse();
+
+            ScenarioModel sm = new ScenarioModel(s);
+
+            CurrentScenario = sm;
         }
         private void saveScenario()
         {
@@ -194,6 +203,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 double lat = currentScenario.Latitude;
                 double lon = currentScenario.Longitude;
 
+                
                 string pathToWeather = 
                     writer.SetupWeather(currentScenario.GetScenario());
 

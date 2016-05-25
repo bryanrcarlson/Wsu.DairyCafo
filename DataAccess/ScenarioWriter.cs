@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Wsu.DairyCafo.DataAccess.Core;
 using Wsu.DairyCafo.DataAccess.Dto;
+using static System.Environment;
 
 namespace Wsu.DairyCafo.DataAccess
 {
@@ -128,6 +129,7 @@ namespace Wsu.DairyCafo.DataAccess
             }
                   
         }
+        
         public string SetupWeather(Scenario scenario)
         {
             // Find current weather file
@@ -461,11 +463,17 @@ namespace Wsu.DairyCafo.DataAccess
             if (!Directory.Exists(pathToParentDir))
                 throw new ArgumentException("Copy to path does not exist");
 
-            string sourcePath = 
+            //string sourcePath = 
+            //    Path.Combine(
+            //        Directory.GetCurrentDirectory(), 
+            //    @"Assets\Fields", 
+            //    s.Field.Crop);
+            string sourcePath =
                 Path.Combine(
-                    Directory.GetCurrentDirectory(), 
-                @"Assets\Fields", 
-                s.Field.Crop);
+                    Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
+                    "DairyCropSyst",
+                    "Fields",
+                    s.Field.Crop);
             string destinationPath = 
                 Path.Combine(pathToParentDir, s.Field.Crop);
 
@@ -484,68 +492,68 @@ namespace Wsu.DairyCafo.DataAccess
             // Reload file
             fDp.Load(Path.Combine(destinationPath, fieldScenarioFilename));
         }
-        private void replaceWithFieldTemplate(Scenario s, string pathToReplace)
-        {
-            if (Directory.Exists(pathToReplace))
-                throw new ArgumentException("Path to replace does not exist");
+        //private void replaceWithFieldTemplate(Scenario s, string pathToReplace)
+        //{
+        //    if (Directory.Exists(pathToReplace))
+        //        throw new ArgumentException("Path to replace does not exist");
 
-            // Burn current field dir and copy a new one from templates
-            string SourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"Assets\Fields", s.Field.Crop);
-            if (!Directory.Exists(SourcePath))
-                throw new ArgumentException("Error setting up field; specified crop does not exist");
-            //string currFieldDir = pathToReplace;
-            string DestinationPath = Path.Combine(Directory.GetParent(pathToReplace).ToString(), s.Field.Crop);
+        //    // Burn current field dir and copy a new one from templates
+        //    string SourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"Assets\Fields", s.Field.Crop);
+        //    if (!Directory.Exists(SourcePath))
+        //        throw new ArgumentException("Error setting up field; specified crop does not exist");
+        //    //string currFieldDir = pathToReplace;
+        //    string DestinationPath = Path.Combine(Directory.GetParent(pathToReplace).ToString(), s.Field.Crop);
 
-            Directory.Delete(pathToReplace, true);
-            Directory.CreateDirectory(DestinationPath);
+        //    Directory.Delete(pathToReplace, true);
+        //    Directory.CreateDirectory(DestinationPath);
 
-            //Create all of the directories
-            foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
-                SearchOption.AllDirectories))
-                Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
+        //    //Create all of the directories
+        //    foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
+        //        SearchOption.AllDirectories))
+        //        Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
 
-            //Copy all the files & Replaces any files with the same name
-            foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
-                SearchOption.AllDirectories))
-                File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
+        //    //Copy all the files & Replaces any files with the same name
+        //    foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
+        //        SearchOption.AllDirectories))
+        //        File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
 
-            // Reload file
-            fDp.Load(Path.Combine(DestinationPath, fieldScenarioFilename));
-        }
-        private void _copyFieldTemplate(Scenario s)
-        {
-            if (String.IsNullOrEmpty(fDp.LoadedPath))
-                throw new NullReferenceException("Error setting up field; path not loaded");
+        //    // Reload file
+        //    fDp.Load(Path.Combine(DestinationPath, fieldScenarioFilename));
+        //}
+        //private void _copyFieldTemplate(Scenario s)
+        //{
+        //    if (String.IsNullOrEmpty(fDp.LoadedPath))
+        //        throw new NullReferenceException("Error setting up field; path not loaded");
 
-            string dirName = 
-                new DirectoryInfo(Path.GetDirectoryName(fDp.LoadedPath)).Name;
+        //    string dirName = 
+        //        new DirectoryInfo(Path.GetDirectoryName(fDp.LoadedPath)).Name;
 
-            if(s.Field.Enabled && dirName != s.Field.Crop)
-            {
-                // Burn current field dir and copy a new one from templates
-                string SourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"Assets\Fields", s.Field.Crop);
-                if (!Directory.Exists(SourcePath))
-                    throw new ArgumentException("Error setting up field; specified crop does not exist");
-                string currFieldDir = Path.GetDirectoryName(fDp.LoadedPath);
-                string DestinationPath = Path.Combine(Directory.GetParent(currFieldDir).ToString(), s.Field.Crop);
+        //    if(s.Field.Enabled && dirName != s.Field.Crop)
+        //    {
+        //        // Burn current field dir and copy a new one from templates
+        //        string SourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"Assets\Fields", s.Field.Crop);
+        //        if (!Directory.Exists(SourcePath))
+        //            throw new ArgumentException("Error setting up field; specified crop does not exist");
+        //        string currFieldDir = Path.GetDirectoryName(fDp.LoadedPath);
+        //        string DestinationPath = Path.Combine(Directory.GetParent(currFieldDir).ToString(), s.Field.Crop);
                 
-                Directory.Delete(Path.GetDirectoryName(fDp.LoadedPath), true);
-                Directory.CreateDirectory(DestinationPath);
+        //        Directory.Delete(Path.GetDirectoryName(fDp.LoadedPath), true);
+        //        Directory.CreateDirectory(DestinationPath);
 
-                //Create all of the directories
-                foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
-                    SearchOption.AllDirectories))
-                    Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
+        //        //Create all of the directories
+        //        foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
+        //            SearchOption.AllDirectories))
+        //            Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
 
-                //Copy all the files & Replaces any files with the same name
-                foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
-                    SearchOption.AllDirectories))
-                    File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
+        //        //Copy all the files & Replaces any files with the same name
+        //        foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
+        //            SearchOption.AllDirectories))
+        //            File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
 
-                // Reload file
-                fDp.Load(Path.Combine(DestinationPath, fieldScenarioFilename));
-            }
-        }
+        //        // Reload file
+        //        fDp.Load(Path.Combine(DestinationPath, fieldScenarioFilename));
+        //    }
+        //}
         private void writeField(Scenario s)
         {
             if (String.IsNullOrEmpty(fDp.LoadedPath))

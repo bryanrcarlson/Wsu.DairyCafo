@@ -93,6 +93,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
+        "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_636B9E21F0F14DBF8BB5249FB8656F5F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -130,13 +136,19 @@
         "Entry"
         {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
+        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -178,13 +190,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
+        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -196,7 +202,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
+        "OwnerKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -271,6 +289,34 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_80F0308954574B19BCEC3BED681CCE16"
+            {
+            "Name" = "8:Primary output from SetPermissions (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_9BE36966_D004_4D98_8F12_08BF7104BD5E"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_852EE5E3BC8A4C189BC11C11D3FF33DE"
+            {
+            "Name" = "8:Primary output from SetPermissions (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_EA0E3B29_FA6A_454B_A0E3_588BA1F067F0"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -301,11 +347,6 @@
             "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0BB2F2FA95AD1FB39EB80A796244AE1B"
-                    {
-                    "Name" = "8:Wsu.DairyCafo.DataAccess.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Wsu.DairyCafo.DataAccess.dll"
             "TargetName" = "8:"
@@ -492,11 +533,6 @@
             "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.UI.PresentationLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_5F868099A15972FD887DE63551609C27"
-                    {
-                    "Name" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
             "TargetName" = "8:"
@@ -543,11 +579,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_625ACCDC3FEE796A64D2F00CE184C6AA"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -674,11 +705,6 @@
             "AssemblyAsmDisplayName" = "8:Wsu.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BD129EAEDEDC3BE1E3425EFF40DBA067"
-                    {
-                    "Name" = "8:Wsu.IO.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Wsu.IO.dll"
             "TargetName" = "8:"
@@ -803,7 +829,30 @@
                     "Property" = "8:_95389B47B914436D916E69D8977AA7D7"
                         "Folders"
                         {
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_49F15FE879C049809FD457FABBD7549D"
+                        }
+                    }
+                }
+            }
+            "{994432C3-9487-495D-8656-3E829A8DBDDE}:_96EFB2A5B51D4C509282453489B8CABD"
+            {
+            "DefaultLocation" = "8:[CommonAppDataFolder]"
+            "Name" = "8:ProgramData"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:NEWPROPERTY1"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_13335FCA84E047D8B114E3753927C261"
+                    {
+                    "Name" = "8:DairyCropSyst"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_8D6900BC945D4FBEBCEFC24DE952EBE7"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_59096E9FF13E4DB3A06B99FE6554C088"
                             {
                             "Name" = "8:Fields"
                             "AlwaysCreate" = "11:FALSE"
@@ -836,7 +885,7 @@
                                     }
                                 }
                             }
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_8FDC6FFDCFAC41A487E47BC0B055B5A7"
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_6EEA1FA532044FA9AC100E5CD058ED63"
                             {
                             "Name" = "8:Database"
                             "AlwaysCreate" = "11:FALSE"
@@ -912,7 +961,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dairy-CropSyst"
         "ProductCode" = "8:{EBF4D12C-27B2-4DEA-A109-6E9B53D8E752}"
-        "PackageCode" = "8:{6F4D0B57-28F9-4818-9433-B5CCAE8BB4B0}"
+        "PackageCode" = "8:{6907C4C3-2D3E-4A6A-B3CF-027332DD4E0A}"
         "UpgradeCode" = "8:{FB066AC0-D7C4-49D3-856A-A93183A5C634}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1431,6 +1480,34 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C1C9A5D196154601BBAC98A4594213F0"
+            {
+            "SourcePath" = "8:Scripts\\SetPermissions\\obj\\Debug\\SetPermissions.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{D806C5AF-E30F-4785-8BC6-86FB4046BB6F}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
             {
             "SourcePath" = "8:..\\..\\Client\\obj\\Debug\\Client.exe"
