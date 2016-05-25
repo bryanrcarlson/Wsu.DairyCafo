@@ -63,6 +63,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_558939422DEA420F82C68332E1CA75CD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5823DC58B22D46BD81A9D22B66F76822"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -88,13 +94,13 @@
         "Entry"
         {
         "MsmKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
-        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
-        "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,13 +142,13 @@
         "Entry"
         {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
+        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -190,13 +196,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
+        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -208,13 +208,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
+        "OwnerKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -347,6 +353,11 @@
             "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_0BB2F2FA95AD1FB39EB80A796244AE1B"
+                    {
+                    "Name" = "8:Wsu.DairyCafo.DataAccess.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Wsu.DairyCafo.DataAccess.dll"
             "TargetName" = "8:"
@@ -486,6 +497,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_558939422DEA420F82C68332E1CA75CD"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\cow.ico"
+            "TargetName" = "8:cow.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5823DC58B22D46BD81A9D22B66F76822"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\debug\\nutrients-template.xlsm"
@@ -533,6 +564,11 @@
             "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.UI.PresentationLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_5F868099A15972FD887DE63551609C27"
+                    {
+                    "Name" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
             "TargetName" = "8:"
@@ -579,6 +615,11 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
+                    "_625ACCDC3FEE796A64D2F00CE184C6AA"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -705,6 +746,11 @@
             "AssemblyAsmDisplayName" = "8:Wsu.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_BD129EAEDEDC3BE1E3425EFF40DBA067"
+                    {
+                    "Name" = "8:Wsu.IO.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Wsu.IO.dll"
             "TargetName" = "8:"
@@ -820,17 +866,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_39051FBF84AC4E02B76C42AD8F57C857"
-                    {
-                    "Name" = "8:Assets"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_95389B47B914436D916E69D8977AA7D7"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{994432C3-9487-495D-8656-3E829A8DBDDE}:_96EFB2A5B51D4C509282453489B8CABD"
@@ -961,7 +996,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dairy-CropSyst"
         "ProductCode" = "8:{EBF4D12C-27B2-4DEA-A109-6E9B53D8E752}"
-        "PackageCode" = "8:{6907C4C3-2D3E-4A6A-B3CF-027332DD4E0A}"
+        "PackageCode" = "8:{662BDAB8-90E3-4C23-97AC-F3A616566214}"
         "UpgradeCode" = "8:{FB066AC0-D7C4-49D3-856A-A93183A5C634}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1081,6 +1116,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_138D64C221EC498B97BE78DE911666D6"
+            {
+            "Name" = "8:Dairy-CropSyst"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+            "Folder" = "8:_F17C2E654BF2455188FB152B74754D82"
+            "WorkingFolder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Icon" = "8:_558939422DEA420F82C68332E1CA75CD"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {

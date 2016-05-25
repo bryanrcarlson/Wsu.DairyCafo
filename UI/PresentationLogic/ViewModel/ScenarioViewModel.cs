@@ -161,14 +161,13 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.ViewModel
                 {
                     System.Windows.MessageBox.Show(e.Message);
                 }
+
+                // Now load created scenario
+                loadScenario(Path.Combine(filePath, ".NIFA_dairy_scenario"));
             }
         }
         private void getScenario()
         {
-            // Get ScenarioDto using ScenarioReader.TryParse()
-            // Create new ScenarioModel(scenarioDto)
-            // Set CurrentScenario
-
             string sFile = loadScenarioFileDialog();
             if(!String.IsNullOrEmpty(sFile))
             {
