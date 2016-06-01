@@ -34,7 +34,7 @@ namespace Wsu.DairyCafo.DataAccess
             if (!Directory.Exists(pathToWeatherDatabase))
                 throw new ArgumentException("Unable to locate weather database");
 
-            if (longitude < 0) longitude *= -1;
+            //if (longitude < 0) longitude *= -1;
 
             List<GeoCoordinate> locations = getLocations(pathToWeatherDatabase);
 
