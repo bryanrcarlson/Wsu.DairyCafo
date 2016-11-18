@@ -128,14 +128,60 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Assets\Database\Soil\46.3931N_120.0410W.CS_soil" />
-    <None Include="Assets\Database\Soil\48.9832N_122.4680W.CS_soil">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Database\Weather\46.3931N_120.0410W.UED" />
-    <None Include="Assets\Database\Weather\48.9832N_122.4680W.UED">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="Assets\Database\Soil\42.0349N_111.7783W.CS_soil" />
+    <None Include="Assets\Database\Soil\42.0733N_111.8424W.CS_soil" />
+    <None Include="Assets\Database\Soil\42.4591N_113.6565W.CS_soil" />
+    <None Include="Assets\Database\Soil\42.7433N_114.4463W.CS_soil" />
+    <None Include="Assets\Database\Soil\42.7453N_114.7187W.CS_soil" />
+    <None Include="Assets\Database\Soil\42.8273N_112.7705W.CS_soil" />
+    <None Include="Assets\Database\Soil\43.0559N_114.1769W.CS_soil" />
+    <None Include="Assets\Database\Soil\43.4974N_112.0858W.CS_soil" />
+    <None Include="Assets\Database\Soil\43.5550N_114.4216W.CS_soil" />
+    <None Include="Assets\Database\Soil\43.5557N_116.4605W.CS_soil" />
+    <None Include="Assets\Database\Soil\43.6341N_112.2792W.CS_soil" />
+    <None Include="Assets\Database\Soil\43.9561N_112.5771W.CS_soil" />
+    <None Include="Assets\Database\Soil\45.7408N_122.3791W.CS_soil" />
+    <None Include="Assets\Database\Soil\46.1946N_119.9349W.CS_soil" />
+    <None Include="Assets\Database\Soil\46.2748N_119.1204W.CS_soil" />
+    <None Include="Assets\Database\Soil\46.2749N_119.0283W.CS_soil" />
+    <None Include="Assets\Database\Soil\46.3489N_120.0696W.CS_soil" />
+    <None Include="Assets\Database\Soil\46.4187N_120.1767W.CS_soil" />
+    <None Include="Assets\Database\Soil\46.6681N_117.2663W.CS_soil" />
+    <None Include="Assets\Database\Soil\46.8000N_123.0190W.CS_soil" />
+    <None Include="Assets\Database\Soil\46.9091N_119.1601W.CS_soil" />
+    <None Include="Assets\Database\Soil\48.8673N_122.4617W.CS_soil" />
+    <None Include="Assets\Database\Soil\48.8947N_122.7070W.CS_soil" />
+    <None Include="Assets\Database\Soil\48.9291N_122.3068W.CS_soil" />
+    <None Include="Assets\Database\Soil\48.9342N_122.4110W.CS_soil" />
+    <None Include="Assets\Database\Soil\48.9824N_122.4567W.CS_soil" />
+    <None Include="Assets\Database\Soil\48.9913N_122.2786W.CS_soil" />
+    <None Include="Assets\Database\Weather\42.0349N_111.7783W.UED" />
+    <None Include="Assets\Database\Weather\42.0733N_111.8424W.UED" />
+    <None Include="Assets\Database\Weather\42.4591N_113.6565W.UED" />
+    <None Include="Assets\Database\Weather\42.7433N_114.4463W.UED" />
+    <None Include="Assets\Database\Weather\42.7453N_114.7187W.UED" />
+    <None Include="Assets\Database\Weather\42.8273N_112.7705W.UED" />
+    <None Include="Assets\Database\Weather\43.0559N_114.1769W.UED" />
+    <None Include="Assets\Database\Weather\43.4974N_112.0858W.UED" />
+    <None Include="Assets\Database\Weather\43.5550N_114.4216W.UED" />
+    <None Include="Assets\Database\Weather\43.5557N_116.4605W.UED" />
+    <None Include="Assets\Database\Weather\43.6341N_112.2792W.UED" />
+    <None Include="Assets\Database\Weather\43.9561N_112.5771W.UED" />
+    <None Include="Assets\Database\Weather\45.7408N_122.3791W.UED" />
+    <None Include="Assets\Database\Weather\46.1946N_119.9349W.UED" />
+    <None Include="Assets\Database\Weather\46.2748N_119.1204W.UED" />
+    <None Include="Assets\Database\Weather\46.2749N_119.0283W.UED" />
+    <None Include="Assets\Database\Weather\46.3489N_120.0696W.UED" />
+    <None Include="Assets\Database\Weather\46.4187N_120.1767W.UED" />
+    <None Include="Assets\Database\Weather\46.6681N_117.2663W.UED" />
+    <None Include="Assets\Database\Weather\46.8000N_123.0190W.UED" />
+    <None Include="Assets\Database\Weather\46.9091N_119.1601W.UED" />
+    <None Include="Assets\Database\Weather\48.8673N_122.4617W.UED" />
+    <None Include="Assets\Database\Weather\48.8947N_122.7070W.UED" />
+    <None Include="Assets\Database\Weather\48.9291N_122.3068W.UED" />
+    <None Include="Assets\Database\Weather\48.9342N_122.4110W.UED" />
+    <None Include="Assets\Database\Weather\48.9824N_122.4567W.UED" />
+    <None Include="Assets\Database\Weather\48.9913N_122.2786W.UED" />
     <None Include="Assets\Fields\alfalfa\.CropSyst_scenario">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -186,6 +232,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
