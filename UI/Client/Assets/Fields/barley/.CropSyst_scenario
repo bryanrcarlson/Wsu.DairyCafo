@@ -21,7 +21,7 @@ recalibration=Optional (Currently not selected).rcl
 water_table=Optional (Currently not_selected).wtb
 [cropping_system]
 cropping_mode=rotation
-rotation=corn.rot
+rotation=barley.rot
 [simulation]
 starting_date=1980001 (1980/Jan/01)
 ending_date=2010365 (2010/Dec/31)

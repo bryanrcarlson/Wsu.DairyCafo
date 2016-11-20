@@ -75,6 +75,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2037CF4F7A614EFF8E2C11E0F0528C82"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_23ED58A03E974102B214794BBB89DC07"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -93,13 +99,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_30331B0A44D64BAA84752294ED95485B"
+        "MsmKey" = "8:_31E149FFD6494629A2DA79CBAE02635C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_31E149FFD6494629A2DA79CBAE02635C"
+        "MsmKey" = "8:_35EB2245D0E24B09BB87A85E57B6BD1A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -123,7 +129,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_436B10F821184448B68A6485A655C21D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4B83AFA47E76432DB05F170987C9CDA8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4DAA732F052E44BB8DE78670FE0877D8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -136,6 +154,12 @@
         "Entry"
         {
         "MsmKey" = "8:_51916710017E40F592AF292BB6754585"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_556DDB0B3A744C4ABCCD763778B05CE5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -154,6 +178,12 @@
         "Entry"
         {
         "MsmKey" = "8:_5B2166FE60CF4E8095089ABA369919BF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5C2E161B2AF84A5E999A742861B153E9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -255,6 +285,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_78D5AD3358044106891A845EABEEE0AA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7A78E53D91AC4AEC87BFDE16D75A19CA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -285,7 +321,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_92D19B266FAC4C499D6DF16D7836A485"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_94B882E58DD3411C8E4CF9FD01DEE985"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9D6D3A9DA648416F9595398C2564928A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -304,6 +352,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A0475B26DE8846EDA81F1FB82837C21F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A0D92FD03D434C38B8FF33E60CA71211"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -346,18 +400,24 @@
         "Entry"
         {
         "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
         "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
+        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C478EE9FBAB1488F8B09E7B9E0EF845A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -387,13 +447,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D02104BA27704E5A8A1CCF31370AB517"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D0B38C2597DC45C1B7903EE2D53D2428"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D177F3F908234C25A7999D0FAC2FF791"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D867DD38BF364B2A9859C22A8911AEB2"
+        "MsmKey" = "8:_D66F17A434EF4B3A8069F2450A6FF9E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -465,6 +537,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F8124F64F50D499688A15801291634CE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F974F7CE103843F6B34BD031E4388E09"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -496,19 +574,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
+        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -520,7 +586,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
+        "OwnerKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -713,6 +791,11 @@
             "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_0BB2F2FA95AD1FB39EB80A796244AE1B"
+                    {
+                    "Name" = "8:Wsu.DairyCafo.DataAccess.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Wsu.DairyCafo.DataAccess.dll"
             "TargetName" = "8:"
@@ -832,6 +915,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2037CF4F7A614EFF8E2C11E0F0528C82"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\alfalfa\\.CropSyst_scenario"
+            "TargetName" = "8:.CropSyst_scenario"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5CE7A488254AB2A31BDEAD48E089FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_23ED58A03E974102B214794BBB89DC07"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\42.7433N_114.4463W.UED"
@@ -892,12 +995,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_30331B0A44D64BAA84752294ED95485B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_31E149FFD6494629A2DA79CBAE02635C"
             {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\corn\\.CropSyst_scenario"
-            "TargetName" = "8:.CropSyst_scenario"
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Soil\\42.7453N_114.7187W.CS_soil"
+            "TargetName" = "8:42.7453N_114.7187W.CS_soil"
             "Tag" = "8:"
-            "Folder" = "8:_B5645936662B477EA829882636B02DDF"
+            "Folder" = "8:_F435049CB6B842A68703322C08ECA1CD"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -912,12 +1015,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_31E149FFD6494629A2DA79CBAE02635C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_35EB2245D0E24B09BB87A85E57B6BD1A"
             {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Soil\\42.7453N_114.7187W.CS_soil"
-            "TargetName" = "8:42.7453N_114.7187W.CS_soil"
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\barley\\barley.mgt"
+            "TargetName" = "8:barley.mgt"
             "Tag" = "8:"
-            "Folder" = "8:_F435049CB6B842A68703322C08ECA1CD"
+            "Folder" = "8:_DEC5D052FC284B83BD7F96583CF9FA38"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -992,12 +1095,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_436B10F821184448B68A6485A655C21D"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\barley\\barley.rot"
+            "TargetName" = "8:barley.rot"
+            "Tag" = "8:"
+            "Folder" = "8:_DEC5D052FC284B83BD7F96583CF9FA38"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4B83AFA47E76432DB05F170987C9CDA8"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\43.6341N_112.2792W.UED"
             "TargetName" = "8:43.6341N_112.2792W.UED"
             "Tag" = "8:"
             "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4DAA732F052E44BB8DE78670FE0877D8"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\alfalfa\\alfalfa.crp"
+            "TargetName" = "8:alfalfa.crp"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5CE7A488254AB2A31BDEAD48E089FB"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1038,6 +1181,26 @@
             "TargetName" = "8:46.8000N_123.0190W.CS_soil"
             "Tag" = "8:"
             "Folder" = "8:_F435049CB6B842A68703322C08ECA1CD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_556DDB0B3A744C4ABCCD763778B05CE5"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\barley\\all.FMT"
+            "TargetName" = "8:all.FMT"
+            "Tag" = "8:"
+            "Folder" = "8:_DEC5D052FC284B83BD7F96583CF9FA38"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1112,6 +1275,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5C2E161B2AF84A5E999A742861B153E9"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\corn\\.CropSyst_scenario"
+            "TargetName" = "8:.CropSyst_scenario"
+            "Tag" = "8:"
+            "Folder" = "8:_B5645936662B477EA829882636B02DDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5E3B9865362048F9A6CAB5F4C3F60AF8"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Soil\\48.8947N_122.7070W.CS_soil"
@@ -1159,6 +1342,11 @@
             "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.UI.PresentationLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_5F868099A15972FD887DE63551609C27"
+                    {
+                    "Name" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
             "TargetName" = "8:"
@@ -1205,6 +1393,11 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
+                    "_625ACCDC3FEE796A64D2F00CE184C6AA"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -1424,6 +1617,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_78D5AD3358044106891A845EABEEE0AA"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\alfalfa\\alfalfa.rot"
+            "TargetName" = "8:alfalfa.rot"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5CE7A488254AB2A31BDEAD48E089FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A78E53D91AC4AEC87BFDE16D75A19CA"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Weather\\42.4591N_113.6565W.UED"
@@ -1524,12 +1737,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_92D19B266FAC4C499D6DF16D7836A485"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\corn\\all.FMT"
+            "TargetName" = "8:all.FMT"
+            "Tag" = "8:"
+            "Folder" = "8:_B5645936662B477EA829882636B02DDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94B882E58DD3411C8E4CF9FD01DEE985"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Soil\\43.5550N_114.4216W.CS_soil"
             "TargetName" = "8:43.5550N_114.4216W.CS_soil"
             "Tag" = "8:"
             "Folder" = "8:_F435049CB6B842A68703322C08ECA1CD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9D6D3A9DA648416F9595398C2564928A"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\corn\\corn.crp"
+            "TargetName" = "8:corn.crp"
+            "Tag" = "8:"
+            "Folder" = "8:_B5645936662B477EA829882636B02DDF"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1590,6 +1843,26 @@
             "TargetName" = "8:43.5550N_114.4216W.UED"
             "Tag" = "8:"
             "Folder" = "8:_B794B9271420404AA1D5B147BC3B5AFA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A0D92FD03D434C38B8FF33E60CA71211"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\barley\\barley-spring.crp"
+            "TargetName" = "8:barley-spring.crp"
+            "Tag" = "8:"
+            "Folder" = "8:_DEC5D052FC284B83BD7F96583CF9FA38"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1711,6 +1984,11 @@
             "AssemblyAsmDisplayName" = "8:Wsu.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_BD129EAEDEDC3BE1E3425EFF40DBA067"
+                    {
+                    "Name" = "8:Wsu.IO.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Wsu.IO.dll"
             "TargetName" = "8:"
@@ -1728,6 +2006,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C478EE9FBAB1488F8B09E7B9E0EF845A"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\corn\\corn.rot"
+            "TargetName" = "8:corn.rot"
+            "Tag" = "8:"
+            "Folder" = "8:_B5645936662B477EA829882636B02DDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C53D0A3C06744B3E9B209F08C3E1CFE1"
@@ -1810,6 +2108,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D02104BA27704E5A8A1CCF31370AB517"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\corn\\corn.mgt"
+            "TargetName" = "8:corn.mgt"
+            "Tag" = "8:"
+            "Folder" = "8:_B5645936662B477EA829882636B02DDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D0B38C2597DC45C1B7903EE2D53D2428"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\alfalfa\\all.FMT"
+            "TargetName" = "8:all.FMT"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5CE7A488254AB2A31BDEAD48E089FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D177F3F908234C25A7999D0FAC2FF791"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Soil\\42.4591N_113.6565W.CS_soil"
@@ -1830,10 +2168,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D867DD38BF364B2A9859C22A8911AEB2"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D66F17A434EF4B3A8069F2450A6FF9E1"
             {
-            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\alfalfa\\.CropSyst_scenario"
-            "TargetName" = "8:.CropSyst_scenario"
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\alfalfa\\alfalfa.mgt"
+            "TargetName" = "8:alfalfa.mgt"
             "Tag" = "8:"
             "Folder" = "8:_EF5CE7A488254AB2A31BDEAD48E089FB"
             "Condition" = "8:"
@@ -2050,6 +2388,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F8124F64F50D499688A15801291634CE"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\Fields\\barley\\.CropSyst_scenario"
+            "TargetName" = "8:.CropSyst_scenario"
+            "Tag" = "8:"
+            "Folder" = "8:_DEC5D052FC284B83BD7F96583CF9FA38"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F974F7CE103843F6B34BD031E4388E09"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Soil\\43.5557N_116.4605W.CS_soil"
@@ -2183,6 +2541,17 @@
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_9CD8A45383464D56B4A04381AF155ED5"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_DEC5D052FC284B83BD7F96583CF9FA38"
+                                    {
+                                    "Name" = "8:barley"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_1A9EDA7C709D4982B94ABDC670E2BF92"
                                         "Folders"
                                         {
                                         }

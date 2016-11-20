@@ -453,7 +453,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
         }
         public string[] FieldCrops
         {
-            get { return new string[] { "alfalfa", "corn"  }; }
+            get { return new string[] { "alfalfa", "barley", "corn"  }; }
         }
         #endregion // Properties
         #region 'structors
