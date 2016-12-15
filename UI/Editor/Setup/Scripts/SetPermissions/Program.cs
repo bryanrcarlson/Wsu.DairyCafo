@@ -16,7 +16,7 @@ namespace Wsu.DairyCafo.UI.Editor.Setup.SetPermissions
         {
             string path = Path.Combine(
                Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-               "DairyCropSyst");
+               "CS_Suite", "Dairy");
 
             if (!Directory.Exists(path))
             {

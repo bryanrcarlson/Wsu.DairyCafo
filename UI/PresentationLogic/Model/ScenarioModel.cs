@@ -447,6 +447,7 @@ namespace Wsu.DairyCafo.UI.PresentationLogic.Model
                 if(value != scenario.Field.Crop)
                 {
                     scenario.Field.Crop = value;
+                    scenario.Field.Id = value;
                     OnPropertyChanged("FieldCrop");
                 }
             }

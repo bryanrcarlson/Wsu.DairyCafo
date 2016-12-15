@@ -5,7 +5,7 @@ feed_name_immature=
 feed_name_midmature=
 feed_name_mature=
 model=crop
-harvested_part=canopy
+harvested_part=leaf
 RUSLE2_name=
 RUSLE2_description=
 abscission=marcescent
@@ -54,7 +54,7 @@ TUE_equation=TUE_curve
 RUE_basis=global_radiation
 TUE_scaling_coef=0.50000000 Scaling coefficient of TUE regression (power function)
 TUE_scaling_coef_veg=0.44999999 Scaling coefficient of TUE regression (power function)
-TUE_at_1pKa_VPD=4.00000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
+TUE_at_1pKa_VPD=3.70000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
 TUE_at_1pKa_VPD_veg=5.00000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
 water_productivity=20.00000000 Water productivity FAO AquaCrop water productivity during reproductive growth (or throughout the season depending on the WUE mode)
 water_productivity_veg=20.00000000 Water productivity as in AquaCrop
@@ -74,6 +74,7 @@ max_canopy_height=1.50000000 Maximum plant height
 [harvest_index]
 unstressed=0.47999999 Unstressed harvest index
 temperature_stress_sensitivity=0.00000000 Sensitivity to temperature stress during flowering
+growth_sensitivity=0.00000000 Sensitivity to water and nitrogen stress during active growth
 adjust_HI=true
 heat_extreme=false
 [emergence]
