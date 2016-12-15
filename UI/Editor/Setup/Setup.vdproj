@@ -207,6 +207,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_612151EC948D4DA6ACB53DAAE0CA105D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6156A3655D3249018EFC5A2CEDA731D5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1366,6 +1372,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_612151EC948D4DA6ACB53DAAE0CA105D"
+            {
+            "SourcePath" = "8:..\\..\\Client\\Assets\\manual.docx"
+            "TargetName" = "8:manual.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6156A3655D3249018EFC5A2CEDA731D5"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\Qt5Widgetsd.dll"
@@ -2496,7 +2522,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_3B9F570D12B94D78B2DA2BA71C009E7D"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder]\\CS_Suite"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\CS_suite_4"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
@@ -2682,7 +2708,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dairy-CropSyst"
         "ProductCode" = "8:{EBF4D12C-27B2-4DEA-A109-6E9B53D8E752}"
-        "PackageCode" = "8:{662BDAB8-90E3-4C23-97AC-F3A616566214}"
+        "PackageCode" = "8:{ED4EA4D0-83F2-4FDD-9E8D-4F3B5CF7717C}"
         "UpgradeCode" = "8:{FB066AC0-D7C4-49D3-856A-A93183A5C634}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -3123,7 +3149,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
