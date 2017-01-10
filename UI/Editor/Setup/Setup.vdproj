@@ -21,6 +21,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_00CC4B8F9890200A5B152A8EA2B6F43E"
+        "OwnerKey" = "8:_93EA78476DAD28893CEF379EEAB1BEA1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_00CC4B8F9890200A5B152A8EA2B6F43E"
+        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_00CC4B8F9890200A5B152A8EA2B6F43E"
+        "OwnerKey" = "8:_FDCF90EDD32A6738ACAEA73723812B5F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_09CFF572E889418E90151E5E65E1B824"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -29,18 +47,6 @@
         {
         "MsmKey" = "8:_0B6BD95B678443108EE28B20CD5AB7E5"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
-        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -201,12 +207,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5F868099A15972FD887DE63551609C27"
-        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_612151EC948D4DA6ACB53DAAE0CA105D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -215,18 +215,6 @@
         {
         "MsmKey" = "8:_6156A3655D3249018EFC5A2CEDA731D5"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
-        "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
-        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -333,6 +321,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_93EA78476DAD28893CEF379EEAB1BEA1"
+        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_93EA78476DAD28893CEF379EEAB1BEA1"
+        "OwnerKey" = "8:_FDCF90EDD32A6738ACAEA73723812B5F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_94B882E58DD3411C8E4CF9FD01DEE985"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -369,6 +369,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A23661CD9B9B0591A5185439D83ECEF5"
+        "OwnerKey" = "8:_C1C9A5D196154601BBAC98A4594213F0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A23661CD9B9B0591A5185439D83ECEF5"
+        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AB7E89D784A84C959209869364D2B916"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -395,24 +407,6 @@
         {
         "MsmKey" = "8:_BB01038EB1384A6888E08D2B9ECBA502"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -573,6 +567,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FDCF90EDD32A6738ACAEA73723812B5F"
+        "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
         "MsmSig" = "8:_UNDEFINED"
@@ -580,19 +580,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F868099A15972FD887DE63551609C27"
+        "OwnerKey" = "8:_FDCF90EDD32A6738ACAEA73723812B5F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0BB2F2FA95AD1FB39EB80A796244AE1B"
+        "OwnerKey" = "8:_93EA78476DAD28893CEF379EEAB1BEA1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BD129EAEDEDC3BE1E3425EFF40DBA067"
+        "OwnerKey" = "8:_00CC4B8F9890200A5B152A8EA2B6F43E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -604,7 +604,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_625ACCDC3FEE796A64D2F00CE184C6AA"
+        "OwnerKey" = "8:_A23661CD9B9B0591A5185439D83ECEF5"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -750,6 +750,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_00CC4B8F9890200A5B152A8EA2B6F43E"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Wsu.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_00CC4B8F9890200A5B152A8EA2B6F43E"
+                    {
+                    "Name" = "8:Wsu.IO.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Wsu.IO.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_09CFF572E889418E90151E5E65E1B824"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Soil\\43.9561N_112.5771W.CS_soil"
@@ -790,43 +821,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0BB2F2FA95AD1FB39EB80A796244AE1B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_0BB2F2FA95AD1FB39EB80A796244AE1B"
-                    {
-                    "Name" = "8:Wsu.DairyCafo.DataAccess.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Wsu.DairyCafo.DataAccess.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0E2F7065DB304B979708F9D7A884D067"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\Qt5Cored.dll"
             "TargetName" = "8:Qt5Cored.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -886,7 +886,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\icuuc52.dll"
             "TargetName" = "8:icuuc52.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -966,7 +966,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\libstdc++-6.dll"
             "TargetName" = "8:libstdc++-6.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1226,7 +1226,7 @@
             "SourcePath" = "8:..\\..\\Client\\Assets\\cow.ico"
             "TargetName" = "8:cow.ico"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1246,7 +1246,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\debug\\nutrients-template.xlsm"
             "TargetName" = "8:nutrients-template.xlsm"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1326,7 +1326,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\icudt52.dll"
             "TargetName" = "8:icudt52.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1341,43 +1341,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5F868099A15972FD887DE63551609C27"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.UI.PresentationLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_5F868099A15972FD887DE63551609C27"
-                    {
-                    "Name" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_612151EC948D4DA6ACB53DAAE0CA105D"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\manual.docx"
             "TargetName" = "8:manual.docx"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1397,7 +1366,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\Qt5Widgetsd.dll"
             "TargetName" = "8:Qt5Widgetsd.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1412,43 +1381,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_625ACCDC3FEE796A64D2F00CE184C6AA"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_625ACCDC3FEE796A64D2F00CE184C6AA"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_636B9E21F0F14DBF8BB5249FB8656F5F"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\libgcc_s_dw2-1.dll"
             "TargetName" = "8:libgcc_s_dw2-1.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1488,7 +1426,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\icuin52.dll"
             "TargetName" = "8:icuin52.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1688,7 +1626,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\debug\\scenario_run.exe"
             "TargetName" = "8:scenario_run.exe"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1781,6 +1719,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_93EA78476DAD28893CEF379EEAB1BEA1"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_93EA78476DAD28893CEF379EEAB1BEA1"
+                    {
+                    "Name" = "8:Wsu.DairyCafo.DataAccess.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Wsu.DairyCafo.DataAccess.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94B882E58DD3411C8E4CF9FD01DEE985"
@@ -1903,6 +1872,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A23661CD9B9B0591A5185439D83ECEF5"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_A23661CD9B9B0591A5185439D83ECEF5"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AB7E89D784A84C959209869364D2B916"
             {
             "SourcePath" = "8:..\\..\\Client\\Assets\\Database\\Soil\\48.9824N_122.4567W.CS_soil"
@@ -1988,7 +1988,7 @@
             "SourcePath" = "8:C:\\Program Files (x86)\\CS_suite_4\\CropSyst\\CropSyst_4.exe"
             "TargetName" = "8:CropSyst_4.exe"
             "Tag" = "8:"
-            "Folder" = "8:_0598C83057C84D5CB36C92A73EE64E4C"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:not CROPSYST_4_EXE_EXISTS"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2001,37 +2001,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BD129EAEDEDC3BE1E3425EFF40DBA067"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Wsu.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_BD129EAEDEDC3BE1E3425EFF40DBA067"
-                    {
-                    "Name" = "8:Wsu.IO.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Wsu.IO.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C478EE9FBAB1488F8B09E7B9E0EF845A"
@@ -2079,7 +2048,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\libwinpthread-1.dll"
             "TargetName" = "8:libwinpthread-1.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2279,7 +2248,7 @@
             "SourcePath" = "8:..\\..\\..\\..\\..\\NIFA\\dairy\\build\\Qt\\5\\Assets\\Qt5Guid.dll"
             "TargetName" = "8:Qt5Guid.dll"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2514,6 +2483,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FDCF90EDD32A6738ACAEA73723812B5F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Wsu.DairyCafo.UI.PresentationLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_FDCF90EDD32A6738ACAEA73723812B5F"
+                    {
+                    "Name" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Wsu.DairyCafo.UI.PresentationLogic.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -2522,7 +2522,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_3B9F570D12B94D78B2DA2BA71C009E7D"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder]\\CS_suite_4"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\DairyCropSyst"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
@@ -2530,28 +2530,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_0598C83057C84D5CB36C92A73EE64E4C"
-                    {
-                    "Name" = "8:CropSyst"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_E52A7574D8C94224934271C100657344"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_0F777306EE524058ABD62B6E70272E49"
-                    {
-                    "Name" = "8:Dairy"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_C61C5172D15549C6A87161A67693D4CF"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{994432C3-9487-495D-8656-3E829A8DBDDE}:_96EFB2A5B51D4C509282453489B8CABD"
@@ -2682,21 +2660,6 @@
         }
         "Locator"
         {
-            "{39E1837C-0DB9-45A2-89C8-438377A77565}:_D944671F70D1442BAE7681FBBFC29400"
-            {
-            "Name" = "8:CropSyst_4Exe"
-            "Folder" = "8:[ProgramFilesFolder]"
-            "Depth" = "2:2"
-            "FileName" = "8:CropSyst_4.exe"
-            "MinVesion" = "8:"
-            "MaxVersion" = "8:"
-            "MinSize" = "8:"
-            "MaxSize" = "8:"
-            "MinDate" = "8:"
-            "MaxDate" = "8:"
-            "Languages" = "8:"
-            "Property" = "8:CROPSYST_4_EXE_EXISTS"
-            }
         }
         "MsiBootstrapper"
         {
@@ -2708,7 +2671,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Dairy-CropSyst"
         "ProductCode" = "8:{EBF4D12C-27B2-4DEA-A109-6E9B53D8E752}"
-        "PackageCode" = "8:{ED4EA4D0-83F2-4FDD-9E8D-4F3B5CF7717C}"
+        "PackageCode" = "8:{6A5D73AD-E0BD-44C6-A9DF-E3D0A604CD66}"
         "UpgradeCode" = "8:{FB066AC0-D7C4-49D3-856A-A93183A5C634}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -2838,7 +2801,7 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_DDBE95BCD2DE4B36BBAF84BD00E2FE37"
             "Folder" = "8:_F17C2E654BF2455188FB152B74754D82"
-            "WorkingFolder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "WorkingFolder" = "8:"
             "Icon" = "8:_558939422DEA420F82C68332E1CA75CD"
             "Feature" = "8:"
             }
@@ -3246,7 +3209,7 @@
             "SourcePath" = "8:Scripts\\SetPermissions\\obj\\Debug\\SetPermissions.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3274,7 +3237,7 @@
             "SourcePath" = "8:..\\..\\Client\\obj\\Debug\\Client.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_0F777306EE524058ABD62B6E70272E49"
+            "Folder" = "8:_3B9F570D12B94D78B2DA2BA71C009E7D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
